@@ -1,11 +1,11 @@
 ### Overview
-The team name: team-eta
-The application name: UMeet
+- The team name: team-eta
+- The application name: UMeet
 
 ### Team Overview 
-Name: Kavya Jeganathan, Github: kjeganathan
-Name: Laura Nepo, Github: lauranepo
-Name: Disha Srivastava, Github: dishsrivastava
+- Name: Kavya Jeganathan, Github: kjeganathan
+- Name: Laura Nepo, Github: lauranepo
+- Name: Disha Srivastava, Github: dishsrivastava
 
 ### Innovative Idea
 
