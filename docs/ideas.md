@@ -3,7 +3,7 @@ The team name: team-eta
 The application name: UMeet
 
 ### Team Overview 
-*Name: Kavya Jeganath, Github: kjeganathan
+*Name: Kavya Jeganathan, Github: kjeganathan
 *Name: Laura Nepo, Github: lauranepo
 *Name: Disha Srivastava, Github: dishsrivastava
 
