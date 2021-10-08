@@ -9,7 +9,7 @@
 
 ### Innovative Idea
 
-UMeet is a web application used to book meeting/event spaces around campus, specifically for clubs and rsos to book rooms more easily.  This web app will include functionality for users to leave comments on their experience using specific rooms, a rating system, and functionality to view your e-board team bookings.  Furthermore, other users can upvote comments.
+UMeet is a web application used to book meeting/event spaces around campus, specifically for clubs and RSOs to book rooms more easily.  This web app will include functionality for users to leave comments on their experience using specific rooms, a rating system, and functionality to view your e-board team bookings.  Furthermore, other users can upvote comments.
 
 There is an existing library application in order to book rooms in the library.  Since the rooms provided by the library are too small to host large RSO and club groups, these library rooms cannot be used by RSO’s and club’s in order to hold events or meetings.  
 Instead, we would like to create a platform which will make it easier for clubs and RSOs to book large meeting spaces in order to host their events in a standardized and articulate manner.
