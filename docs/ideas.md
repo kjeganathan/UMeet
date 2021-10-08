@@ -24,6 +24,6 @@ For reference: *user* is a representation of a student who is part of a student 
 
 🔑 functionality #3: Users can leave comments for each room and include tags such as accessibility, environment & surroundings, technology access, size (20+, 50+, 75+, 100+), room type (ex. lecture, TBL, event space). 
 
-🔑 functionality #4: Users can see if other e-board members have booked a room, All e-board members receive confirmation email when room is booked.  
+🔑 functionality #4: Users can see if other e-board members have booked a room.  Furthermore, all e-board members receive confirmation email when a room is booked.  
 
-🔑 functionality #5: Users can search/filter through the rooms available based on certain attributes like time and size.  
+🔑 functionality #5: Users can search/filter through the rooms available based on criteria like time and size.  
