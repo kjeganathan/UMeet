@@ -22,7 +22,7 @@ For reference: *user* is a representation of a student who is part of a student 
 
 🔑 functionality #2: Users can view all available classrooms and event spaces on campus at a specific date and time, and book spaces directly on UMeet. Since users are approved during account creation, once they are approved and on the platform they can directly book event spaces. Users are sent an email confirmation once their room is booked. 
 
-🔑 functionality #3: Users can leave comments for each room and include tags such as accessibility, environment & surroundings, technology access, size (20+, 50+, 75+, 100+), room type (ex. lecture, TBL, event space). 
+🔑 functionality #3: Users can leave comments for each room and include tags such as accessibility, environment & surroundings, technology access, size (ex. 20+, 50+, 75+, 100+), room type (ex. lecture, TBL, event space). 
 
 🔑 functionality #4: Users can see if other e-board members have booked a room.  Furthermore, all e-board members receive confirmation email when a room is booked.  
 
