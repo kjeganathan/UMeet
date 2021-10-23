@@ -1,0 +1,254 @@
+.navbar{
+    position: absolute;
+    height: 96px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
+}
+
+.inputNav{
+    position: relative;
+    height:150px;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: rgba(108, 92, 231, 0.28);
+}
+
+.startTime{
+    position: absolute;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    left: 2.17%;
+    right: 87.29%;
+    top: 29.33%;
+    bottom: 29.33%;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+.icon{
+    padding-left:10%;
+    padding-top:10%;
+}
+
+.bi bi-alarm-fill{
+    width:10px;
+    height:10px;
+    fill:currentColor;
+    position: absolute;
+    left: 2.92%;
+    right: 95.81%;
+    top: 38%;
+    bottom: 44%;
+}
+
+.text{
+    padding-left:10%;
+    padding-top:5%;
+}
+
+.startTimeTitle{
+    position: absolute;
+    left: 4.89%;
+    right: 90.67%;
+    top: 33.33%;
+    bottom: 53.33%;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.startTimeInput{
+position: absolute;
+left: 4.89%;
+right: 89.66%;
+top: 48%;
+bottom: 38.67%;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+}
+
+
+
+.endTime{
+    position: absolute;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+left: 18.1%;
+right: 71.36%;
+top: 29.33%;
+bottom: 29.33%;
+
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+.date{
+    position: absolute;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+left: 34.09%;
+right: 54.31%;
+top: 29.33%;
+bottom: 29.33%;
+
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+.attendeeNumber{
+    position: absolute;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+left: 50.38%;
+right: 38.02%;
+top: 29.33%;
+bottom: 29.33%;
+
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+.sortBy{
+    position: absolute;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+left: 67.47%;
+right: 20.93%;
+top: 29.33%;
+bottom: 29.33%;
+
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 350px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 246; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    background: #F8F8FF;
+    box-shadow: 5px 0px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card{
+    height:250px;
+    width: 1000px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#card1{
+    position: absolute;
+    left: 550px;
+    top: 319px;
+    background: #F8F8FF;
+}
+
+#card2{
+    position: relative;
+    left: 550px;
+    top: 419px;
+    background: #F8F8FF;
+}
+
+.card-horizontal {
+    display: flex;
+    height:200px;
+  }
+
+.img-square-wrapper{
+    height:180px;
+    width:300px;
+    padding-left:30px;
+    padding-top:30px;
+}
+
+
+
+.card-body{
+    margin-left:50px;
+    margin-top:15px;
+}
+
+.sideBarText{
+    padding-top:50px;
+    padding-left:30px;
+}
+
+.star1{
+display:flex;
+flex-direction:row;
+justify-content:center;
+background: #FFFFFF;
+border: 1px solid #AAAAAA;
+box-sizing: border-box;
+height:41px;
+width:73px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin-right:20px;
+}
+
+.starText{
+    margin-right:10px;
+}
+
+.flex-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+}
+
+.boldText{
+    font-weight: 700;
+}
+
+.clip-star {
+    background: black;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 37px;
+    width: 38px;
+  }
+
+  .empty-star{
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 37px;
+    width: 38px;
+    border-color: black;
+    background: lightgray;
+  }
+  
+  /* PRESENTATION STYLES */
+  .stars {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .roomPicture{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+  }
