@@ -9,9 +9,23 @@
     <body>
         <!--Header Bar-->
         <nav class="navbar">
-            
+            <img class="logo" src="images/UMeetLogo.png" height="84px" width="200px" alt="Card image cap">
+            <div class="flex-header-bar">
+            <a href="#" id="link-header-bar" class="link-dark">My Profile</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+</svg>
+            <a href="#" id="link-header-bar" class="link-dark">Book a Room</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+</svg>
+            <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
+        </div>
         </nav>
+
+        <!--Input Header Bar-->
         <nav class="inputNav">
+            
             <div class="startTime">
                 <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
@@ -64,13 +78,9 @@
                 </div>
             </div>
             <div class="sortBy">
-            <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
-                        <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/>
-                    </svg>
-                </div>
+            
                 <div class="text">  
-                    <span id="startTimeTitle">Start Time</span>
+                    <span id="startTimeTitle">Sort By</span>
                     <br/>
                     <span id="startTimeInput">7:00 AM</span>
                 </div>
@@ -193,7 +203,7 @@
         </div>
     </div>
 </div>
-
+  
 <div class="card" id="card2">
     <div class="card-horizontal">
         <div class="img-square-wrapper" >
