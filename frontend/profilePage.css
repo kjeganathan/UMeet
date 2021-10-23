@@ -1,0 +1,180 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+  position: absolute;
+  height: 96px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
+}
+
+
+.banner{
+  position: absolute;
+  width: 100%;
+  height: 346px;
+  left: 0px;
+  top: 96px;
+  background: rgba(108, 92, 231, 0.28);
+}
+
+.inputNav{
+  position: relative;
+  height:150px;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: rgba(108, 92, 231, 0.28);
+}
+
+.icon{
+  padding-left:10%;
+  padding-top:10%;
+}
+
+.bi bi-alarm-fill{
+  width:10px;
+  height:10px;
+  fill:currentColor;
+  position: absolute;
+  left: 2.92%;  right: 95.81%;
+  top: 38%;
+  bottom: 44%;
+}
+
+.text{
+  padding-left:10%;
+  padding-top:5%;
+}
+
+.card{
+  height:250px;
+  width: 1000px;
+  margin-top: 400px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /*position: relative;*/
+}
+
+#card1{
+  /*position: absolute;
+  left: 550px;
+  top: 319px;*/
+  background: #F8F8FF;
+}
+
+#card2{
+  /*position: relative;
+  left: 550px;
+  top: 419px;*/
+  background: #F8F8FF;
+}
+
+.card-horizontal {
+  display: flex;
+  height:200px;
+}
+
+.img-square-wrapper{
+  height:180px;
+  width:300px;
+  padding-left:30px;
+  padding-top:30px;
+}
+
+
+
+.card-body{
+  margin-left:50px;
+  margin-top:15px;
+}
+
+.sideBarText{
+  padding-top:50px;
+  padding-left:30px;
+}
+
+.star1{
+display:flex;
+flex-direction:row;
+justify-content:center;
+background: #FFFFFF;
+border: 1px solid #AAAAAA;
+box-sizing: border-box;
+height:41px;
+width:73px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin-right:20px;
+}
+
+.starText{
+  margin-right:10px;
+}
+
+.flex-container{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+}
+
+.boldText{
+  font-weight: 700;
+}
+
+.clip-star {
+  background: black;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  display: inline-block;
+  height: 37px;
+  width: 38px;
+}
+
+.empty-star{
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  display: inline-block;
+  height: 37px;
+  width: 38px;
+  border-color: black;
+  background: lightgray;
+}
+
+/* PRESENTATION STYLES */
+.stars {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.roomPicture{
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+}
+
+.info {
+  padding-left: 80px;
+  padding-top: 80px;
+}
+
+.info svg {
+  float: left;
+  padding-right: 40px;
+}
+
+.info p {
+  font-size:x-large;
+}
+
+.info h3 {
+  float: right;
+  padding-right: 100px;
+  position: relative;
+  top: -50px;
+}
+
+.upcoming {
+  float: left;
+}
