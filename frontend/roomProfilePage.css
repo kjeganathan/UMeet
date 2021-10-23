@@ -1,0 +1,70 @@
+/* Banner */
+.body {
+    overflow-x: hidden
+}
+
+.banner {
+    position: absolute;
+    height: 346px;
+    width: 1440px; 
+    background: rgba(108, 92, 231, 0.28);
+    text-align: left;
+}
+
+.banner-subtext {
+    padding-top: 200px;
+    margin-left: 70px;
+}
+
+.banner-title{  
+    padding-top: 0px;
+    margin-left: 70px;
+}
+
+.banner-stars {
+    margin-left: 70px;
+}
+
+.container {
+    margin-top: 400px;
+}
+
+.popular-features {
+    padding-top: 40px;
+}
+
+.pf-icon {
+    padding-top: 10px;
+}
+
+.location { 
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Set the size of the div element that contains the map */
+.map {
+    height: 200px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+.tags {
+    padding-top: 40px;
+}
+
+.tags-text {
+    padding-top: 20px;
+}
+
+p.tags-design {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(108, 92, 231, 0.28);
+    border-radius: 30px;
+  }
+
+
