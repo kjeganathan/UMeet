@@ -61,7 +61,7 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 19px;
     color: #000000;
 }
@@ -279,4 +279,25 @@ margin-right:20px;
 
   #link-header-bar{
       margin-top:5px;
+  }
+
+  .search{
+    position: absolute;
+    left: 66.67%;
+    right: 23.15%;
+    top: 26.67%;
+    bottom: 32%;
+    border-radius: 20px;
+  }
+
+  #searchButton{
+      border-radius:20px;
+      width:202px;
+      height:62px;
+  }
+  
+  .flex-card-title{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
   }
