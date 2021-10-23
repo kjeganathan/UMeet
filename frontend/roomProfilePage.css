@@ -6,7 +6,7 @@
 .banner {
     position: absolute;
     height: 346px;
-    width: 1440px; 
+    width: 100%; 
     background: rgba(108, 92, 231, 0.28);
     text-align: left;
 }
@@ -75,3 +75,28 @@ p.tags-design {
     top: 0px;
     filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
 }
+
+.flex-header-bar{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#link-header-bar{
+    margin-top:5px;
+}
+
+#logOut{
+    padding-left:30px;
+    padding-right:30px;
+    margin-right:30px;
+    border-radius:30px;
+}
+
+#dot{ 
+    margin-top:5px;
+    margin-left:30px;
+    margin-right:30px;
+     fill:#FDCB6E;
+ }
+
