@@ -9,7 +9,8 @@ Our project idea has not changed since Milestone 0.
 
 Part 1: Wireframes
 Page 0: Log In / Create an Account Page 
-[insert Figma image]
+<img width="1345" alt="Screen Shot 2021-10-23 at 9 26 46 PM" src="https://user-images.githubusercontent.com/68821572/138576385-64b0dff6-9caf-4020-bb20-50d2e980d377.png">
+
 
 Page 1: Student Profile 
 ![studentProfilePage mockup wireframe](https://user-images.githubusercontent.com/26130113/138576330-4334e846-19f6-4560-b2c3-74b00d09a4cf.JPG)
@@ -29,6 +30,9 @@ The room profile page will provide a hollistic overview of a room avaiable for b
 
 Page 3: Main Room Bookings Page 
 ![roomBookingPage mockup wireframe](https://user-images.githubusercontent.com/26130113/138576362-7694612f-448c-4c31-8974-1fe8f99a04a9.JPG)
+
+<img width="1281" alt="Screen Shot 2021-10-23 at 9 26 28 PM" src="https://user-images.githubusercontent.com/68821572/138576387-63397d8c-7eea-4713-9a77-01873e1623bd.png">
+
 
 [insert Figma image]
 
