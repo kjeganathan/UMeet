@@ -44,6 +44,7 @@ The student profile page will allow students to view their account, their person
 Page 2: Room Profile Page 
 [insert iPad image]
 [insert Figma image]
+![Room Profile Page mockup wireframe](https://user-images.githubusercontent.com/26130113/138576242-6149f9a6-60cb-4b66-bb31-aa8752ec4b41.JPG)
 
 The room profile page will provide a hollistic overview of a room avaiable for booking. This includes a short description, building and Google Maps location, popular amenities, filter tags, and images. 
 
