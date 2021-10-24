@@ -11,20 +11,26 @@
         <nav class="navbar">
             <img class="logo" src="images/UMeetLogo.png" height="84px" width="200px" alt="Card image cap">
             <div class="flex-header-bar">
-            <a href="#" id="link-header-bar" class="link-dark">My Profile</a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg>
-            <a href="#" id="link-header-bar" class="link-dark">Book a Room</a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg>
-            <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
-        </div>
+
+                <!--Header Links-->
+                <a href="#" id="link-header-bar" class="link-dark">My Profile</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                </svg>
+                <a href="#" id="link-header-bar" class="link-dark">Book a Room</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                </svg>
+
+                <!--Log Out Button-->
+                <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
+            </div>
         </nav>
 
-        <!--Input Header Bar-->
+        <!--Search Input Header Bar-->
         <nav class="inputNav">
+
+            <!--Start Time Input Box-->
             <div class="startTime">
                 <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
@@ -32,12 +38,13 @@
                     </svg>
                 </div>
                 <div class="text">  
-                    <span id="startTimeTitle">Start Time</span>
+                    <span id="inputNavTitle">Start Time</span>
                     <br/>
-                    <span id="startTimeInput">7:00 AM</span>
+                    <span id="inputNavInput">7:00 AM</span>
                 </div>
             </div>
 
+            <!--End Time Input Box-->
             <div class="endTime">
                 <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
@@ -45,187 +52,218 @@
                     </svg>
                 </div>
                 <div class="text">  
-                    <span id="startTimeTitle">End Time</span>
+                    <span id="inputNavTitle">End Time</span>
                     <br/>
-                    <span id="startTimeInput">9:00 AM</span>
+                    <span id="inputNavInput">9:00 AM</span>
                 </div>
             </div>
 
+            <!--Date Input Box-->
             <div class="date">
-            <div class="icon">
+                <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-  <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
-  <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-</svg>
+                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
                 </div>
                 <div class="text">  
-                    <span id="startTimeTitle">Date</span>
+                    <span id="inputNavTitle">Date</span>
                     <br/>
-                    <span id="startTimeInput">Nov 9, 2021</span>
+                    <span id="inputNavInput">Nov 9, 2021</span>
                 </div>
             </div>
+
+            <!--Number of Attendees Input Box-->
             <div class="attendeeNumber">
-            <div class="icon">
+                <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-</svg>
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
                 </div>
                 <div class="text">  
-                    <span id="startTimeTitle">Attendee No.</span>
+                    <span id="inputNavTitle">Attendee No.</span>
                     <br/>
-                    <span id="startTimeInput">10</span>
+                    <span id="inputNavInput">10</span>
                 </div>
             </div>
-
-                <div class="search">
-                     <button type="button" class="btn btn-dark" id="searchButton">Search</button>
-                </div>
-
+            
+            <!--Search Button-->
+            <div class="search">
+                <button type="button" class="btn btn-dark" id="searchButton">Search</button>
+            </div>
         </nav>
        
-       <!-- Side navigation -->
-<div class="sidenav">
-<div class="sideBarText">
-  <div class="flex-container">
-  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
-  <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
-</svg>
-    <h4> &nbsp; Filter By </h4>
-  </div>
-  <br/>
-  <br/>
-  <div>
-    <div class="boldText">Popular Filters</div>
-    <br/>
-    <div class="form-check">
-  <input class="form-check-input" type="checkbox">
-  <label class="form-check-label" for="flexCheckDefault">
-    HDMI Port
-  </label>
-</div>
-<br/>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox">
-  <label class="form-check-label" for="flexCheckDefault">
-    Large capacity
-  </label>
-</div>
-<br/>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox">
-  <label class="form-check-label" for="flexCheckDefault">
-    Small capacity
-  </label>
-</div>
-<br/>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox">
-  <label class="form-check-label" for="flexCheckDefault">
-    Projector access
-  </label>
-</div>
-<br/>
-  </div>
-<br/>
-<br/>
-<br/>
-<div class="boldText">Star Rating</div>
-<br/>
-<div class="flex-container">
-    <div class="star1">
-        <div class="starText">1</div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </div> 
-    </div>
-     <div class="star1">
-     <div class="starText">2</div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </div>
-    </div>
-     <div class="star1">
-     <div class="starText">3</div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </div>
-    </div>
-</div>
-<br/>
-<div class="flex-container">
-    <div class="star1">
-    <div class="starText">4</div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </div>
-    </div>
-     <div class="star1">
-     <div class="starText">5</div>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-            </svg>
-        </div>
-    </div>
-</div>
-</div>
-</div>
+       <!--Filter By Side Bar-->
+        <div class="sidenav">
+            <div class="sideBarText">
+                <div class="flex-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+                    </svg>
+                    <h4> &nbsp; Filter By </h4>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                    <!--Popular Filters Section-->
+                    <div class="boldText">Popular Filters</div>
+                    <br/>
 
-<div class="card" id="card1">
-    <div class="card-horizontal">
-        <div class="img-square-wrapper" >
-             <img class="roomPicture" src="https://www.umass.edu/cp/sites/default/files/Integrative%20Learning%20Center%20%28ILC%29_02.jpg" height="180px" width="300px" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <div class="flex-card-title">
-            <h4 class="card-title">ILC N111</h4>
-            <span>Max Capacity: 151</span>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            HDMI Port
+                            </label>
+                        </div>
+                        <br/>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            Large capacity
+                            </label>
+                        </div>
+                        <br/>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            Small capacity
+                            </label>
+                        </div>
+                        <br/>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            Projector access
+                            </label>
+                        </div>
+                        <br/>
+
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <!--Star Rating Section-->
+                    <div class="boldText">Star Rating</div>
+                    <br/>
+                        <!--First Row of Star Ratings in Star Rating Section-->
+                        <div class="flex-container">
+
+                            <!--1 Star Rating-->
+                            <div class="starRate">
+                                <div class="starText">1</div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </div> 
+                            </div>
+
+                            <!--2 Star Rating-->
+                            <div class="starRate">
+                                <div class="starText">2</div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </div>
+                            </div>
+
+                            <!--3 Star Rating-->
+                            <div class="starRate">
+                                <div class="starText">3</div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="flex-container">
+
+                            <!--4 Star Rating-->
+                            <div class="starRate">
+                                <div class="starText">4</div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </div>
+                            </div>
+
+                            <!--5 Star Meeting-->
+                            <div class="starRate">
+                                <div class="starText">5</div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br/>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-            <div class="stars">
-             <div class="clip-star"></div>
-<div class="clip-star"></div>
-<div class="clip-star"></div>
-<div class="clip-star"></div>
-<div class="empty-star"></div>
-</div>
         </div>
-    </div>
-</div>
+
+
+                <!--Room Cards-->
+                <div class="card" id="card1">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper" >
+                            <img class="roomPicture" src="https://www.umass.edu/cp/sites/default/files/Integrative%20Learning%20Center%20%28ILC%29_02.jpg" height="180px" width="300px" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <div class="flex-card-title">
+                                <!--Card Room Name-->
+                                <h4 class="card-title">ILC N111</h4>
+                                <!--Card Room Max Capacity-->
+                                <span>Max Capacity: 151</span>
+                            </div>
+                            <br/>
+                            <!--Card Room Description-->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                            <!--Card Room Star Rating-->
+                            <div class="stars">
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="empty-star"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
   
-<div class="card" id="card2">
-    <div class="card-horizontal">
-        <div class="img-square-wrapper" >
-            <img class="roomPicture" src="https://www.umass.edu/it/sites/it/files/2015/08/31/MOR_III_212_1.jpeg" height="180px" width="300px" alt="Card image cap">
-        </div>
-        <div class="card-body">
-            <div class="flex-card-title">
-            <h4 class="card-title">Morill III 112</h4>
-            <span>Max Capacity: 50</span>
-            </div>
-            <br/>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-           
-            <div class="stars">
-             <div class="clip-star"></div>
-<div class="clip-star"></div>
-<div class="clip-star"></div>
-<div class="empty-star"></div>
-<div class="empty-star"></div>
-</div>
-        </div>
-    </div>
-</div>
-
-        
+                <div class="card" id="card2">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper" >
+                            <img class="roomPicture" src="https://www.umass.edu/it/sites/it/files/2015/08/31/MOR_III_212_1.jpeg" height="180px" width="300px" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <div class="flex-card-title">
+                                <!--Card Room Name-->
+                                <h4 class="card-title">Morill III 112</h4>
+                                <!--Card Room Max Capacity-->
+                                <span>Max Capacity: 50</span>
+                            </div>
+                            <br/>
+                            <!--Card Room Description-->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                            <!--Card Room Star Rating-->
+                            <div class="stars">
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="empty-star"></div>
+                                <div class="empty-star"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </body>
 </html>

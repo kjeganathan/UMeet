@@ -10,59 +10,71 @@
         <nav class="navbar">
             <img class="logo" src="images/UMeetLogo.png" height="84px" width="200px" alt="Card image cap">
             <div class="flex-header-bar">
-            <a href="#" id="link-header-bar" class="link-dark">My Profile</a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg>
-            <a href="#" id="link-header-bar" class="link-dark">Book a Room</a>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
-  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-</svg>
-            <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
-        </div>
+
+                <!--Header Links-->
+                <a href="#" id="link-header-bar" class="link-dark">My Profile</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                </svg>
+                <a href="#" id="link-header-bar" class="link-dark">Book a Room</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-dot" id="dot" viewBox="0 0 16 16">
+                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                </svg>
+
+                <!--Log Out Button-->
+                <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
+            </div>
         </nav>
 
-        <!--LogIn-->
+        <!--Login and Create New Account Grid-->
         <div class="container">
-  <div class="row">
-    <div id="loginCol" class="col-sm border-right">
-            <h1 class="loginBannerTitle">Login</h1>
-    </div>
-    <div id="createAccountCol" class="col-sm">
-            <h1 class="createAccountBannerTitle">Create Account</h1>
-    </div>
-  </div>
+            <!--Login and Create New Account Header Banner-->
+            <div class="row">
 
-  <div class="row">
-  <!--Login Form-->
-  <div id="loginForm" class="col-sm border-right">
-    <form>
-        <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <button id="login" type="submit" class="btn btn-dark">Login</button>
-    </form>
-  </div>
+                <!--Login Banner Column-->
+                <div id="loginCol" class="col-sm border-right">
+                    <h1 class="loginBannerTitle">Login</h1>
+                </div>
 
-    <div id="createAccountForm" class="col-sm">
-            <form>
-        <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                <!--Create Account Banner Column-->
+                <div id="createAccountCol" class="col-sm">
+                    <h1 class="createAccountBannerTitle">Create Account</h1>
+                </div>
+            </div>
+
+            <!--Login and Create Account Form-->
+            <div class="row">
+            
+                <!--Login Form-->
+                <div id="loginForm" class="col-sm border-right">
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <button id="login" type="submit" class="btn btn-dark">Login</button>
+                    </form>
+                </div>
+
+                <!--Create Account Form-->
+                <div id="createAccountForm" class="col-sm">
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="verifyPassword" class="form-control" id="exampleInputVerifyPassword1" placeholder="Verify Password">
+                        </div>
+                        <button id="login" type="submit" class="btn btn-dark">Create</button>
+                    </form>
+                </div>
+                
+            </div>
         </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <input type="verifyPassword" class="form-control" id="exampleInputVerifyPassword1" placeholder="Verify Password">
-        </div>
-        <button id="login" type="submit" class="btn btn-dark">Create</button>
-    </form>
-    </div>
-  
-  </div>
-</div>
     </body>
 </html>
