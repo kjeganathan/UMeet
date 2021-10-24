@@ -31,7 +31,8 @@ The main bookings page will allow a user to search for available rooms based on 
 Part 2: HTML and CSS
 
 Page 0: Log In / Create an Account Page 
-[insert Figma image]
+<img width="1677" alt="Screen Shot 2021-10-23 at 8 11 32 PM" src="https://user-images.githubusercontent.com/68821572/138576145-295799cd-7fe9-43e7-8e5f-b477c62c0820.png">
+
 
 Page 1: Student Profile 
 [insert iPad image]
@@ -46,5 +47,5 @@ Page 2: Room Profile Page
 The room profile page will provide a hollistic overview of a room avaiable for booking. This includes a short description, building and Google Maps location, popular amenities, filter tags, and images. 
 
 Page 3: Main Room Bookings Page 
-[insert iPad image]
-[insert Figma image]
+
+<img width="1680" alt="Screen Shot 2021-10-23 at 4 44 52 PM" src="https://user-images.githubusercontent.com/68821572/138576155-9932d07a-bb77-4f6b-aa05-9c75dd248234.png">
