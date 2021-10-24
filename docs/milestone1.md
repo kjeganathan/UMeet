@@ -12,6 +12,7 @@ Page 0: Log In / Create an Account Page
 [insert Figma image]
 
 Page 1: Student Profile 
+![studentProfilePage mockup wireframe](https://user-images.githubusercontent.com/26130113/138576330-4334e846-19f6-4560-b2c3-74b00d09a4cf.JPG)
 ![studentProfilePage](https://user-images.githubusercontent.com/68821572/138576270-4171f253-563e-4f79-af72-0381c57a2bc7.png)
 
 
