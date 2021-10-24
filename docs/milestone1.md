@@ -75,6 +75,6 @@ We used bootstrap icons extensively while coding the main room bookings page.
 
 ## Contributions
 
-Disha: Room Profile page wireframe diagram, Room Profile page HTML/CSS, Milestone 1 documentation wireframe diagram information, wireframe diagram hand-drawn mockups
-Kavya: Room bookings page wireframe diagram, Room bookings page HTML/CSS, Login page HTML/CSS, Milestone 1 documentation uploading images, Milestone 1 documentation HTML/CSS descriptions 
-Laura: Login Page wireframe diagram, Student Profile page wireframe diagram, Student Profile page HTML/CSS, Milestone 1 documentation data interactions, Milestone 1 documentation uploading images
+- Disha: Room Profile page wireframe diagram, Room Profile page HTML/CSS, Milestone 1 documentation wireframe diagram information, wireframe diagram hand-drawn mockups
+- Kavya: Room bookings page wireframe diagram, Room bookings page HTML/CSS, Login page HTML/CSS, Milestone 1 documentation uploading images, Milestone 1 documentation HTML/CSS descriptions 
+- Laura: Login Page wireframe diagram, Student Profile page wireframe diagram, Student Profile page HTML/CSS, Milestone 1 documentation data interactions, Milestone 1 documentation uploading images
