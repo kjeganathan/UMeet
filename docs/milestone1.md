@@ -72,3 +72,9 @@ We used the bootstrap carousel for creating the image slide show in our room pro
 We used bootstrap icons extensively while coding the main room bookings page.
 
 <img width="1680" alt="Screen Shot 2021-10-23 at 4 44 52 PM" src="https://user-images.githubusercontent.com/68821572/138576155-9932d07a-bb77-4f6b-aa05-9c75dd248234.png">
+
+## Contributions
+
+Disha: Room Profile page wireframe diagram, Room Profile page HTML/CSS, Milestone 1 documentation wireframe diagram information, wireframe diagram hand-drawn mockups
+Kavya: Room bookings page wireframe diagram, Room bookings page HTML/CSS, Login page HTML/CSS, Milestone 1 documentation uploading images, Milestone 1 documentation HTML/CSS descriptions 
+Laura: Login Page wireframe diagram, Student Profile page wireframe diagram, Student Profile page HTML/CSS, Milestone 1 documentation data interactions, Milestone 1 documentation uploading images
