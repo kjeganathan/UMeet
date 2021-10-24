@@ -35,7 +35,6 @@ The room profile page will provide a hollistic overview of a room avaiable for b
 <img width="1281" alt="Screen Shot 2021-10-23 at 9 26 28 PM" src="https://user-images.githubusercontent.com/68821572/138576387-63397d8c-7eea-4713-9a77-01873e1623bd.png">
 
 
-[insert Figma image]
 
 The main bookings page will allow a user to search for available rooms based on certain input parameters, while also filtering on parameters we provide. 
 
