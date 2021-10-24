@@ -18,7 +18,7 @@ Page 1: Student Profile
 The student profile page will allow students to view their account, their personal information such as their assigned advisor and student organizations, and their upcoming room bookings. 
 
 Page 2: Room Profile Page 
-[insert iPad image]
+![Room Profile Page mockup wireframe](https://user-images.githubusercontent.com/26130113/138576242-6149f9a6-60cb-4b66-bb31-aa8752ec4b41.JPG)
 [insert Figma image]
 
 The room profile page will provide a hollistic overview of a room avaiable for booking. This includes a short description, building and Google Maps location, popular amenities, filter tags, and images. 
@@ -36,15 +36,12 @@ Page 0: Log In / Create an Account Page
 
 
 Page 1: Student Profile 
-[insert iPad image]
 [insert Figma image]
 
 The student profile page will allow students to view their account, their personal information such as their assigned advisor and student organizations, and their upcoming room bookings. 
 
 Page 2: Room Profile Page 
-[insert iPad image]
 [insert Figma image]
-![Room Profile Page mockup wireframe](https://user-images.githubusercontent.com/26130113/138576242-6149f9a6-60cb-4b66-bb31-aa8752ec4b41.JPG)
 
 The room profile page will provide a hollistic overview of a room avaiable for booking. This includes a short description, building and Google Maps location, popular amenities, filter tags, and images. 
 
