@@ -8,6 +8,7 @@ Our project idea has not changed since Milestone 0.
     - Current Bookings / Upcoming Availabilties Data: When users complete a booking submission, the specific times and dates of the booking, along with the user/organization that made the booking, will be associated with the room.
 
 ## Part 1: Wireframes
+We started our wireframe diagram process by hand-drawing our wireframes, and translating the drawing to Figma for more refined wireframes.
 
 ### Page 0: Log In / Create an Account Page 
 <img width="1345" alt="Screen Shot 2021-10-23 at 9 26 46 PM" src="https://user-images.githubusercontent.com/68821572/138576385-64b0dff6-9caf-4020-bb20-50d2e980d377.png">
