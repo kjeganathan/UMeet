@@ -1,13 +1,26 @@
 {
-    "users": [
+    "users": [ 
         {
-
+         "email": "johndoe@umass.edu",
+         "password": "dog123",
+         "firstName": "John",
+         "lastName": "Doe",
+         "userId": 1,
+         "groups": ["Esports Club", "Bowling Club"], 
+         "previousBookings": [1, 2, 3],
+         "upcomingBookings": [5]
         }
     ],
-
+  
     "rooms":[
         {
-            
+         "roomName":  "N211",
+         "building": "Integrated Learning Center",
+         "roomId": 1,
+         "capacity": 10,
+         "description": "ILC",
+         "rating": 5
         }
     ]
-}
+ }
+ 
