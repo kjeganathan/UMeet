@@ -58,12 +58,44 @@
   
     "rooms":[
         {
-         "roomName":  "N211",
-         "building": "Integrated Learning Center",
-         "roomId": 1,
-         "capacity": 10,
-         "description": "ILC",
-         "rating": 5
+            "roomName":  "N211",
+            "building": "Integrated Learning Center",
+            "roomId": 1,
+            "capacity": 10,
+            "description": "ILC",
+            "rating": 4
+        },
+        {
+            "roomName":  "N125",
+            "building": "Isenberg School of Management",
+            "roomId": 2,
+            "capacity": 50,
+            "description": "TBL room with computers",
+            "rating": 5
+        },
+        {
+            "roomName":  "314",
+            "building": "Lederle",
+            "roomId": 3,
+            "capacity": 20,
+            "description": "Desks and lecture room",
+            "rating": 3
+        },
+        {
+            "roomName":  "W245",
+            "building": "South College",
+            "roomId": 4,
+            "capacity": 20,
+            "description": "Lecture style technology room",
+            "rating": 1
+        },
+        {
+            "roomName":  "CS150",
+            "building": "Computer Science",
+            "roomId": 5,
+            "capacity": 89,
+            "description": "Desks and lecture room",
+            "rating": 2
         }
     ]
  }
