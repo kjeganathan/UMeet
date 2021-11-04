@@ -21,7 +21,8 @@ app.post('/createAccount', (req, res) => {
     data["users"].push(body);
     let strInput = JSON.stringify(data);
     fs.writeFileSync(filename, strInput);
-    res.send(`Created new account for ${first} ${last} with id number ${id}`);
+    console.log(`Created new account for ${first} ${last} with id number ${id}`);
+    res.send(res.statusCode);
 });
 
 app.get('*', (req, res) => {
