@@ -29,30 +29,30 @@
             "lastName": "Pocket",
             "userId": 3,
             "groups": [""], 
-            "previousBookings": [1, 2, 3],
-            "upcomingBookings": [5]
+            "previousBookings": [7, 8],
+            "upcomingBookings": [9]
         },
 
         {
-            "email": "johndoe@umass.edu",
-            "password": "dog123",
-            "firstName": "John",
-            "lastName": "Doe",
-            "userId": 1,
-            "groups": ["Esports Club", "Bowling Club"], 
-            "previousBookings": [1, 2, 3],
-            "upcomingBookings": [5]
+            "email": "lnepo@umass.edu",
+            "password": "itsme123",
+            "firstName": "Laura",
+            "lastName": "Nepo",
+            "userId": 4,
+            "groups": ["Filipino Student Association"], 
+            "previousBookings": [10],
+            "upcomingBookings": []
         },
-        
+
         {
-            "email": "johndoe@umass.edu",
-            "password": "dog123",
-            "firstName": "John",
-            "lastName": "Doe",
-            "userId": 1,
-            "groups": ["Esports Club", "Bowling Club"], 
-            "previousBookings": [1, 2, 3],
-            "upcomingBookings": [5]
+            "email": "mallowbear@umass.edu",
+            "password": "laurasdog123",
+            "firstName": "Mallow",
+            "lastName": "Bear",
+            "userId": 5,
+            "groups": ["Team Positive Presence"], 
+            "previousBookings": [],
+            "upcomingBookings": [11]
         }
     ],
   
