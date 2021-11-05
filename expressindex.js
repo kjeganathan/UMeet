@@ -16,8 +16,24 @@ let data = {};
 const filename = 'data.json';
 data = JSON.parse(fs.readFileSync(filename));
 
-app.get('/loginPage', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/loginPage.html'));
+});
+
+app.get('/profilePage', (req, res) => {
+    res.sendFile(path.resolve('./client/profilePage.html'));
+});
+
+app.get('/profilePage', (req, res) => {
+    res.sendFile(path.resolve('./client/profilePage.html'));
+});
+
+app.get('/bookingPage', (req, res) => {
+    res.sendFile(path.resolve('./client/bookingPage.html'));
+});
+
+app.get('/roomProfilePage', (req, res) => {
+    res.sendFile(path.resolve('./client/roomProfilePage.html'));
 });
 
 //browser url localhost:3000/login
