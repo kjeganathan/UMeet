@@ -24,10 +24,6 @@ app.get('/profilePage', (req, res) => {
     res.sendFile(path.resolve('./client/profilePage.html'));
 });
 
-app.get('/profilePage', (req, res) => {
-    res.sendFile(path.resolve('./client/profilePage.html'));
-});
-
 app.get('/bookingPage', (req, res) => {
     res.sendFile(path.resolve('./client/bookingPage.html'));
 });
