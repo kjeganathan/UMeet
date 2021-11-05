@@ -1,0 +1,10 @@
+{
+    "name": "cs326-final-team-eta",
+    "version": "1.0.0",
+    "description": "",
+    "main": "expressindex.js",
+    "scripts": {
+      "start": "node expressindex.js"
+    },
+    "keywords": []
+  }

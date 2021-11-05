@@ -3,15 +3,22 @@ const express = require('express');
 let http = require('http');
 let url = require('url');
 let fs = require('fs');
+const path = require('path');
 const app = express();
 
 app.use(express.json()); // lets you handle JSON input
 
 const port = 3000;
 
+app.use(express.static('client'));
+
 let data = {};
 const filename = 'data.json';
 data = JSON.parse(fs.readFileSync(filename));
+
+app.get('/loginPage', (req, res) => {
+    res.sendFile(path.resolve('./client/loginPage.html'));
+});
 
 //browser url localhost:3000/login
 app.get('/login', (req, res) => {
