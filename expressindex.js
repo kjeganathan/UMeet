@@ -8,14 +8,15 @@ const app = express();
 
 app.use(express.json()); // lets you handle JSON input
 
-const port = 3000;
+const port = 3000; // specify the port 
 
-app.use(express.static('client'));
+app.use(express.static('client/')); // specify the directory 
 
 let data = {};
 const filename = 'data.json';
 data = JSON.parse(fs.readFileSync(filename));
 
+// connect HTML frontend to server backend 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/loginPage.html'));
 });
