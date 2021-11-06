@@ -15,6 +15,13 @@ emaildiv.innerText = "janeDoe@umass.edu";
 personDetails.appendChild(emaildiv);
 
 let btn = document.getElementById("myBtn");
+let deleteBtn = document.getElementById("deleteBtn");
+
+deleteBtn.addEventListener('click', async () => {
+    document.location.href = "http://localhost:3000/";
+    await fetch('/deleteProfile');
+});
+
 
 btn.addEventListener('click', async () => {
     const email = document.getElementById('profileEmail').innerText;

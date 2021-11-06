@@ -38,6 +38,10 @@ app.get('/editInfo', (req,res) => {
     res.send();
 });
 
+app.get('/deleteProfile', (req, res) => {
+    console.log("deleted user profile!");
+});
+
 // browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
@@ -75,6 +79,8 @@ app.delete('/users/:id', (req, res, next) => {
       res.status(404).send();
     }
   });
+
+ 
 
   // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', (req, res) => {
