@@ -80,8 +80,6 @@ app.delete('/users/:id', (req, res, next) => {
     }
   });
 
- 
-
   // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', (req, res) => {
     data["users"].pop(req.body.user);

@@ -1,5 +1,8 @@
 'use strict';
 
+//const data = require('./testdata.json');
+//console.log(data);
+
 let createAccountbutton = document.getElementById('createAccountLogin');
 
 if(createAccountbutton){
@@ -37,5 +40,6 @@ loginButton.addEventListener('click', async () => {
     const email = document.getElementById('exampleInputEmail1').value;
     await fetch('/login');
     document.location.href = "http://localhost:3000/profilePage";
-});
-}
+    });
+} 
+
