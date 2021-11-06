@@ -51,6 +51,18 @@ app.get('/userInfo', (req, res) => {
     res.send();
 });
 
+// browser url http://localhost:3000/roomProfile?roomId=1
+app.get('/roomProfile', (req, res) => {
+    const k = req.query["roomId"];
+    for(let i = 0; i < data["rooms"]; ++i) {
+        if (k === JSON.stringify(data["rooms"][i].roomId)) {
+            console.log(data["rooms"][i]);
+            res.send(data["rooms"][i]);
+        }
+    }
+    res.send();
+});
+
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', (req, res) => {
     data["users"].push(req.body.user);

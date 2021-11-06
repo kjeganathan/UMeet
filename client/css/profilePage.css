@@ -231,3 +231,11 @@ html {
 .upcoming {
   float: left;
 }
+
+h2 {
+  padding-top:25px;
+}
+
+p {
+  padding-top: 0px;
+}
