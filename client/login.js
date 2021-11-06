@@ -31,8 +31,6 @@ const createpassword = document.getElementById('createPasswordInput').value;
 
 let loginButton = document.getElementById('login');
 loginButton.addEventListener('click', async () => {
-const email = document.getElementById('exampleInputEmail1').value;
-const password = document.getElementById('exampleInputPassword1').value;
     await fetch('/login');
     document.location.href = "http://localhost:3000/bookingPage";
 });
