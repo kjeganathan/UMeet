@@ -34,12 +34,18 @@ Example of backend response:
 
 ### READ
 
-We are reading in user and room information from data.json to populate profilePage and roomProfilePage. We have created multiple API calls to GET() user information and room information based on given parameters such as a roomId or a userId. 
+We are reading in user and room information from data.json to populate profilePage and roomProfilePage. We have created multiple API calls to GET() user information and room information based on given parameters such as a roomId or a userId. Here is an example of the API calls: 
 
 <img width="300" alt="Screen Shot 2021-11-06 at 4 20 37 PM" src="https://user-images.githubusercontent.com/20649388/140626632-df8e4bd7-37fb-464a-930e-f0bb2e193067.png">
 
-We have created two different ways to grab room information: through quering a roomId and t
+We have created two different ways to grab room information, through quering a roomId and or findByName(). The roomProfile() API calls allows you to find a specific room and its information with a given roomID. 
+
 <img width="300" alt="Screen Shot 2021-11-06 at 4 22 17 PM" src="https://user-images.githubusercontent.com/20649388/140626670-a1b7087a-54ca-4160-b6d4-3201433eef8e.png">
+
+The findByName() API call allows you to find a specific room and its information with a given roomName, which will help us populate our bookingPage for Milestone 3, and the upcoming/past bookings on the user profile page. Here is an example of a successful request: 
+
+<img width="1040" alt="Screen Shot 2021-11-06 at 4 30 39 PM" src="https://user-images.githubusercontent.com/20649388/140626849-7e008bf8-5e47-4a14-be22-87e71c85d9a7.png">
+
 
 
 
@@ -53,8 +59,6 @@ For the update functionality, users can edit their profile directly on the user 
 When the "Edit Profile" button is clicked, the user information is updated in the JSON file.
 
 ![image](https://user-images.githubusercontent.com/26130113/140625780-5c1c004a-e3fa-43fb-b971-e0e10209ba6b.png)
-
-
 
 ![image](https://user-images.githubusercontent.com/26130113/140626608-8e674f18-e34d-4ad3-9d83-17331e0dcee1.png)
 (Our delete button functions to redirect the user and calls the delete API)
