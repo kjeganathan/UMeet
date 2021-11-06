@@ -32,12 +32,12 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfilePage.html'));
 });
 
-//browser url localhost:3000/login
+//browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
-    res.send(`Login succeeded with status code ${res.statusCode}`);
+    res.send("Login Succeeded!");
 });
 
-// browser url localhost:3000/userInfo?userId=1
+// browser url http://localhost:3000/userInfo?userId=1
 app.get('/userInfo', (req, res) => {
     const k = req.query["userId"];
     for(let i = 0 ; i < data["users"].length; ++i){
@@ -51,15 +51,17 @@ app.get('/userInfo', (req, res) => {
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', (req, res) => {
-    const body = req.body;
-    const first = req.body['firstName'];
-    const last = req.body['lastName'];
-    const id = req.body['userId'];
-    data["users"].push(body);
-    let strInput = JSON.stringify(data);
-    fs.writeFileSync(filename, strInput);
-    console.log(`Created new account for ${first} ${last} with id number ${id}`);
-    res.send(res.statusCode);
+    // const first = firstName;
+    // const last = req.body['lastName'];
+    // const email = req.body['email'];
+    // const passWord = req.body["password"];
+    // const body = { "email" : email, "password": passWord, "firstName" : first, "lastName" : last, "userId" : "", "groups": [], "previousBookings" : [], "upcomingBookings" : []};
+    console.log(req.body.user);
+    // data["users"].push(body);
+    // let strInput = JSON.stringify(data);
+    // fs.writeFileSync(filename, strInput);
+    // console.log(`Created new account for ${first} ${last}`);
+    //res.send("Account created successfully!");
 });
 
 app.get('*', (req, res) => {
