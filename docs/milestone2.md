@@ -30,7 +30,7 @@ An alert is displayed to confirm that an account has been created.
 
 Example of backend response:
 
-![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
+![image](https://user-images.githubusercontent.com/26130113/140626736-9e10887f-a046-4df0-bb98-d236f5d6ae26.png)
 
 ### READ
 
