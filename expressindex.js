@@ -35,7 +35,8 @@ app.get('/roomProfilePage', (req, res) => {
 
 //browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
-    res.send("Login Succeeded!");
+    console.log("Login Succeeded!");
+    res.sendFile(path.resolve('./client/bookingPage.html'));
 });
 
 // browser url http://localhost:3000/userInfo?userId=1
