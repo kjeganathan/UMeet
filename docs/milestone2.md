@@ -79,8 +79,7 @@ We have multiple delete API calls currently. For future milestones, we are plann
 
 Example of backend response: 
 
-![image](https://user-images.githubusercontent.com/26130113/140626413-0bdc5fba-0d08-4930-b6e0-2cea33811434.png)
-
+<img width="1340" alt="Screen Shot 2021-11-06 at 7 36 14 PM" src="https://user-images.githubusercontent.com/68821572/140626940-1219dfe5-e6c2-4d6a-8ee4-ce069585637d.png">
 
 
 ## Heroku URL
