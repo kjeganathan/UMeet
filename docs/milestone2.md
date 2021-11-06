@@ -22,6 +22,8 @@ We created multiple endpoints for two objects: users and rooms. For users, we ha
 
 The Create Account section of the login page creates a user object in JSON file.
 
+<img width="418" alt="Screen Shot 2021-11-06 at 7 29 48 PM" src="https://user-images.githubusercontent.com/68821572/140626860-94f3e56e-8231-406e-ad6f-47b27d139b4b.png">
+
 ![image](https://user-images.githubusercontent.com/26130113/140625621-d81402ea-5caa-4721-a36f-42fa3dac41e4.png)
 
 ![image](https://user-images.githubusercontent.com/26130113/140625626-e51f3f77-7b5b-4093-a41c-80d7cff89b2b.png)
