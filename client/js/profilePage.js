@@ -1,3 +1,4 @@
+'use strict';
 
 let personDetails = document.getElementById('personDetails');
 const namediv = document.createElement('div');
