@@ -63,6 +63,19 @@ app.get('/roomProfile', (req, res) => {
     res.send();
 });
 
+/*
+* Room objects don't currently have isAvailable attribute
+* Once that is added we can simply check to see if the attribute
+*   is true and push it to an array.
+app.get('/availableRooms', (req, res) => {
+    let availableRooms = [];
+    for (let i = 0; i < data["rooms"]; ++i) {
+        if (data["rooms"][i].isAvailable) 
+    
+    }
+});
+*/
+
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', (req, res) => {
     data["users"].push(req.body.user);
