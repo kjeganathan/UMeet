@@ -30,9 +30,11 @@ An alert is displayed to confirm that an account has been created.
 
 Example of backend response:
 
-![image](https://user-images.githubusercontent.com/26130113/140626736-9e10887f-a046-4df0-bb98-d236f5d6ae26.png)
+![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
 
 ### READ
+
+
 
 ### UPDATE
 For the update functionality, users can edit their profile directly on the user profile page.
@@ -45,7 +47,10 @@ When the "Edit Profile" button is clicked, the user information is updated in th
 
 ![image](https://user-images.githubusercontent.com/26130113/140625780-5c1c004a-e3fa-43fb-b971-e0e10209ba6b.png)
 
-An alert is displayed to confirm that the changes have been made.
+
+
+![image](https://user-images.githubusercontent.com/26130113/140626608-8e674f18-e34d-4ad3-9d83-17331e0dcee1.png)
+(Our delete button functions to redirect the user and calls the delete API)
 
 Example of backend response:
 
@@ -54,11 +59,7 @@ Example of backend response:
 
 ### DELETE
 
-We have multiple delete API calls currently. The delete API removes the user from the JSON file. For future milestones, we are planning on optimizing the delete functionality by using the user and room IDs. When the user clicks "Delete User",  the user is redirected to the login page, as that user's credentials no longer exist.
-
-![image](https://user-images.githubusercontent.com/26130113/140626608-8e674f18-e34d-4ad3-9d83-17331e0dcee1.png)
-(Our delete button functions to redirect the user and calls the delete API)
-
+We have multiple delete API calls currently. For future milestones, we are planning on optimizing the delete functionality by using the user and room IDs. When the user clicks "Delete User",  the user is redirected to the login page, as that user's credentials no longer exist.
 
 Example of backend response: 
 
