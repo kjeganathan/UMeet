@@ -52,17 +52,10 @@ app.get('/userInfo', (req, res) => {
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', (req, res) => {
-    // const first = firstName;
-    // const last = req.body['lastName'];
-    // const email = req.body['email'];
-    // const passWord = req.body["password"];
-    // const body = { "email" : email, "password": passWord, "firstName" : first, "lastName" : last, "userId" : "", "groups": [], "previousBookings" : [], "upcomingBookings" : []};
-    console.log(req.body.user);
-    // data["users"].push(body);
-    // let strInput = JSON.stringify(data);
-    // fs.writeFileSync(filename, strInput);
-    // console.log(`Created new account for ${first} ${last}`);
-    //res.send("Account created successfully!");
+    data["users"].push(req.body.user);
+    let strInput = JSON.stringify(data);
+    fs.writeFileSync(filename, strInput);
+    console.log(`Created new account successfully!`);
 });
 
 app.get('*', (req, res) => {

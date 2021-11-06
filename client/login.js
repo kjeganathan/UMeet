@@ -1,22 +1,13 @@
 'use strict';
 
-function configurethis(){ 
-    let createfirstName = document.getElementById('firstName').innerHTML;
-    console.log(createfirstName);
-}
-
 let createAccountbutton = document.getElementById('createAccountLogin');
-let createfirstName = document.getElementById('firstName').value;
-let createlastName = document.getElementById('createLastName').value;
-let createemail = document.getElementById('createEmailInput').value;
-let createpassword = document.getElementById('createPasswordInput');
-let verifyPassword = document.getElementById('createVerifyPasswordInput');
-let createuserId = "";
-let creategroups = [];
-let createpreviousBookings = [];
-let createupcomingBookings = [];
 
 createAccountbutton.addEventListener('click', async () => {
+const createemail = document.getElementById('createEmailInput').value;
+const createfirstName = document.getElementById('firstName').value;
+const createlastName = document.getElementById('createLastName').value;
+const createpassword = document.getElementById('createPasswordInput').value;
+
     fetch('/createAccount', {
         method: 'POST',
         headers: {
@@ -25,8 +16,9 @@ createAccountbutton.addEventListener('click', async () => {
         body: JSON.stringify({
             user: {
                 email: createemail,
-                firstName: "i",
-                lastName:"hi",
+                password: createpassword,
+                firstName: createfirstName,
+                lastName:createlastName,
                 userId: "",
                 groups: [],
                 previousBookings:[],
@@ -34,5 +26,7 @@ createAccountbutton.addEventListener('click', async () => {
             }
         })
     });
-})
+
+    window.alert("Created new account successfully!");
+});
 
