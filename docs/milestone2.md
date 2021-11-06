@@ -28,6 +28,9 @@ The Create Account section of the login page creates a user object in JSON file.
 
 An alert is displayed to confirm that an account has been created.
 
+Example of backend response:
+![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
+
 ### READ
 
 ### UPDATE
@@ -43,12 +46,15 @@ When the "Edit Profile" button is clicked, the user information is updated in th
 
 An alert is displayed to confirm that the changes have been made.
 
+Example of backend response:
+![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
+
 
 ### DELETE
 
-Example of backend responses: 
+Example of backend response: 
+![image](https://user-images.githubusercontent.com/26130113/140626413-0bdc5fba-0d08-4930-b6e0-2cea33811434.png)
 
-![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
 
 
 ## Heroku URL
