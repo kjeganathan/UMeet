@@ -34,6 +34,9 @@ Example of backend response:
 
 ![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
 
+<img width="763" alt="Screen Shot 2021-11-06 at 4 24 47 PM" src="https://user-images.githubusercontent.com/20649388/140626910-fb7510d1-6418-4e6b-b99e-5b71a08a3220.png">
+
+
 ### READ
 
 We are reading in user and room information from data.json to populate profilePage and roomProfilePage. We have created multiple API calls to GET() user information and room information based on given parameters such as a roomId or a userId. Here is an example of the API calls: 
