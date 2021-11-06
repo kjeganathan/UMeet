@@ -47,6 +47,7 @@ An alert is displayed to confirm that the changes have been made.
 ### DELETE
 
 Example of backend responses: 
+
 ![image](https://user-images.githubusercontent.com/26130113/140626127-543fa2f8-e6e8-4e79-b3dc-3bdfc4066d28.png)
 
 
