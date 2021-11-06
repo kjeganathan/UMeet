@@ -33,10 +33,18 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfilePage.html'));
 });
 
-//browser url http://localhost:3000/login
+// browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
     res.sendFile(path.resolve('./client/bookingPage.html'));
+});
+
+// curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
+app.post('/createAccount', (req, res) => {
+    data["users"].push(req.body.user);
+    let strInput = JSON.stringify(data);
+    fs.writeFileSync(filename, strInput);
+    console.log(`Created new account successfully!`);
 });
 
 // browser url http://localhost:3000/userInfo?userId=1
@@ -46,6 +54,30 @@ app.get('/userInfo', (req, res) => {
         if(k === JSON.stringify(data["users"][i].userId)){
             console.log(data["users"][i]);
             res.send(data["users"][i]);
+        }
+    }
+    res.send();
+});
+
+// https://www.codegrepper.com/code-examples/javascript/app.delete%28%29+express
+// browser url http://localhost:3000/deleteAccount?userId=1
+app.delete('/users/:id', (req, res, next) => {
+    const expressionIndex = getIndexById(req.params.id, expressions);
+    if (expressionIndex !== -1) {
+      expressions.splice(expressionIndex, 1);
+      res.status(204).send();
+    } else {
+      res.status(404).send();
+    }
+  });
+
+// browser url http://localhost:3000/findByName?roomId=1
+app.get('/findByName', (req, res) => {
+    const k = req.query["roomId"];
+    for(let i = 0 ; i < data["rooms"].length; ++i){
+        if(k === JSON.stringify(data["rooms"][i].roomId)) {
+            console.log(data["rooms"][i]);
+            res.send(data["rooms"][i]);
         }
     }
     res.send();
@@ -75,14 +107,6 @@ app.get('/availableRooms', (req, res) => {
     }
 });
 */
-
-// curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-app.post('/createAccount', (req, res) => {
-    data["users"].push(req.body.user);
-    let strInput = JSON.stringify(data);
-    fs.writeFileSync(filename, strInput);
-    console.log(`Created new account successfully!`);
-});
 
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
