@@ -71,12 +71,15 @@ app.delete('/users/:id', (req, res, next) => {
     }
   });
 
-// browser url http://localhost:3000/findByName?roomId=1
-// http://localhost:3000/findByName?roomName=N211
+// browser url http://localhost:3000/findByName?roomName=N211
 app.get('/findByName', (req, res) => {
-    const k = req.query[JSON.stringify("roomName")];
+    const k = req.query["roomName"];
+    // console.log(k);
     for(let i = 0 ; i < data["rooms"].length; ++i){
-        if(k === JSON.stringify(data["rooms"][i].roomName)) {
+        // console.log(i);
+        // console.log(data["rooms"][i].roomName);
+        if(k === (data["rooms"][i].roomName)) {
+            // console.log("reached inside if statement");
             console.log(data["rooms"][i]);
             res.send(data["rooms"][i]);
         }
@@ -87,8 +90,10 @@ app.get('/findByName', (req, res) => {
 // browser url http://localhost:3000/roomProfile?roomId=1
 app.get('/roomProfile', (req, res) => {
     const k = req.query["roomId"];
-    for(let i = 0; i < data["rooms"]; ++i) {
-        if (k === JSON.stringify(data["rooms"][i].roomId)) {
+    // console.log(k);
+    for(let i = 0 ; i < data["rooms"].length; ++i){
+        if(k === JSON.stringify(data["rooms"][i].roomId)) {
+            // console.log(i);
             console.log(data["rooms"][i]);
             res.send(data["rooms"][i]);
         }
