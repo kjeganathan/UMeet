@@ -72,10 +72,11 @@ app.delete('/users/:id', (req, res, next) => {
   });
 
 // browser url http://localhost:3000/findByName?roomId=1
+// http://localhost:3000/findByName?roomName=N211
 app.get('/findByName', (req, res) => {
-    const k = req.query["roomId"];
+    const k = req.query[JSON.stringify("roomName")];
     for(let i = 0 ; i < data["rooms"].length; ++i){
-        if(k === JSON.stringify(data["rooms"][i].roomId)) {
+        if(k === JSON.stringify(data["rooms"][i].roomName)) {
             console.log(data["rooms"][i]);
             res.send(data["rooms"][i]);
         }
