@@ -56,7 +56,7 @@ app.post('/createAccount', (req, res) => {
     data["users"].push(req.body.user);
     let strInput = JSON.stringify(data);
     fs.writeFileSync(filename, strInput);
-    console.log(`Created new account successfully!`);
+    console.log("Created new account successfully!");
 });
 
 app.get('*', (req, res) => {

@@ -6,7 +6,7 @@ const createemail = document.getElementById('createEmailInput').value;
 const createfirstName = document.getElementById('firstName').value;
 const createlastName = document.getElementById('createLastName').value;
 const createpassword = document.getElementById('createPasswordInput').value;
-
+window.alert(`Created new account for ${createfirstName} ${createlastName} successfully!`);
     await fetch('/createAccount', {
         method: 'POST',
         headers: {
@@ -25,8 +25,6 @@ const createpassword = document.getElementById('createPasswordInput').value;
             }
         })
     });
-
-    window.alert("Created new account successfully!");
 });
 
 let loginButton = document.getElementById('login');
