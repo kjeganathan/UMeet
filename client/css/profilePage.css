@@ -286,3 +286,17 @@ p {
   width:50%;
   margin-left:25%;
 }
+
+.profileName{
+  font-size: 30px;
+  margin-bottom: 10px;
+  width:40%;
+  margin-left:150px;
+}
+
+.profileEmail{
+  font-size: 20px;
+  margin-bottom: 30px;
+  width:40%;
+  margin-left:150px;
+}
