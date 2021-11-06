@@ -17,7 +17,18 @@ We created multiple endpoints for two objects: users and rooms. For users, we ha
 
 ## Client Interface
 
-In progress
+### CREATE
+![image](https://user-images.githubusercontent.com/26130113/140625606-ee84ac61-cc73-4fbd-969d-9241bcf1b71e.png)
+The Create Account section of the login page creates a user object in JSON file.
+![image](https://user-images.githubusercontent.com/26130113/140625621-d81402ea-5caa-4721-a36f-42fa3dac41e4.png)
+![image](https://user-images.githubusercontent.com/26130113/140625626-e51f3f77-7b5b-4093-a41c-80d7cff89b2b.png)
+
+
+### READ
+
+### UPDATE
+
+### DELETE
 
 ## Heroku URL
 https://u-meet.herokuapp.com/
