@@ -1,6 +1,5 @@
 # Milestone #1 
 
-<<<<<<< HEAD
 ### Overview
 - The team name: team-eta
 - The application name: UMeet
@@ -11,18 +10,12 @@
 - Name: Disha Srivastava, Github: dishsrivastava
 
 Part 0: Data Interactions
-=======
 ## Part 0: Data Interactions
->>>>>>> b1a78113916f2c3676191bc7627db14a8d6eb6bf
 Our project idea has not changed since Milestone 0. 
 - User Information Data: We have a login system in our project UMeet, which requires a user to enter their email and a password. Due to this, their email and password will be stored and linked to their account. Other user data, such as clubs and organizations, previous and upcoming room bookings, and the student's advisor will also be associated with the user. 
 - Room Building Data: Each room will have data regarding the room name, number, building, capacity, description and rating.
     - Room Rating Data: Each rating for a room will be made as the average of ratings made by users for the particular room.
-<<<<<<< HEAD
-    - Current Bookings / Upcoming Availabilties Data: When users complete a booking submission, the specific    
-=======
     - Current Bookings / Upcoming Availabilties Data: When users complete a booking submission, the specific times and dates of the booking, along with the user/organization that made the booking, will be associated with the room.
->>>>>>> b1a78113916f2c3676191bc7627db14a8d6eb6bf
 
 ## Part 1: Wireframes
 We started our wireframe diagram process by hand-drawing our wireframes, and then translated the hand-drawings to Figma for more refined wireframes.
@@ -92,19 +85,6 @@ We used bootstrap icons extensively while coding the main room bookings page.
 
 ## Contributions
 
-<<<<<<< HEAD
-The main bookings page will allow a user to search for available rooms based on certain input parameters, while also filtering on parameters we provide. 
-
-Part 2: HTML and CSS
-Page 0: Log In / Create an Account Page
-
-Page 1: Student Profile
-
-Page 2: Room Profile Page
-
-Page 3: Main Room Bookings Page
-=======
 - Disha: Room Profile page wireframe diagram, Room Profile page HTML/CSS, Milestone 1 documentation wireframe diagram information, wireframe diagram hand-drawn mockups
 - Kavya: Room bookings page wireframe diagram, Room bookings page HTML/CSS, Login page HTML/CSS, Milestone 1 documentation uploading images, Milestone 1 documentation HTML/CSS descriptions 
 - Laura: Login Page wireframe diagram, Student Profile page wireframe diagram, Student Profile page HTML/CSS, Milestone 1 documentation data interactions, Milestone 1 documentation uploading images
->>>>>>> b1a78113916f2c3676191bc7627db14a8d6eb6bf
