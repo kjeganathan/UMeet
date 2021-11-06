@@ -54,7 +54,11 @@ Example of backend response:
 
 ### DELETE
 
-We have multiple delete API calls currently. For future milestones, we are planning on optimizing the delete functionality by using the user and room IDs. When the user clicks "Delete User",  the user is redirected to the login page, as that user's credentials no longer exist.
+We have multiple delete API calls currently. The delete API removes the user from the JSON file. For future milestones, we are planning on optimizing the delete functionality by using the user and room IDs. When the user clicks "Delete User",  the user is redirected to the login page, as that user's credentials no longer exist.
+
+![image](https://user-images.githubusercontent.com/26130113/140626608-8e674f18-e34d-4ad3-9d83-17331e0dcee1.png)
+(Our delete button functions to redirect the user and calls the delete API)
+
 
 Example of backend response: 
 
