@@ -33,10 +33,15 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfilePage.html'));
 });
 
+app.get('/editInfo', (req,res) => {
+    console.log("User Info has been updated");
+    res.send();
+});
+
 // browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
-    res.sendFile(path.resolve('./client/bookingPage.html'));
+    res.sendFile(path.resolve('./client/profilePage.html'));
 });
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
