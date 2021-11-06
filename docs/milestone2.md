@@ -77,9 +77,10 @@ Example of backend response:
 
 We have multiple delete API calls currently. For future milestones, we are planning on optimizing the delete functionality by using the user and room IDs. When the user clicks "Delete User",  the user is redirected to the login page, as that user's credentials no longer exist.
 
+<img width="1340" alt="Screen Shot 2021-11-06 at 7 36 14 PM" src="https://user-images.githubusercontent.com/68821572/140626940-1219dfe5-e6c2-4d6a-8ee4-ce069585637d.png">
+
 Example of backend response: 
 
-<img width="1340" alt="Screen Shot 2021-11-06 at 7 36 14 PM" src="https://user-images.githubusercontent.com/68821572/140626940-1219dfe5-e6c2-4d6a-8ee4-ce069585637d.png">
 
 
 ## Heroku URL
