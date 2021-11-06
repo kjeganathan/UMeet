@@ -19,14 +19,30 @@ We created multiple endpoints for two objects: users and rooms. For users, we ha
 
 ### CREATE
 ![image](https://user-images.githubusercontent.com/26130113/140625606-ee84ac61-cc73-4fbd-969d-9241bcf1b71e.png)
+
 The Create Account section of the login page creates a user object in JSON file.
+
 ![image](https://user-images.githubusercontent.com/26130113/140625621-d81402ea-5caa-4721-a36f-42fa3dac41e4.png)
+
 ![image](https://user-images.githubusercontent.com/26130113/140625626-e51f3f77-7b5b-4093-a41c-80d7cff89b2b.png)
 
+An alert is displayed to confirm that an account has been created.
 
 ### READ
 
 ### UPDATE
+For the update functionality, users can edit their profile directly on the user profile page.
+
+![image](https://user-images.githubusercontent.com/26130113/140625764-b5efa66d-07be-4f07-af59-bdd5d52350d1.png)
+
+![image](https://user-images.githubusercontent.com/26130113/140625771-fcaba698-0228-4ca9-8bee-6327ae43acff.png)
+
+When the "Edit Profile" button is clicked, the user information is updated in the JSON file.
+
+![image](https://user-images.githubusercontent.com/26130113/140625780-5c1c004a-e3fa-43fb-b971-e0e10209ba6b.png)
+
+An alert is displayed to confirm that the changes have been made.
+
 
 ### DELETE
 
