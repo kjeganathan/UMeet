@@ -1,8 +1,16 @@
+ /* General body CSS */ 
+ body { 
+    width: 100%;
+    overflow-x: hidden; 
+    margin: 0;
+    font-family: system-ui;
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+  }
+  
 /* Banner */
-.body {
-    overflow-x: hidden
-}
-
 .banner {
     position: absolute;
     height: 346px;
@@ -67,15 +75,6 @@ p.tags-design {
     border-radius: 30px;
   }
 
-.navbar {
-    position: absolute;
-    height: 96px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
-}
-
 .flex-header-bar{
     display:flex;
     flex-direction: row;
@@ -86,12 +85,51 @@ p.tags-design {
     margin-top:5px;
 }
 
-#logOut{
+/* Adding a background color to the top navigation */
+.navbar {
+    position: absolute;
+    height: 96px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: rgba(108, 92, 231, 0.28);
+    color: black;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    background-color: rgba(108, 92, 231, 0.749);
+    color: white;
+    border-radius: 8px;
+  }
+  
+  #logOut {
     padding-left:30px;
     padding-right:30px;
     margin-right:30px;
     border-radius:30px;
-}
+    width: 150px;
+  }
+  
+  #logOut:hover {
+    background-color: rgba(108, 92, 231, 0.749);
+    color: white;
+    border-radius: 8px;
+  }
 
 #dot{ 
     margin-top:5px;
