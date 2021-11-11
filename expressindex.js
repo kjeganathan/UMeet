@@ -18,19 +18,19 @@ data = JSON.parse(fs.readFileSync(filename));
 
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve('./client/loginPage.html'));
+    res.sendFile(path.resolve('./client/login.html'));
 });
 
 app.get('/profilePage', (req, res) => {
-    res.sendFile(path.resolve('./client/profilePage.html'));
+    res.sendFile(path.resolve('./client/userProfile.html'));
 });
 
 app.get('/bookingPage', (req, res) => {
-    res.sendFile(path.resolve('./client/bookingPage.html'));
+    res.sendFile(path.resolve('./client/createBooking.html'));
 });
 
 app.get('/roomProfilePage', (req, res) => {
-    res.sendFile(path.resolve('./client/roomProfilePage.html'));
+    res.sendFile(path.resolve('./client/roomProfile.html'));
 });
 
 app.get('/editInfo', (req,res) => {
@@ -45,7 +45,7 @@ app.get('/deleteProfile', (req, res) => {
 // browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
-    res.sendFile(path.resolve('./client/profilePage.html'));
+    res.sendFile(path.resolve('./client/userProfile.html'));
 });
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
