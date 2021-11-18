@@ -4,7 +4,10 @@
     "description": "",
     "main": "expressindex.js",
     "scripts": {
-      "start": "node expressindex.js"
+        "start": "node expressindex.js"
     },
-    "keywords": []
-  }
+    "keywords": [],
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
