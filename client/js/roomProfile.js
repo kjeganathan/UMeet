@@ -60,12 +60,6 @@ locationTextDiv.setAttribute('id', 'locationText');
 locationTextDiv.innerText = "650 N Pleasant St, Amherst, MA 01003";
 locationText.appendChild(locationTextDiv);
 
-let logoutButton = document.getElementById('logOut');
-logoutButton.addEventListener('click', () => {
-    document.location.href = "http://localhost:3000/";
-});
-
-
 // Body left-col: location map 
 // <div id="map">
 
@@ -73,3 +67,9 @@ logoutButton.addEventListener('click', () => {
 
 // Body right-col: tags 
 // <div id="tags" class="tags">
+
+// Log Out Button in Navbar 
+let logoutButton = document.getElementById('logOut');
+logoutButton.addEventListener('click', () => {
+    document.location.href = "http://localhost:3000/";
+});
