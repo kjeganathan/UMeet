@@ -141,41 +141,22 @@ app.listen(port, () => {
 });
 
 // Setting up a database connect 
-const { Pool, Client } = require("pg");
+const pgp = require('pg-promise')();
 
-const credentials = {
-  user: "postgres",
-  host: "localhost",
-  database: "umeet",
-  password: "password",
-  port: 5432,
-};
+let config = {
+    host: process.env.POSTGRES_HOST || "localhost",
+    database: process.env.POSTGRES_DB,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+  };
 
-// Connect with a connection pool.
-async function poolDemo() {
-  const pool = new Pool(credentials);
-  const now = await pool.query("SELECT NOW()");
-  await pool.end();
+const db = pgp(config);
+console.log(db);
 
-  return now;
-}
-
-// Connect with a client.
-async function clientDemo() {
-  const client = new Client(credentials);
-  await client.connect();
-  const now = await client.query("SELECT NOW()");
-  await client.end();
-
-  return now;
-}
-
-// Use a self-calling function so we can use async / await.
-(async () => {
-  const poolResult = await poolDemo();
-  console.log("Time with pool: " + poolResult.rows[0]["now"]);
-
-  const clientResult = await clientDemo();
-  console.log("Time with client: " + clientResult.rows[0]["now"]);
-})();
-
+let sql = 'select * from users';
+let qrm = pgp.queryResult;
+db.query(sql, null, qrm.any)
+.then(function(data){
+  console.log("Query returned: " + data);
+  return Promise.resolve(data);
+})

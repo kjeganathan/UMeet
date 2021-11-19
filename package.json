@@ -8,9 +8,11 @@
     },
     "keywords": [],
     "dependencies": {
+        "config": "^3.3.6",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "pg": "^8.7.1",
-        "pg-promise": "^10.11.1"
+        "pg-promise": "^10.11.1",
+        "postgres": "^1.0.2"
     }
 }
