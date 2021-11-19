@@ -19,7 +19,7 @@ let btn = document.getElementById("myBtn");
 let deleteBtn = document.getElementById("deleteBtn");
 
 deleteBtn.addEventListener('click', async () => {
-    document.location.href = "http://localhost:3000/";
+    document.location.href = "https://u-meet.herokuapp.com/";
     await fetch('/deleteProfile');
 });
 
@@ -59,6 +59,6 @@ window.onclick = function(event) {
 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
-    document.location.href = "http://localhost:3000/";
+    document.location.href = "https://u-meet.herokuapp.com/";
 });
 
