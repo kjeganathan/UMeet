@@ -165,8 +165,3 @@ db.connect()
 let sql = 'select * from users';
 let qrm = pgp.queryResult;
 
-db.query(sql, null, qrm.any)
-.then(function(data){
-  console.log("Query returned: " + data);
-  return Promise.resolve(data);
-})
