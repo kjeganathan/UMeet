@@ -164,4 +164,3 @@ db.connect()
 
 let sql = 'select * from users';
 let qrm = pgp.queryResult;
-
