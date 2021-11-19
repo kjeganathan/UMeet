@@ -39,7 +39,7 @@ if(loginButton){
 loginButton.addEventListener('click', async () => {
     const email = document.getElementById('exampleInputEmail1').value;
     await fetch('/login');
-    document.location.href = "http://localhost:3000/profilePage";
+    document.location.href = "https://u-meet.herokuapp.com/login";
     });
 } 
 
