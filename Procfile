@@ -1,1 +1,1 @@
-web: node server/expressindex.js
+web: node index.js

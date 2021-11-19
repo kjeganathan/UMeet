@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json()); // lets you handle JSON input
 
-const port = 3000; // specify the port 
+// const port = 3000; // specify the port 
 
 app.use(express.static('client/')); // specify the directory 
 
@@ -136,9 +136,9 @@ app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
   });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+const port = 3000; // specify the port 
+
+app.listen(process.env.PORT || port)
 
 // Setting up a database connect 
 const pgp = require('pg-promise')();
@@ -151,10 +151,20 @@ let config = {
   };
 
 const db = pgp(config);
-console.log(db);
+// console.log(db);
+
+db.connect()
+  .then(function (obj) {
+    obj.done(); // success, release connection;
+    console.log("IT WORKED");
+  })
+  .catch(function (error) {
+    console.log("ERROR:", error.message);
+  });
 
 let sql = 'select * from users';
 let qrm = pgp.queryResult;
+
 db.query(sql, null, qrm.any)
 .then(function(data){
   console.log("Query returned: " + data);

@@ -2,9 +2,9 @@
     "name": "cs326-final-team-eta",
     "version": "1.0.0",
     "description": "",
-    "main": "expressindex.js",
+    "main": "index.js",
     "scripts": {
-        "start": "node expressindex.js"
+        "start": "node index.js"
     },
     "keywords": [],
     "dependencies": {
