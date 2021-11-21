@@ -1,10 +1,10 @@
 'use strict';
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
+
 const express = require('express');
 let http = require('http');
+let url = require('url');
 let fs = require('fs');
 const path = require('path');
-const dblast = require("./database.js");
 const app = express();
 
 app.use(express.json()); // lets you handle JSON input
@@ -47,12 +47,6 @@ app.get('/deleteProfile', (req, res) => {
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
     res.sendFile(path.resolve('./client/userProfile.html'));
-});
-
-app.post("/test", async(req,res) => {
-    const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email);
-    res.sendStatus(200);
 });
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
@@ -144,15 +138,10 @@ app.get('*', (req, res) => {
 
 const port = 3000; // specify the port 
 
-app.listen(process.env.PORT || port);
+app.listen(process.env.PORT || port)
 
 // Setting up a database connect 
 const pgp = require('pg-promise')();
-let secrets = require('././secrets.json');
-let username = secrets.username;
-let password = secrets.password;
-
-let url = `postgres://${username}:${password}@ec2-34-199-224-49.compute-1.amazonaws.com:5432/db98f1gop9514j?sslmode=require`;
 
 let config = {
     host: process.env.POSTGRES_HOST || "localhost",
@@ -161,17 +150,20 @@ let config = {
     password: process.env.POSTGRES_PASSWORD,
   };
 
-const db = pgp(url);
+const db = pgp(config);
 // console.log(db);
 
 db.connect()
   .then(function (obj) {
-    // db.query('SELECT * FROM users', (err,result) => {
-    //     console.log(result);
-    // }); 
+    db.query('SELECT * FROM users', (err,result) => {
+        console.log(result);
+    }); 
     obj.done(); // success, release connection;
     console.log("IT WORKED");
   })
   .catch(function (error) {
     console.log("ERROR:", error.message);
   });
+
+let sql = 'select * from users';
+let qrm = pgp.queryResult;
