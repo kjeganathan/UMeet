@@ -21,16 +21,16 @@ let responseUser = await fetch('/userInfo', {
 });
 
 let userdata = await responseUser.json(); 
-console.log(userdata[0]["firstname"] + userdata[0]["lastname"]);
+//console.log(userdata[0]["firstname"] + " " + userdata[0]["lastname"]);
 
-namediv.innerText = "Jane Doe";
+namediv.innerText = userdata[0]["firstname"] + " " + userdata[0]["lastname"];
 personDetails.appendChild(namediv);
 
 const emaildiv = document.createElement('div');
 emaildiv.classList.add('profileEmail');
 emaildiv.setAttribute('contentEditable', true);
 emaildiv.setAttribute('id', 'profileEmail');
-emaildiv.innerText = "janeDoe@umass.edu";
+emaildiv.innerText = userdata[0]["email"];
 personDetails.appendChild(emaildiv);
 
 });
