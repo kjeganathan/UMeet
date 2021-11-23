@@ -28,12 +28,8 @@ let loginButton = document.getElementById('login');
 loginButton.addEventListener('click', async () => {
     const email = document.getElementById('exampleInputEmail1').value;
     //store email in localstorage.json
-    const emailJSON = {
-        "email": JSON.stringify(email)
-    };
-    let fs = require('fs');
-    fs.writeFile('./../../localStorage.json', emailJSON);
     await fetch('/login');
+    localStorage.setItem("email", JSON.stringify(email));
     document.location.href = "https://u-meet.herokuapp.com/profilePage";
     });
 
