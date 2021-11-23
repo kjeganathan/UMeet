@@ -21,7 +21,7 @@ let responseUser = await fetch('/userInfo', {
 });
 
 let userdata = await responseUser.json(); 
-console.log(userdata);
+console.log(userdata[0]["firstname"] + userdata[0]["lastname"]);
 
 namediv.innerText = "Jane Doe";
 personDetails.appendChild(namediv);
