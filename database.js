@@ -40,11 +40,11 @@ async function connectAndRun(task) {
   }
 
 //Database functions
-async function addUser(firstname, lastname, email) {
+async function addUser(firstname, lastname, email, password, previousbookings, upcomingbookings) {
     return await connectAndRun((db) =>
       db.none(
-        "INSERT INTO users (firstname, lastname, email) VALUES ($1, $2, $3);",
-        [firstname, lastname, email]
+        "INSERT INTO users (firstname, lastname, email, password, previousbookings, upcomingbookings) VALUES ($1, $2, $3, $4, $5, $6);",
+        [firstname, lastname, email, password, previousbookings, upcomingbookings]
       )
     );
   }

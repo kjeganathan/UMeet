@@ -49,17 +49,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.resolve('./client/userProfile.html'));
 });
 
-app.post("/test", async(req,res) => {
-    const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email);
-    res.sendStatus(200);
-});
-
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-app.post('/createAccount', (req, res) => {
-    data["users"].push(req.body.user);
-    let strInput = JSON.stringify(data);
-    fs.writeFileSync(filename, strInput);
+app.post('/createAccount', async (req, res) => {
+    const data = req.body;
+    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
     console.log(`Created new account successfully!`);
 });
 
@@ -145,33 +138,3 @@ app.get('*', (req, res) => {
 const port = 3000; // specify the port 
 
 app.listen(process.env.PORT || port);
-
-// Setting up a database connect 
-const pgp = require('pg-promise')();
-let secrets = require('././secrets.json');
-let username = secrets.username;
-let password = secrets.password;
-
-let url = `postgres://${username}:${password}@ec2-34-199-224-49.compute-1.amazonaws.com:5432/db98f1gop9514j?sslmode=require`;
-
-let config = {
-    host: process.env.POSTGRES_HOST || "localhost",
-    database: process.env.POSTGRES_DB,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-  };
-
-const db = pgp(url);
-// console.log(db);
-
-db.connect()
-  .then(function (obj) {
-    // db.query('SELECT * FROM users', (err,result) => {
-    //     console.log(result);
-    // }); 
-    obj.done(); // success, release connection;
-    console.log("IT WORKED");
-  })
-  .catch(function (error) {
-    console.log("ERROR:", error.message);
-  });
