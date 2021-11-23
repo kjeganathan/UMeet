@@ -57,15 +57,9 @@ app.post('/createAccount', async (req, res) => {
 });
 
 // browser url http://localhost:3000/userInfo?userId=1
-app.get('/userInfo', (req, res) => {
-    const k = req.query["userId"];
-    for(let i = 0 ; i < data["users"].length; ++i){
-        if(k === JSON.stringify(data["users"][i].userId)){
-            console.log(data["users"][i]);
-            res.send(data["users"][i]);
-        }
-    }
-    res.send();
+app.post('/userInfo', async (req, res) => {
+    const data = req.body;
+    res.send(JSON.stringify(await dblast.getUserByEmail(data.email)));
 });
 
 // https://www.codegrepper.com/code-examples/javascript/app.delete%28%29+express

@@ -52,9 +52,7 @@ async function addUser(firstname, lastname, email, password, previousbookings, u
 async function getUserByEmail(email){
   return await connectAndRun((db) =>
       db.any(
-        "SELECT * FROM meetings where email = $1;",
-        [email]
-      )
+        "SELECT * FROM users where email = $1;",[email])
     );
 }
 

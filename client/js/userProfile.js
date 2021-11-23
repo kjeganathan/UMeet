@@ -1,10 +1,28 @@
 'use strict';
 
+const email = localStorage.getItem("email");
+
+window.addEventListener("load", async function () {
+
 let personDetails = document.getElementById('personDetails');
 const namediv = document.createElement('div');
 namediv.classList.add('profileName');
 namediv.setAttribute('contentEditable', true);
 namediv.setAttribute('id', 'profileName');
+
+let responseUser = await fetch('/userInfo', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+      email:JSON.parse(email)
+  })
+});
+
+let userdata = await responseUser.json(); 
+console.log(userdata);
+
 namediv.innerText = "Jane Doe";
 personDetails.appendChild(namediv);
 
@@ -14,6 +32,9 @@ emaildiv.setAttribute('contentEditable', true);
 emaildiv.setAttribute('id', 'profileEmail');
 emaildiv.innerText = "janeDoe@umass.edu";
 personDetails.appendChild(emaildiv);
+
+});
+
 
 let btn = document.getElementById("myBtn");
 let deleteBtn = document.getElementById("deleteBtn");
