@@ -118,6 +118,20 @@ app.get('/roomProfile', (req, res) => {
     res.send();
 });
 
+// Room Building Name 
+// Room Name 
+// Room Description 
+// Room Popular Features 
+// Room Address 
+// Tags 
+
+// User's Name 
+// User's Email 
+// Upcoming Bookings 
+// Previous Bookings 
+
+// Fetching meetings based on parameters inputted on schedule a meeting page 
+
 /*
 * Room objects don't currently have isAvailable attribute
 * Once that is added we can simply check to see if the attribute

@@ -85,3 +85,9 @@ Example of backend response:
 
 ## Heroku URL
 https://u-meet.herokuapp.com/
+
+Edit as of 9:48 pm on Novemeber 22nd, 2021: 
+We realized we forgot to add division of labor, adding it now! Apologies for the delay. 
+- Kavya Jeganathan: login / createAccount page + myProfile page HTML/CSS and functionality using JavaScript, backend endpoints such as userInfo()
+- Disha Srivastava: roomProfile page HTML/CSS and functionality using JavaScript, backend endpoints such as roomProfile() + Heroku deployment 
+- Laura Nepo: collaborated on HTMl elements and CSS styles for all pages + documentation 
