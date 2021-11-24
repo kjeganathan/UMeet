@@ -11,7 +11,7 @@ n111Button.addEventListener('click', async () => {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            building:(buildingName)
+            building:buildingName
         })
     });
     let building1responseJSON = await building1response.json();
