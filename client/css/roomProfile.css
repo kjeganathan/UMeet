@@ -153,7 +153,6 @@ p.tags-design {
     bottom: 0;
     width: 100%;
     background-color: grey;
-    color: grey;
     text-align: center;
     height: 50px;
   }
@@ -161,6 +160,7 @@ p.tags-design {
   /* Footer text */
   .footer p {
     padding-top: 10px;
+    color: white;
   }
   
   /* Red heart CSS for footer text */
