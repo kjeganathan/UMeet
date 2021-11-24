@@ -47,7 +47,7 @@
 
 .location { 
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 /* Set the size of the div element that contains the map */
@@ -138,3 +138,6 @@ p.tags-design {
      fill:#FDCB6E;
  }
 
+.description {
+    font-size: 15px;
+}
