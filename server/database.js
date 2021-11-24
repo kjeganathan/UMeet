@@ -85,6 +85,13 @@ async function updateUserEmail(email, password){
 }
 
 // Database functions for getting room information 
+async function getRoomID(building, room) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT roomid FROM rooms WHERE building = $1 AND room = $2;", [building, room])
+    );
+}
+
 async function getBuildingName(roomid) { 
   return await connectAndRun((db) => 
     db.any(
@@ -148,6 +155,7 @@ async function getRoomAddress(roomid) {
     updateUserLastName,
     updateUserEmail,
     delUser, 
+    getRoomID, 
     getBuildingName,
     getRoomName,
     getRoomRating,
