@@ -88,56 +88,56 @@ async function updateUserEmail(email, password){
 async function getBuildingName(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT building FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT building FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomName(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT room FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT room FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomRating(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT rating FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT rating FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomCapacity(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT capacity FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT capacity FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomTech(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT tech FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT tech FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomType(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT building FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT building FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomTags(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT tags FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT tags FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
 async function getRoomAddress(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT address FROM rooms WHERE roomid = $1", [roomid])
+      "SELECT address FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
@@ -147,9 +147,13 @@ async function getRoomAddress(roomid) {
     updateUserFirstName,
     updateUserLastName,
     updateUserEmail,
-    delUser
+    delUser, 
+    getBuildingName,
+    getRoomName,
+    getRoomRating,
+    getRoomCapacity,
+    getRoomTech,
+    getRoomType, 
+    getRoomTags,
+    getRoomAddress
   };
-
-
-
-
