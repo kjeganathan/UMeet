@@ -12,7 +12,7 @@ n111Button.addEventListener('click', async () => {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            building:"Ag. Engineering Bldg Room 119"
+            building:JSON.parse(buildingName)
         })
     });
     let building1responseJSON = await building1response.json();
