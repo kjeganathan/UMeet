@@ -49,6 +49,15 @@ async function addUser(firstname, lastname, email, password, previousbookings, u
     );
   }
 
+async function deleteUser(){
+  return await connectAndRun((db) =>
+      db.none(
+        "INSERT INTO users (firstname, lastname, email, password, previousbookings, upcomingbookings) VALUES ($1, $2, $3, $4, $5, $6);",
+        [firstname, lastname, email, password, previousbookings, upcomingbookings]
+      )
+    );
+}
+
 async function getUserByEmail(email){
   return await connectAndRun((db) =>
       db.any(
