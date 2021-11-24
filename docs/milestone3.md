@@ -9,6 +9,9 @@
 - Name: Laura Nepo, Github: lauranepo
 - Name: Disha Srivastava, Github: dishsrivastava
 
+## Heroku Link
+https://u-meet.herokuapp.com/
+
 ## Our Database
 We used a PostgreSQL database for this project. 
 ### User Table
@@ -37,6 +40,18 @@ We used a PostgreSQL database for this project.
 | type              | varchar   | The type of the room              |
 
 ## Contributions
-- Disha:
-- Kavya:
+- Disha: 
+- Kavya: 
 - Laura: 
+
+## Milestone Overview
+
+We created the PostgreSQL database and connected it to our Heroku app. From there, we finalized all of the CRUD operations for our application. roomProfile.js and userProfile.js both pull information from the database dependent on the roomid/userid saved in local storage. 
+
+User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
+
+![image](https://user-images.githubusercontent.com/26130113/143325725-f7799b8f-9857-43af-8095-66d953ba10a6.png)
+
+Room Profile: The room and building information is pulled from the database, including tags, room and building name, and popular features.
+
+![image](https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png)
