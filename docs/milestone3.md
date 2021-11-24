@@ -40,9 +40,9 @@ We used a PostgreSQL database for this project.
 | type              | varchar   | The type of the room              |
 
 ## Contributions
-- Disha: 
-- Kavya: 
-- Laura: 
+- Disha: Collected data for on-campus room information and added it to Heroku database, created database connections and completed backend endpoints and functionality for room profile page, added client-side connections to the server for room profile page
+- Kavya: Created database connections and completed backend endpoints and functionality for user profile page + login page, added client-side connections to the server for room profile page + login page, created overall heroku database connection for the app
+- Laura: Worked on milestone 3 documentation as well as worked on creating linkage between booking page and room profile page
 
 ## Milestone Overview
 
