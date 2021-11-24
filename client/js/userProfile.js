@@ -1,6 +1,7 @@
 'use strict';
 
 const email = localStorage.getItem("email");
+const password = localStorage.getItem("password");
 
 window.addEventListener("load", async function () {
 
@@ -44,11 +45,28 @@ deleteBtn.addEventListener('click', async () => {
     await fetch('/deleteProfile');
 });
 
-
+//Edit User Infoo
 btn.addEventListener('click', async () => {
     const email = document.getElementById('profileEmail').innerText;
     const name = document.getElementById('profileName').innerText;
-    await fetch('/editInfo');
+    const nameArray = name.split(" ");
+    const firstName = nameArray[0];
+    const lastName = nameArray[1];
+    //edits info based on password
+    await fetch('/editInfo', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email:email,
+          password:JSON.parse(password),
+          firstname:firstName,
+          lastname:lastName
+      })
+    });
+    localStorage.setItem("email", email);
+    //person's info is displayed based on their email in localstorage so email in localstorage has to be updated
     window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
 });
 
