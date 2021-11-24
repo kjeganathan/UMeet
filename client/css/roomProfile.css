@@ -24,7 +24,7 @@
     margin-left: 70px;
 }
 
-.banner-title{  
+.banner-title {  
     padding-top: 0px;
     margin-left: 70px;
 }
@@ -38,7 +38,7 @@
 }
 
 .popular-features {
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .pf-icon {
@@ -46,8 +46,12 @@
 }
 
 .location { 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.location-title {
+    padding-bottom: 100px; 
 }
 
 /* Set the size of the div element that contains the map */
@@ -56,10 +60,8 @@
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
-}
-
-.tags {
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .tags-text {
@@ -71,8 +73,9 @@ p.tags-design {
     height: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: rgba(108, 92, 231, 0.28);
+    background-color: #5E17EB;
     border-radius: 30px;
+    color: white;
   }
 
 .flex-header-bar{
@@ -138,3 +141,31 @@ p.tags-design {
      fill:#FDCB6E;
  }
 
+.description {
+    font-size: 15px;
+    width: 90%;
+}
+
+/* Footer CSS */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: grey;
+    text-align: center;
+    height: 50px;
+  }
+  
+  /* Footer text */
+  .footer p {
+    padding-top: 10px;
+  }
+  
+  /* Red heart CSS for footer text */
+  .redheart {
+    color: #ff0000;
+    font-size: 14px;
+    font-family: "arial unicode MS", arial, geneva, sans-serif;
+  }
