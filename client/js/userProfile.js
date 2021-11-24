@@ -40,12 +40,21 @@ personDetails.appendChild(emaildiv);
 let btn = document.getElementById("myBtn");
 let deleteBtn = document.getElementById("deleteBtn");
 
+//Delete User
 deleteBtn.addEventListener('click', async () => {
     document.location.href = "https://u-meet.herokuapp.com/";
-    await fetch('/deleteProfile');
+    await fetch('/deleteUser', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email:JSON.parse(email)
+      })
+    });
 });
 
-//Edit User Infoo
+//Edit User Info
 btn.addEventListener('click', async () => {
     const email = document.getElementById('profileEmail').innerText;
     const name = document.getElementById('profileName').innerText;

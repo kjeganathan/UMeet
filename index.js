@@ -35,6 +35,11 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfile.html'));
 });
 
+app.post("/deleteUser", async (req, res) => {
+    const data = req.body;
+    await dblast.delUser(data.email);
+});
+
 app.post('/editInfo', async (req,res) => {
     const data = req.body;
     await dblast.updateUserFirstName(data.firstname, data.password);
