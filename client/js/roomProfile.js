@@ -75,3 +75,16 @@ logoutButton.addEventListener('click', () => {
     localStorage.removeItem("password");
     document.location.href = "https://u-meet.herokuapp.com/logOut";
 });
+
+
+let buildingNameResponse = await fetch('/accessBuildingName', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        roomid:JSON.parse(email)
+    })
+  });
+  
+  let userdata = await responseUser.json(); 

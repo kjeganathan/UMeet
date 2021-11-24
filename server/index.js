@@ -81,50 +81,55 @@ app.post('/deleteAccount', (req, res) => {
     console.log(`Deleted account successfully!`);
 });
 
-/*
-// browser url http://localhost:3000/findByName?roomName=N211
-app.get('/findByName', (req, res) => {
-    const k = req.query["roomName"];
-    // console.log(k);
-    for(let i = 0 ; i < data["rooms"].length; ++i){
-        // console.log(i);
-        // console.log(data["rooms"][i].roomName);
-        if(k === (data["rooms"][i].roomName)) {
-            // console.log("reached inside if statement");
-            console.log(data["rooms"][i]);
-            res.send(data["rooms"][i]);
-        }
-    }
-    res.send();
+// Room Building Name 
+app.post('/buildingName', async (req, res) => {
+    const data = req.body;    
+    console.log("this is working"); 
+    console.log(data)
+    res.send(JSON.stringify(await dblast.getBuildingName(data.roomid)));
 });
 
-// browser url http://localhost:3000/roomProfile?roomId=1
-app.get('/roomProfile', (req, res) => {
-    const k = req.query["roomId"];
-    // console.log(k);
-    for(let i = 0 ; i < data["rooms"].length; ++i){
-        if(k === JSON.stringify(data["rooms"][i].roomId)) {
-            // console.log(i);
-            console.log(data["rooms"][i]);
-            res.send(data["rooms"][i]);
-        }
-    }
-    res.send();
-}); */
-
-// Room Building Name 
 // Room Name 
-// Room Description 
-// Room Popular Features 
+app.post('/roomName', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomName(data.roomid)));
+});
+
+// Room Rating 
+app.post('/roomRating', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomRating(data.roomid)));
+});
+
+// Room Capacity 
+app.post('/roomCapacity', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomCapacity(data.roomid)));
+});
+
+// Room Tech
+app.post('/roomTech', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomTech(data.roomid)));
+});
+
+// Room Type 
+app.post('/roomType', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomType(data.roomid)));
+});
+
+// Room Tags 
+app.post('/roomTags', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomTags(data.roomid)));
+});
+
 // Room Address 
-// Tags 
-
-// User's Name 
-// User's Email 
-// Upcoming Bookings 
-// Previous Bookings 
-
-// Fetching meetings based on parameters inputted on schedule a meeting page 
+app.post('/roomAddress', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomAddress(data.roomid)));
+});
 
 /*
 * Room objects don't currently have isAvailable attribute
