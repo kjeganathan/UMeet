@@ -85,66 +85,17 @@ async function updateUserEmail(email, password){
 }
 
 // Database functions for getting room information 
-async function getRoomID(building, room) { 
+async function getRoomID(building) { 
   return await connectAndRun((db) => 
     db.any(
       "SELECT roomid FROM rooms WHERE building = $1;", [building])
     );
 }
 
-async function getBuildingName(roomid) { 
+async function getRoomInformation(roomid) { 
   return await connectAndRun((db) => 
     db.any(
       "SELECT * FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomName(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT room FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomRating(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT rating FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomCapacity(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT capacity FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomTech(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT tech FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomType(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT building FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomTags(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT tags FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
-
-async function getRoomAddress(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT address FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
@@ -156,12 +107,5 @@ async function getRoomAddress(roomid) {
     updateUserEmail,
     delUser, 
     getRoomID, 
-    getBuildingName,
-    getRoomName,
-    getRoomRating,
-    getRoomCapacity,
-    getRoomTech,
-    getRoomType, 
-    getRoomTags,
-    getRoomAddress
+    getRoomInformation
   };
