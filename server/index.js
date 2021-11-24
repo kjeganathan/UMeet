@@ -8,15 +8,7 @@ const dblast = require("./database.js");
 const app = express();
 
 app.use(express.json()); // lets you handle JSON input
-
-// const port = 3000; // specify the port 
-
 app.use(express.static('client/')); // specify the directory 
-
-let data = {};
-const filename = 'data.json';
-data = JSON.parse(fs.readFileSync(filename));
-
 
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
@@ -35,6 +27,7 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfile.html'));
 });
 
+// creating API endpoints 
 app.post("/deleteUser", async (req, res) => {
     const data = req.body;
     await dblast.delUser(data.email);
@@ -85,11 +78,10 @@ app.delete('/users/:id', (req, res, next) => {
   // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', (req, res) => {
     data["users"].pop(req.body.user);
-    // let strInput = JSON.stringify(data);
-    // fs.writeFileSync(filename, strInput);
     console.log(`Deleted account successfully!`);
 });
 
+/*
 // browser url http://localhost:3000/findByName?roomName=N211
 app.get('/findByName', (req, res) => {
     const k = req.query["roomName"];
@@ -118,7 +110,7 @@ app.get('/roomProfile', (req, res) => {
         }
     }
     res.send();
-});
+}); */
 
 // Room Building Name 
 // Room Name 
@@ -152,5 +144,4 @@ app.get('*', (req, res) => {
   });
 
 const port = 3000; // specify the port 
-
 app.listen(process.env.PORT || port);
