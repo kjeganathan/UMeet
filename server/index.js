@@ -33,6 +33,11 @@ app.post("/deleteUser", async (req, res) => {
     await dblast.delUser(data.email);
 });
 
+app.post('/getRoomById', async (req,res) => {
+    const data = req.body;
+    res.send(JSON.stringify(await dblast.getRoomID(data.building)));
+});
+
 app.post('/editInfo', async (req,res) => {
     const data = req.body;
     await dblast.updateUserFirstName(data.firstname, data.password);

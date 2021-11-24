@@ -88,7 +88,7 @@ async function updateUserEmail(email, password){
 async function getRoomID(building, room) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT roomid FROM rooms WHERE building = $1 AND room = $2;", [building, room])
+      "SELECT roomid FROM rooms WHERE building = $1;", [building])
     );
 }
 
