@@ -39,7 +39,7 @@ async function connectAndRun(task) {
     }
   }
 
-//Database functions
+// Database functions for log in 
 async function addUser(firstname, lastname, email, password, previousbookings, upcomingbookings) {
     return await connectAndRun((db) =>
       db.none(
@@ -62,26 +62,82 @@ async function getUserByEmail(email){
     );
 }
 
-//Editing user info 
-
+// Database functions for editing user info 
 async function updateUserFirstName(firstname, password){
   return await connectAndRun((db) =>
       db.any(
-        "UPDATE users SET firstname = $1 where password = $2;",[firstname, password])
+        "UPDATE users SET firstname = $1 where password = $2;", [firstname, password])
     );
 }
 
 async function updateUserLastName(lastname, password){
   return await connectAndRun((db) =>
       db.any(
-        "UPDATE users SET lastname = $1 where password = $2;",[lastname, password])
+        "UPDATE users SET lastname = $1 where password = $2;", [lastname, password])
     );
 }
 
 async function updateUserEmail(email, password){
   return await connectAndRun((db) =>
       db.any(
-        "UPDATE users SET email = $1 where password = $2;",[email, password])
+        "UPDATE users SET email = $1 where password = $2;", [email, password])
+    );
+}
+
+// Database functions for getting room information 
+async function getBuildingName(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT building FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomName(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT room FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomRating(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT rating FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomCapacity(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT capacity FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomTech(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT tech FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomType(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT building FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomTags(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT tags FROM rooms WHERE roomid = $1", [roomid])
+    );
+}
+
+async function getRoomAddress(roomid) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT address FROM rooms WHERE roomid = $1", [roomid])
     );
 }
 
