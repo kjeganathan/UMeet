@@ -5,10 +5,9 @@
 let roomid = 1; 
 
 window.addEventListener("load", async function () {
-    
-    // Banner: Building name 
-    // <div id = "buildingName"></div>
-    let buildingResponse = await fetch('/buildingName', {
+
+    // fetch room information 
+    let roomInformationResponse = await fetch('/roomInformation', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -18,70 +17,47 @@ window.addEventListener("load", async function () {
         })
     });
 
-    let buildingResponseData = await buildingResponse.json(); 
-
-    let buildingResult = document.getElementById('building');
-    console.log(buildingResponseData[0]["building"]);
-    buildingResult.innerText = buildingResponseData[0]["building"]; 
+    // parse response 
+    let roomInformationResponseJSON = await roomInformationResponse.json(); 
+    
+    // Banner: Building name 
+    // id = "buildingName"
+    document.getElementById('building').innerText = roomInformationResponseJSON[0]["building"]; 
 
     // Banner: Room name 
-    // <div id = "roomName"></div>
-    let roomName = document.getElementById('roomName'); 
-    const roomDiv = document.createElement('div');
-    roomDiv.classList.add('room');
-    roomDiv.setAttribute('id', 'room');
-    roomDiv.innerText = "N211";
-    roomName.appendChild(roomDiv);
+    // id = "roomName"
+    document.getElementById('room').innerText = roomInformationResponseJSON[0]["room"]; 
 
     // Banner: stars 
-    // <div id = "stars"></div>
+    // id = "stars"
 
-    // Body left-col: description 
-    // <div id = "description"></div>
-    let description = document.getElementById('description'); 
-    const descriptionDiv = document.createElement('div');
-    descriptionDiv.classList.add('room');
-    descriptionDiv.setAttribute('id', 'description');
-    descriptionDiv.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-    description.appendChild(descriptionDiv);
+    // Popular Features 
+    // id="room-type" 
+    document.getElementById('room-type').innerText = roomInformationResponseJSON[0]["type"]; 
 
-    // Body left-col: maximum capacity
-    // <div id = "maximum-capacity"></div>
-    let maximumCapacity = document.getElementById('maximum-capacity'); 
-    const maximumCapacityDiv = document.createElement('div');
-    maximumCapacityDiv.classList.add('maximumCapacity');
-    maximumCapacityDiv.setAttribute('id', 'maximumCapacity');
-    maximumCapacityDiv.innerText = "200";
-    maximumCapacity.appendChild(maximumCapacityDiv);
+    // Popular Features 
+    // id="room-capacity" 
+    document.getElementById('room-capacity').innerText = roomInformationResponseJSON[0]["capacity"]; 
 
-    // Body left-col: room type  
-    // <div id = "room-type"></div>
-    let roomType = document.getElementById('room-type'); 
-    const roomTypeDiv = document.createElement('div');
-    roomTypeDiv.classList.add('roomType');
-    roomTypeDiv.setAttribute('id', 'roomType');
-    roomTypeDiv.innerText = "Lecture Hall";
-    roomType.appendChild(roomTypeDiv);
+    // Popular Features 
+    // id="room-tech" 
+    document.getElementById('room-tech').innerText = roomInformationResponseJSON[0]["tech"]; 
 
-    // Body left-col: list of popular features 
-    // <div id = "popular-features"></div>
+    // Tags 
+    // id="tag-0"
+    let arr = roomInformationResponseJSON[0]["tags"]; 
+    arr.split(','); 
+    console.log(arr);
+    document.getElementById('tag-0').innerText = JSON.parse(arr[0]); 
 
-    // Body left-col: location text 
-    // <div id="location-text"></div>
-    let locationText = document.getElementById('location-text'); 
-    const locationTextDiv = document.createElement('div');
-    locationTextDiv.classList.add('locationText');
-    locationTextDiv.setAttribute('id', 'locationText');
-    locationTextDiv.innerText = "650 N Pleasant St, Amherst, MA 01003";
-    locationText.appendChild(locationTextDiv);
+    // id="tag-1"
+    document.getElementById('tag-1').innerText = roomInformationResponseJSON[0]["tags"][1]; 
 
-    // Body left-col: location map 
-    // <div id="map">
+    // id="tag-2"
+    document.getElementById('tag-2').innerText = roomInformationResponseJSON[0]["tags"][2]; 
 
-    // Body right-col: slideshow 
+    // Map 
 
-    // Body right-col: tags 
-    // <div id="tags" class="tags">
 });
     
 // Log Out Button in Navbar 
