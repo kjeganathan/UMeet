@@ -7,7 +7,7 @@ const createemail = document.getElementById('createEmailInput').value;
 const createfirstName = document.getElementById('firstName').value;
 const createlastName = document.getElementById('createLastName').value;
 const createpassword = document.getElementById('createPasswordInput').value;
-    let response = await fetch('/createAccount', {
+    await fetch('/createAccount', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -15,10 +15,10 @@ const createpassword = document.getElementById('createPasswordInput').value;
         body: JSON.stringify({
                 email: createemail,
                 password: createpassword,
-                firstName: createfirstName,
-                lastName:createlastName,
-                previousBookings:[],
-                upcomingBookings:[]
+                firstname: createfirstName,
+                lastname:createlastName,
+                previousbookings:[],
+                upcomingbookings:[]
         })
     });
 });
