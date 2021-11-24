@@ -43,15 +43,15 @@ let deleteBtn = document.getElementById("deleteBtn");
 //Delete User
 deleteBtn.addEventListener('click', async () => {
     document.location.href = "https://u-meet.herokuapp.com/";
-    await fetch('/deleteUser', {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          email:JSON.parse(email)
-      })
-    });
+    // await fetch('/deleteUser', {
+    //   method: 'POST',
+    //   headers: {
+    //   'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //       email:JSON.parse(email)
+    //   })
+    // });
 });
 
 //Edit User Info
