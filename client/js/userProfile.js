@@ -52,6 +52,7 @@ btn.addEventListener('click', async () => {
     const nameArray = name.split(" ");
     const firstName = nameArray[0];
     const lastName = nameArray[1];
+    localStorage.setItem("email", JSON.stringify(email));
     //edits info based on password
     await fetch('/editInfo', {
       method: 'POST',
@@ -65,7 +66,7 @@ btn.addEventListener('click', async () => {
           lastname:lastName
       })
     });
-    localStorage.setItem("email", JSON.stringify(email));
+    
     //person's info is displayed based on their email in localstorage so email in localstorage has to be updated
     window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
 });
