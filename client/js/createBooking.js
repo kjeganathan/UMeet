@@ -4,7 +4,6 @@ let buildingName = document.getElementById('building1').innerText;
 
 let n111Button = document.getElementById('n111details');
 n111Button.addEventListener('click', async () => {
-    //document.location.href = "https://u-meet.herokuapp.com/";
     let building1response = await fetch('/getRoomById', {
         method: 'POST',
         headers: {
