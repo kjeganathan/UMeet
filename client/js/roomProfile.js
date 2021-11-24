@@ -2,7 +2,7 @@
 // const roomid = localStorage.getItem("roomid");
 // localStorage.setItem("roomid", JSON.stringify(roomid));
 
-let roomid = 1; 
+let roomid = localStorage.getItem("roomid"); 
 
 window.addEventListener("load", async function () {
 

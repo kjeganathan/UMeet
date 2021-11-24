@@ -1,8 +1,23 @@
 'use strict';
 
+let buildingName = document.getElementById('building1').value;
+
+
 let n111Button = document.getElementById('n111details');
-n111Button.addEventListener('click', () => {
+n111Button.addEventListener('click', async () => {
     //document.location.href = "https://u-meet.herokuapp.com/";
+    let building1response = await fetch('/getRoomById', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            building:"Ag. Engineering Bldg Room 119"
+        })
+    });
+    let building1responseJSON = await building1response.json();
+    console.log(JSON.stringify(building1responseJSON[0]["roomid"]));
+    localStorage.setItem("roomid", JSON.stringify(building1responseJSON[0]["roomid"]));
     document.location.href = "http://localhost:3000/roomProfilePage";
 });
 
