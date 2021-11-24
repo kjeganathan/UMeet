@@ -27,9 +27,11 @@ let loginButton = document.getElementById('login');
 
 loginButton.addEventListener('click', async () => {
     const email = document.getElementById('exampleInputEmail1').value;
+    const password = document.getElementById('exampleInputPassword1').value;
     await fetch('/login');
      //store email in localstorage.json
     localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("password", JSON.stringify(password));
     document.location.href = "https://u-meet.herokuapp.com/profilePage";
     });
 

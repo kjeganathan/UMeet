@@ -17,6 +17,7 @@ let data = {};
 const filename = 'data.json';
 data = JSON.parse(fs.readFileSync(filename));
 
+
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
@@ -34,9 +35,11 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfile.html'));
 });
 
-app.get('/editInfo', (req,res) => {
-    console.log("User Info has been updated");
-    res.send();
+app.post('/editInfo', async (req,res) => {
+    const data = req.body;
+    await dblast.updateUserFirstName(data.firstname, data.password);
+    await dblast.updateUserLastName(data.lastname, data.password);
+    await dblast.updateUserEmail(data.email, data.password);
 });
 
 app.get('/deleteProfile', (req, res) => {

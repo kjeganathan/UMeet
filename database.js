@@ -56,9 +56,42 @@ async function getUserByEmail(email){
     );
 }
 
+async function getUserId(email){
+  return await connectAndRun((db) =>
+      db.any(
+        "SELECT userId FROM users where email = $1;",[email])
+    );
+}
+
+//Editing user info 
+
+async function updateUserFirstName(firstname, password){
+  return await connectAndRun((db) =>
+      db.any(
+        "UPDATE users SET firstname = $1 where password = $2;",[firstname, password])
+    );
+}
+
+async function updateUserLastName(lastname, password){
+  return await connectAndRun((db) =>
+      db.any(
+        "UPDATE users SET lastname = $1 where password = $2;",[lastname, password])
+    );
+}
+
+async function updateUserEmail(email, password){
+  return await connectAndRun((db) =>
+      db.any(
+        "UPDATE users SET email = $1 where password = $2;",[email, password])
+    );
+}
+
   module.exports = {
     addUser,
-    getUserByEmail
+    getUserByEmail,
+    updateUserFirstName,
+    updateUserLastName,
+    updateUserEmail
   };
 
 
