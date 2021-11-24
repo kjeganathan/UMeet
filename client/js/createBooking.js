@@ -21,6 +21,7 @@ n111Button.addEventListener('click', async () => {
 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
+    localStorage.removeItem("roomid");
     localStorage.removeItem("email");
     localStorage.removeItem("password");
     document.location.href = "https://u-meet.herokuapp.com/";
