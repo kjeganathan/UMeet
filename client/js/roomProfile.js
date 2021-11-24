@@ -1,5 +1,8 @@
 'use strict';
-const roomid = localStorage.getItem("roomid");
+// const roomid = localStorage.getItem("roomid");
+// localStorage.setItem("roomid", JSON.stringify(roomid));
+
+let roomid = 1; 
 
 window.addEventListener("load", async function () {
     
@@ -16,10 +19,9 @@ window.addEventListener("load", async function () {
     });
 
     let buildingResponseData = await buildingResponse.json(); 
-    document.getElementById('building')
 
     let buildingResult = document.getElementById('building');
-    buildingResult.value = buildingResponseData[i]; 
+    buildingResult.value = buildingResponseData; 
 
     // Banner: Room name 
     // <div id = "roomName"></div>

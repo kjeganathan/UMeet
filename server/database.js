@@ -95,7 +95,7 @@ async function getRoomID(building, room) {
 async function getBuildingName(roomid) { 
   return await connectAndRun((db) => 
     db.any(
-      "SELECT building FROM rooms WHERE roomid = $1;", [roomid])
+      "SELECT * FROM rooms WHERE roomid = $1;", [roomid])
     );
 }
 
