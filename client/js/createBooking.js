@@ -17,7 +17,7 @@ n111Button.addEventListener('click', async () => {
     let building1responseJSON = await building1response.json();
     console.log(JSON.stringify(building1responseJSON[0]["roomid"]));
     localStorage.setItem("roomid", JSON.stringify(building1responseJSON[0]["roomid"]));
-    document.location.href = "http://localhost:3000/roomProfilePage";
+    document.location.href = "https://u-meet.herokuapp.com/roomProfilePage";
 });
 
 let logoutButton = document.getElementById('logOut');
