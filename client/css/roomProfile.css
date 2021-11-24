@@ -20,12 +20,12 @@
 }
 
 .banner-subtext {
-    padding-top: 200px;
+    padding-top: 100px;
     margin-left: 70px;
 }
 
 .banner-title {  
-    padding-top: 0px;
+    padding-top: -20px;
     margin-left: 70px;
 }
 
@@ -146,10 +146,6 @@ p.tags-design {
     width: 90%;
 }
 
-
-  /* Red heart CSS for footer text */
-  .redheart {
-    color: #ff0000;
-    font-size: 14px;
-    font-family: "arial unicode MS", arial, geneva, sans-serif;
-  }
+.popular-features-item {
+    margin-left: 20px
+}
