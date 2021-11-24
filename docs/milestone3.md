@@ -11,7 +11,7 @@
 
 ## Our Database
 We used a PostgreSQL database for this project. 
-### User Tables
+### User Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | email             | text      | The email of the user             |
@@ -21,7 +21,7 @@ We used a PostgreSQL database for this project.
 | previousBookings  | \_text    | The previous bookings of the user |
 | upcomingBookings  | \_text    | The upcoming bookings of the user |
 | userid            | int4      | The user ID of the user           |
-### Room Tables
+### Room Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | address           | varchar   | The address of the room           |
