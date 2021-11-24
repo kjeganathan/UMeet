@@ -81,54 +81,10 @@ app.post('/deleteAccount', (req, res) => {
     console.log(`Deleted account successfully!`);
 });
 
-// Room Building Name 
-app.post('/buildingName', async (req, res) => {
+// Gather Room Information 
+app.post('/roomInformation', async (req, res) => {
     const data = req.body;    
-    console.log("this is working"); 
-    console.log(data)
-    res.send(JSON.stringify(await dblast.getBuildingName(data.roomid)));
-});
-
-// Room Name 
-app.post('/roomName', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomName(data.roomid)));
-});
-
-// Room Rating 
-app.post('/roomRating', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomRating(data.roomid)));
-});
-
-// Room Capacity 
-app.post('/roomCapacity', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomCapacity(data.roomid)));
-});
-
-// Room Tech
-app.post('/roomTech', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomTech(data.roomid)));
-});
-
-// Room Type 
-app.post('/roomType', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomType(data.roomid)));
-});
-
-// Room Tags 
-app.post('/roomTags', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomTags(data.roomid)));
-});
-
-// Room Address 
-app.post('/roomAddress', async (req, res) => {
-    const data = req.body;    
-    res.send(JSON.stringify(await dblast.getRoomAddress(data.roomid)));
+    res.send(JSON.stringify(await dblast.getRoomInformation(data.roomid)));
 });
 
 /*
