@@ -65,7 +65,7 @@ btn.addEventListener('click', async () => {
           lastname:lastName
       })
     });
-    localStorage.setItem("email", email);
+    localStorage.setItem("email", JSON.stringify(email));
     //person's info is displayed based on their email in localstorage so email in localstorage has to be updated
     window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
 });
