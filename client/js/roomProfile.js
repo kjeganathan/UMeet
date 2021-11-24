@@ -21,7 +21,8 @@ window.addEventListener("load", async function () {
     let buildingResponseData = await buildingResponse.json(); 
 
     let buildingResult = document.getElementById('building');
-    buildingResult.value = buildingResponseData; 
+    console.log(buildingResponseData[0]["building"]);
+    buildingResult.innerText = buildingResponseData[0]["building"]; 
 
     // Banner: Room name 
     // <div id = "roomName"></div>
