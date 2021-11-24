@@ -1,7 +1,6 @@
 'use strict';
 
-let buildingName = document.getElementById('building1').value;
-
+let buildingName = document.getElementById('building1').innerText;
 
 let n111Button = document.getElementById('n111details');
 n111Button.addEventListener('click', async () => {
@@ -12,7 +11,7 @@ n111Button.addEventListener('click', async () => {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            building:JSON.parse(buildingName)
+            building:(buildingName)
         })
     });
     let building1responseJSON = await building1response.json();

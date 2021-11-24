@@ -22,11 +22,13 @@
 .banner-subtext {
     padding-top: 100px;
     margin-left: 70px;
+    font-size: 30px;
 }
 
 .banner-title {  
     padding-top: -20px;
     margin-left: 70px;
+    font-size: 40px;
 }
 
 .banner-stars {

@@ -46,15 +46,19 @@ window.addEventListener("load", async function () {
     // Tags 
     // id="tag-0"
     let arr = roomInformationResponseJSON[0]["tags"]; 
-    arr.split(','); 
-    console.log(arr);
-    document.getElementById('tag-0').innerText = JSON.parse(arr[0]); 
+    let arr2 = arr.split(','); 
+
+
+    console.log(arr2);
+    console.log(arr2[0]);
+    console.log(arr2[1]);
+    document.getElementById('tag-0').innerText = arr2[0]; 
 
     // id="tag-1"
-    document.getElementById('tag-1').innerText = roomInformationResponseJSON[0]["tags"][1]; 
+    document.getElementById('tag-1').innerText = arr2[1]; 
 
     // id="tag-2"
-    document.getElementById('tag-2').innerText = roomInformationResponseJSON[0]["tags"][2]; 
+    document.getElementById('tag-2').innerText = arr2[2]; 
 
     // Map 
 
