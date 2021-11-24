@@ -146,23 +146,7 @@ p.tags-design {
     width: 90%;
 }
 
-/* Footer CSS */
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: grey;
-    text-align: center;
-    height: 50px;
-  }
-  
-  /* Footer text */
-  .footer p {
-    padding-top: 10px;
-    color: white;
-  }
-  
+
   /* Red heart CSS for footer text */
   .redheart {
     color: #ff0000;
