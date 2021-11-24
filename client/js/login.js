@@ -28,7 +28,6 @@ let loginButton = document.getElementById('login');
 loginButton.addEventListener('click', async () => {
     const email = document.getElementById('exampleInputEmail1').value;
     const password = document.getElementById('exampleInputPassword1').value;
-    console.log(`email ${email}`);
     if (email === NULL || password === NULL) alert("Need to enter email and password.");
     else {
         localStorage.setItem("email", JSON.stringify(email));
