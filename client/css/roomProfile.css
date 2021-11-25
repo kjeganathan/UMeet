@@ -33,7 +33,8 @@
 }
 
 .banner-stars {
-    margin-left: 70px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .container {

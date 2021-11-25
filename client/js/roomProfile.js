@@ -1,8 +1,5 @@
 'use strict';
 
-// const roomid = localStorage.getItem("roomid");
-// localStorage.setItem("roomid", JSON.stringify(roomid));
-
 let roomid = localStorage.getItem("roomid"); 
 
 window.addEventListener("load", async function () {
@@ -22,23 +19,22 @@ window.addEventListener("load", async function () {
     let roomInformationResponseJSON = await roomInformationResponse.json(); 
     
     // Banner: Building name 
-    // id = "buildingName"
+    // id = "building"
     document.getElementById('building').innerText = roomInformationResponseJSON[0]["building"]; 
 
     // Banner: Room name 
-    // id = "roomName"
+    // id = "room"
     document.getElementById('room').innerText = "Room: " + roomInformationResponseJSON[0]["room"]; 
 
     // Banner: stars 
-    // id = "stars"
+    // id = "star-i"
     let starCount = roomInformationResponseJSON[0]["rating"]; 
-    const starTotal = 5;
- 
-    // for(const i in starCount) {  
-    //   const starPercentage = (i / starTotal) * 100;
-    //   const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-    //   document.getElementById('stars').style.width = starPercentageRounded; 
-    // }
+    console.log(starCount); 
+
+    for(let i = 1; i <= starCount; ++i) {
+       document.getElementById("star-" + i).style.color = "#FFFF2E"; 
+       console.log("star-" + i);
+    }
     
     // Popular Features 
     // id="room-type" 
@@ -71,7 +67,7 @@ window.addEventListener("load", async function () {
             document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
         } 
     }
-    
+
     // Map 
     // https://mrvirk.com/passing-url-parameters-to-iframe-using-javascript.html
     let getAddress = roomInformationResponseJSON[0]["address"];
