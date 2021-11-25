@@ -1,4 +1,5 @@
 'use strict';
+
 // const roomid = localStorage.getItem("roomid");
 // localStorage.setItem("roomid", JSON.stringify(roomid));
 
@@ -64,18 +65,21 @@ window.addEventListener("load", async function () {
     let splitArr = arr.split(','); 
 
     for(let i = 0; i < 3; ++i) {
-        console.log(splitArr[i])
         if(splitArr[i] === " technology-access") {
             document.getElementById('tag-' + i).innerText = "#tech-access";
         } else {
             document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
         } 
     }
-
-    // Map 
-
-});
     
+    // Map 
+    // https://mrvirk.com/passing-url-parameters-to-iframe-using-javascript.html
+    let getAddress = roomInformationResponseJSON[0]["address"];
+    let srcURL = "https://www.google.com/maps/embed/v1/place?key=AIzaSyADk8mwzYNCnqs8f7DjNwMllMXPGxiHrE8&q=" + getAddress;
+    let mapElement = document.getElementById('map'); 
+    mapElement.src = srcURL; 
+});
+
 // Log Out Button in Navbar 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
