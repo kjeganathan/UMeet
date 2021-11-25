@@ -33,11 +33,13 @@ window.addEventListener("load", async function () {
     let starCount = roomInformationResponseJSON[0]["rating"]; 
     console.log(starCount);
 
-    // for(let i = 0; i < 5; ++i) {
-    //     for(let i = 0; i < starCount; ++i) {
-    //         document.getElementById('stars') = <i class="fas fa-star"></i>; 
-    //     }
-    // }
+    const starTotal = 5;
+ 
+    for(const i in starCount) {  
+      const starPercentage = (i / starTotal) * 100;
+      const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+      document.getElementById('stars').style.width = starPercentageRounded; 
+    }
     
     // Popular Features 
     // id="room-type" 
