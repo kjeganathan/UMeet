@@ -57,7 +57,7 @@ Some of the CRUD operations we worked on were:
 
 Some pictures to demonstrate the CRUD operations worked on:
 
-Create Account:  A user can create an account with their first name, last name
+Create Account:  A user can create an account with their first name, last name, email and password, and then will get added to the heroku PostgreSQL users table in the database.
 
 User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
 
