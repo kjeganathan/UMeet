@@ -21,6 +21,7 @@ const createpassword = document.getElementById('createPasswordInput').value;
                 upcomingbookings:[]
         })
     });
+    onclick="alert('Account created successfuly, Welcome to UMeet! Please login.')"
 });
 
 let loginButton = document.getElementById('login');
