@@ -9,9 +9,12 @@
 - Name: Laura Nepo, Github: lauranepo
 - Name: Disha Srivastava, Github: dishsrivastava
 
+## Heroku Link
+https://u-meet.herokuapp.com/
+
 ## Our Database
 We used a PostgreSQL database for this project. 
-### User Tables
+### User Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | email             | text      | The email of the user             |
@@ -21,7 +24,7 @@ We used a PostgreSQL database for this project.
 | previousBookings  | \_text    | The previous bookings of the user |
 | upcomingBookings  | \_text    | The upcoming bookings of the user |
 | userid            | int4      | The user ID of the user           |
-### Room Tables
+### Room Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | address           | varchar   | The address of the room           |
@@ -37,6 +40,23 @@ We used a PostgreSQL database for this project.
 | type              | varchar   | The type of the room              |
 
 ## Contributions
-- Disha:
-- Kavya:
-- Laura: 
+- Disha: Collected data for on-campus room information and added it to Heroku database, created database connections and completed backend endpoints and functionality for room profile page, added client-side connections to the server for room profile page
+- Kavya: Created database connections and completed backend endpoints and functionality for user profile page + login page, added client-side connections to the server for room profile page + login page, created overall heroku database connection for the app
+- Laura: Worked on milestone 3 documentation as well as worked on creating linkage between booking page and room profile page
+
+## Milestone Overview
+
+We created the PostgreSQL database and connected it to our Heroku app. From there, we finalized all of the CRUD operations for our application. roomProfile.js and userProfile.js both pull information from the database dependent on the roomid/userid saved in local storage. 
+
+- Create: create a new user 
+- Read: read all room information such as building name, room, popular features, tags, etc. 
+- Update: update user information 
+- Delete: delete a user 
+
+User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
+
+![image](https://user-images.githubusercontent.com/26130113/143325725-f7799b8f-9857-43af-8095-66d953ba10a6.png)
+
+Room Profile: The room and building information is pulled from the database, including tags, room and building name, and popular features (and more).
+
+![image](https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png)
