@@ -55,27 +55,24 @@ Here are a few exmaples of CRUD operations we have implemented:
 - Update: update user information through editing
 - Delete: delete a user from the database
 
+Visual Examples: 
 
-#### Create Account: A user can create an account with their first name, last name, email and password, and then will get added to the heroku PostgreSQL users table in the database.
+#### i. Create Account: A user can create an account with their first name, last name, email, and password, and then be added to the Heroku PostgreSQL DB users table in the database.
+<img width="480" height="680" src="https://user-images.githubusercontent.com/68821572/143328601-0f4c8a96-68c8-41a4-9202-746d648dc022.png">
 
-<img width="480" src="https://user-images.githubusercontent.com/68821572/143328601-0f4c8a96-68c8-41a4-9202-746d648dc022.png">
+#### ii. User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
+<img width="480" src="https://user-images.githubusercontent.com/68821572/143328610-9f100857-8a34-4283-8537-b2d4b0add067.png">
 
-#### User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
+#### iii. Room Profile: The room and building information is pulled from the database, including tags, room and building name, and popular features (and more).
+<img width="480" src="https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png">
 
-<img width="480" src="https://user-images.githubusercontent.com/26130113/143325725-f7799b8f-9857-43af-8095-66d953ba10a6.png">
 
-<img width="843" alt="Screen Shot 2021-11-24 at 4 21 24 PM" src="https://user-images.githubusercontent.com/68821572/143328610-9f100857-8a34-4283-8537-b2d4b0add067.png">
-
-Room Profile: The room and building information is pulled from the database, including tags, room and building name, and popular features (and more).
-
-![image](https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png)
-
-Database Screenshots 
+### Database Screenshots 
 
 To show our rooms database with UMass Amherst campus room information: 
-<img width="1141" alt="Screen Shot 2021-11-24 at 4 19 53 PM" src="https://user-images.githubusercontent.com/20649388/143328701-ece5a1ea-f6b2-47be-9b58-c5205c1d1318.png">
+<img width="1141" src="https://user-images.githubusercontent.com/20649388/143328701-ece5a1ea-f6b2-47be-9b58-c5205c1d1318.png">
 
 To show our user database updating in real time: 
-<img width="1159" alt="Screen Shot 2021-11-24 at 4 20 22 PM" src="https://user-images.githubusercontent.com/20649388/143328732-f3829df0-50b0-4ab1-b703-c63eb53b1ffa.png">
+<img width="1159" src="https://user-images.githubusercontent.com/20649388/143328732-f3829df0-50b0-4ab1-b703-c63eb53b1ffa.png">
 
 
