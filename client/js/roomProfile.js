@@ -31,15 +31,13 @@ window.addEventListener("load", async function () {
     // Banner: stars 
     // id = "stars"
     let starCount = roomInformationResponseJSON[0]["rating"]; 
-    console.log(starCount);
-
     const starTotal = 5;
  
-    for(const i in starCount) {  
-      const starPercentage = (i / starTotal) * 100;
-      const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-      document.getElementById('stars').style.width = starPercentageRounded; 
-    }
+    // for(const i in starCount) {  
+    //   const starPercentage = (i / starTotal) * 100;
+    //   const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+    //   document.getElementById('stars').style.width = starPercentageRounded; 
+    // }
     
     // Popular Features 
     // id="room-type" 

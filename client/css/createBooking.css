@@ -75,6 +75,7 @@ body {
     background-color: rgba(108, 92, 231, 0.749);
     color: white;
     border-radius: 8px;
+    border-color: rgba(108, 92, 231, 0.749);
   }
 
 /* Search Input Bar Styling */
@@ -328,5 +329,10 @@ margin-right:20px;
     border-radius:20px;
     width:202px;
     height:62px;
+}
+
+.fop {
+    width: 3000px;
+    height: 2000px;
 }
   
