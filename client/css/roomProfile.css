@@ -20,15 +20,16 @@
 }
 
 .banner-subtext {
-    margin-left: 70px;
     padding-top: 150px;
     font-size: 20px;
+    font-weight: 200;
+    text-align: center;
 }
 
 .banner-title {  
-    margin-left: 70px;
     font-size: 40px;
-    font-weight: 1;
+    font-weight: 2;
+    text-align: center;
 }
 
 .banner-stars {
