@@ -47,22 +47,21 @@ window.addEventListener("load", async function () {
     // id="room-tech" 
     document.getElementById('room-tech').innerText = roomInformationResponseJSON[0]["tech"]; 
 
+     // Popular Features 
+    // id="room-building-acronym" 
+    document.getElementById('room-building-acronym').innerText = roomInformationResponseJSON[0]["building_acronym"]; 
+
     // Tags 
     // id="tag-0"
     let arr = roomInformationResponseJSON[0]["tags"]; 
-    let arr2 = arr.split(','); 
-
-
-    console.log(arr2);
-    console.log(arr2[0]);
-    console.log(arr2[1]);
-    document.getElementById('tag-0').innerText = arr2[0]; 
+    let splitArr = arr.split(','); 
+    document.getElementById('tag-0').innerText = splitArr[0]; 
 
     // id="tag-1"
-    document.getElementById('tag-1').innerText = arr2[1]; 
+    document.getElementById('tag-1').innerText = splitArr[1]; 
 
     // id="tag-2"
-    document.getElementById('tag-2').innerText = arr2[2]; 
+    document.getElementById('tag-2').innerText = splitArr[2]; 
 
     // Map 
 
