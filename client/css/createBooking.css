@@ -24,13 +24,6 @@ body {
     margin-left:50px;
 }
 
-#dot{ 
-    margin-top:5px;
-    margin-left:30px;
-    margin-right:30px;
-    fill:#FDCB6E;
-}
-
 /* Adding a background color to the top navigation */
 .navbar {
     position: absolute;
