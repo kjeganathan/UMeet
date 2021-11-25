@@ -10,7 +10,7 @@ body {
     text-align: center;
   }
   
-.flex-header-bar{
+.flex-header-bar {
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -72,7 +72,7 @@ body {
   }
 
 /* Search Input Bar Styling */
-.inputNav{
+.inputNav {
     position: relative;
     height:150px;
     left: 0%;
@@ -82,9 +82,9 @@ body {
     background: rgba(108, 92, 231, 0.28);
 }
 
-.startTime{
+.startTime {
     position: absolute;
-    display:flex;
+    display: flex;
     flex-direction:row;
     justify-content: flex-start;
     left: 2.17%;
@@ -93,11 +93,13 @@ body {
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
+    width: 210px;
+    height: 80px;
 }
 
 .icon{
     padding-left:10%;
-    padding-top:10%;
+    padding-top:12%;
 }
 
 .text{
@@ -105,13 +107,12 @@ body {
     padding-top:5%;
 }
 
-.inputNavTitle{
+.inputNavTitle {
     position: absolute;
     left: 4.89%;
     right: 90.67%;
     top: 33.33%;
     bottom: 53.33%;
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -125,7 +126,6 @@ body {
     right: 89.66%;
     top: 48%;
     bottom: 38.67%;
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -144,9 +144,11 @@ body {
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
+    width: 210px;
+    height: 80px;
 }
 
-.date{
+.date {
     position: absolute;
     display:flex;
     flex-direction:row;
@@ -157,6 +159,8 @@ body {
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
+    width: 310px;
+    height: 80px;
 }
 
 .attendeeNumber{
@@ -164,12 +168,14 @@ body {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 50.38%;
+    left: 57.38%;
     right: 38.02%;
     top: 29.33%;
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
+    width: 250px;
+    height: 80px;
 }
 
 .sortBy{
@@ -311,7 +317,7 @@ margin-right:20px;
 
 .search{
     position: absolute;
-    left: 66.67%;
+    left: 75.67%;
     right: 23.15%;
     top: 26.67%;
     bottom: 32%;
@@ -329,3 +335,6 @@ margin-right:20px;
     height: 2000px;
 }
   
+.form-control {
+    border-color: white;
+}

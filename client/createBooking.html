@@ -7,6 +7,10 @@
         <title>Booking Page</title>
         <script type="module" src="js/createBooking.js" defer></script>
         <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
         <!--Header Bar-->
@@ -31,8 +35,7 @@
                 </div>
                 <div class="text">  
                     <span id="inputNavTitle">Start Time</span>
-                    <br/>
-                    <span contentEditable="true" id="inputNavInput">7:00 AM</span>
+                    <input type="time" id="inputNavInput" class="form-control" placeholder="startTime" aria-label="startTime" aria-describedby="basic-addon1">
                 </div>
             </div>
 
@@ -46,7 +49,7 @@
                 <div class="text">  
                     <span id="inputNavTitle">End Time</span>
                     <br/>
-                    <span contentEditable="true" id="inputNavInput">9:00 AM</span>
+                    <input type="time" id="inputNavInput" class="form-control" placeholder="endTime" aria-label="endTime" aria-describedby="basic-addon1">
                 </div>
             </div>
 
@@ -61,7 +64,7 @@
                 <div class="text">  
                     <span id="inputNavTitle">Date</span>
                     <br/>
-                    <span contentEditable="true" id="inputNavInput">Nov 9, 2021</span>
+                    <input type="date" id="inputNavInput" class="form-control" placeholder="date" aria-label="date" aria-describedby="basic-addon1">
                 </div>
             </div>
 
@@ -73,9 +76,9 @@
                     </svg>
                 </div>
                 <div class="text">  
-                    <span id="inputNavTitle">Attendee No.</span>
+                    <span id="inputNavTitle">Attendee Count</span>
                     <br/>
-                    <span contentEditable="true" id="inputNavInput">10</span>
+                    <input type="text" id="inputNavInput" class="form-control" placeholder="" aria-label="attendeeNumber" aria-describedby="basic-addon1">
                 </div>
             </div>
             
