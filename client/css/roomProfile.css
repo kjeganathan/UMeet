@@ -20,15 +20,15 @@
 }
 
 .banner-subtext {
-    padding-top: 100px;
     margin-left: 70px;
-    font-size: 30px;
+    padding-top: 150px;
+    font-size: 20px;
 }
 
 .banner-title {  
-    padding-top: -20px;
     margin-left: 70px;
     font-size: 40px;
+    font-weight: 1;
 }
 
 .banner-stars {

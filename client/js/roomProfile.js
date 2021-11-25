@@ -26,11 +26,19 @@ window.addEventListener("load", async function () {
 
     // Banner: Room name 
     // id = "roomName"
-    document.getElementById('room').innerText = roomInformationResponseJSON[0]["room"]; 
+    document.getElementById('room').innerText = "Room: " + roomInformationResponseJSON[0]["room"]; 
 
     // Banner: stars 
     // id = "stars"
+    let starCount = roomInformationResponseJSON[0]["rating"]; 
+    console.log(starCount);
 
+    // for(let i = 0; i < 5; ++i) {
+    //     for(let i = 0; i < starCount; ++i) {
+    //         document.getElementById('stars') = <i class="fas fa-star"></i>; 
+    //     }
+    // }
+    
     // Popular Features 
     // id="room-type" 
     if(roomInformationResponseJSON[0]["type"] === null) {
@@ -55,7 +63,7 @@ window.addEventListener("load", async function () {
     let arr = roomInformationResponseJSON[0]["tags"]; 
     let splitArr = arr.split(','); 
 
-    for(let i = 0; i < 3; i++) {
+    for(let i = 0; i < 3; ++i) {
         console.log(splitArr[i])
         if(splitArr[i] === " technology-access") {
             document.getElementById('tag-' + i).innerText = "#tech-access";
@@ -63,29 +71,6 @@ window.addEventListener("load", async function () {
             document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
         } 
     }
-
-    //
-
-    // id="tag-0"
-    // if(roomInformationResponseJSON[0]["tech"] === "technology-access") {
-    //     document.getElementById('tag-0').innerText = "#tech-acess";
-    // } else {
-    //     document.getElementById('tag-0').innerText = "#" + splitArr[0];
-    // }
-
-    // // id="tag-1"
-    // if(roomInformationResponseJSON[1]["tech"] === "technology-access") {
-    //     document.getElementById('tag-1').innerText = "#tech-acess";
-    // } else {
-    //     document.getElementById('tag-1').innerText = "#" + splitArr[1]; 
-    // }
-
-    // // id="tag-2"
-    // if(roomInformationResponseJSON[2]["tech"] === "technology-access") {
-    //     document.getElementById('tag-2').innerText = "#tech-acess";
-    // } else {
-    //     document.getElementById('tag-2').innerText = "#" + splitArr[2]; 
-    // }
 
     // Map 
 
