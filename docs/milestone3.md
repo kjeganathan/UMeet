@@ -41,29 +41,28 @@ We used a PostgreSQL database for this project.
 
 ## Contributions
 - Disha: Collected data for on-campus room information from multiple UMass information repositories and compiled into one CSV file, then parsed CSV file into Heroku database to create rooms table, also created database connections and completed backend endpoints + functionality for roomProfilePage, finally, added client-side connections to the server for roomProfilePage
-- Kavya: Created database connections and completed backend endpoints + functionality for userProfilePage + logIn page, added client-side connections to the server for userProfilePage + logIn page, finalized Heroku database connection, and created user table in db 
+- Kavya: Created database connections and completed backend endpoints + functionality for userProfilePage and logIn page, added client-side connections to the server for userProfilePage and logIn page, finalized Heroku database connection, and created user table in db and connected user table to logIn page 
 - Laura: Worked on milestone 3 documentation as well as working on creating linkage between bookingPage and roomProfilePage 
 
 ## Milestone Overview
 
 We created the PostgreSQL database and connected it to our Heroku app. From there, we finalized all of the CRUD operations for our application. roomProfile.js and userProfile.js both pull information from the database dependent on the roomid/userid saved in local storage. 
 
-Some of the CRUD operations we worked on were:
+Here are a few exmaples of CRUD operations we have implemented: 
 
 - Create: create a new user
 - Read: read all room information from the database such as building name, room, popular features, tags, etc. 
 - Update: update user information through editing
 - Delete: delete a user from the database
 
-Some pictures to demonstrate the CRUD operations worked on:
 
-Create Account:  A user can create an account with their first name, last name, email and password, and then will get added to the heroku PostgreSQL users table in the database.
+#### Create Account: A user can create an account with their first name, last name, email and password, and then will get added to the heroku PostgreSQL users table in the database.
 
-<img width="680" alt="Screen Shot 2021-11-24 at 4 20 45 PM" src="https://user-images.githubusercontent.com/68821572/143328601-0f4c8a96-68c8-41a4-9202-746d648dc022.png">
+<img width="480" src="https://user-images.githubusercontent.com/68821572/143328601-0f4c8a96-68c8-41a4-9202-746d648dc022.png">
 
-User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
+#### User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
 
-![image](https://user-images.githubusercontent.com/26130113/143325725-f7799b8f-9857-43af-8095-66d953ba10a6.png)
+<img width="480" src="https://user-images.githubusercontent.com/26130113/143325725-f7799b8f-9857-43af-8095-66d953ba10a6.png">
 
 <img width="843" alt="Screen Shot 2021-11-24 at 4 21 24 PM" src="https://user-images.githubusercontent.com/68821572/143328610-9f100857-8a34-4283-8537-b2d4b0add067.png">
 
