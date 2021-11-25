@@ -67,14 +67,6 @@
   border-color: rgba(108, 92, 231, 0.749);
 }
 
-#dot {  
-  margin-top:5px;
-  margin-left:30px;
-  margin-right:30px;
-   fill:#FDCB6E;
-}
-
-
 .banner {
   position: absolute;
   width: 100%;
