@@ -33,8 +33,12 @@ window.addEventListener("load", async function () {
 
     // Popular Features 
     // id="room-type" 
-    document.getElementById('room-type').innerText = roomInformationResponseJSON[0]["type"]; 
-
+    if(roomInformationResponseJSON[0]["type"] === null) {
+        document.getElementById('room-type').innerText = "Traditional Classroom"; 
+    } else {
+        document.getElementById('room-type').innerText = roomInformationResponseJSON[0]["type"]; 
+    }
+    
     // Popular Features 
     // id="room-capacity" 
     document.getElementById('room-capacity').innerText = roomInformationResponseJSON[0]["capacity"]; 
