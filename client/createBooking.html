@@ -7,10 +7,6 @@
         <title>Booking Page</title>
         <script type="module" src="js/createBooking.js" defer></script>
         <link rel="icon" href="images/favicon.png" type="image/png">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
         <!--Header Bar-->
@@ -88,35 +84,6 @@
                 <button type="button" class="btn btn-dark" id="searchButton">Search</button>
             </div>
         </nav>
-
-        <div class="searchForRooms">
-            <form>
-                <div class="input-group mb-1">
-                    <!-- Start Time -->
-                        <div class="input-group-text">
-                            <label for="startTime" class="form-label"><i class="far fa-clock">Start Time</i></label>
-                        </div>
-                        <input type="time" class="fop form-control" id="startTime" required />
-                    <!-- End Time -->
-                        <div class="input-group-text">
-                            <label for="endTime" class="form-label">End Time</label>
-                        </div>  
-                        <input type="time" class="form-control" id="endTime" required />
-                    <!-- Date -->
-                        <div class="input-group-text">
-                            <label for="meeting-date" class="form-label">Meeting Date</label>
-                        </div>
-                        <input type="date" class="form-control" id="meetingDate" required />
-                    <!-- Attendee Number -->
-                        <div class="input-group-text">
-                            <label for="attendee-count" class="form-label">Attendee Count</label>
-                        </div>
-                        <input type="int" class="form-control" id="attendee-count" required />
-                    <!-- Search -->
-                    <button type="submit" class="button btn btn-primary" id="search"> Search </button>
-                </div>
-            </form>
-        </div>
        
        <!--Filter By Side Bar-->
         <div class="sidenav">
@@ -235,5 +202,36 @@
             </div>
         </div>
 
+
+                <!--Room Cards-->
+                <div class="card" id="card1">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper" >
+                            <img class="roomPicture" src="https://www.umass.edu/cp/sites/default/files/Integrative%20Learning%20Center%20%28ILC%29_02.jpg" height="180px" width="300px" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <div class="flex-card-title">
+                                <!--Card Room Name-->
+                                <h4 id="building1" class="card-title">Ag. Engineering Bldg Room 119</h4>
+                                <!--Card Room Max Capacity-->
+                                <span>Max Capacity: 151</span>
+                            </div>
+                            <br/>
+                            <!--Card Room Description-->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                            <!--Card Room Star Rating-->
+                            <div class="stars">
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="clip-star"></div>
+                                <div class="empty-star"></div>
+                                &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                                <button type="button" class="btn btn-dark" id="n111details">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
     </body>
 </html>
