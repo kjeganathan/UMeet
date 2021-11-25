@@ -52,16 +52,40 @@ window.addEventListener("load", async function () {
     document.getElementById('room-building-acronym').innerText = roomInformationResponseJSON[0]["building_acronym"]; 
 
     // Tags 
-    // id="tag-0"
     let arr = roomInformationResponseJSON[0]["tags"]; 
     let splitArr = arr.split(','); 
-    document.getElementById('tag-0').innerText = "# " + splitArr[0]; 
 
-    // id="tag-1"
-    document.getElementById('tag-1').innerText = "#" + splitArr[1]; 
+    for(let i = 0; i < 3; i++) {
+        console.log(splitArr[i])
+        if(splitArr[i] === " technology-access") {
+            document.getElementById('tag-' + i).innerText = "#tech-access";
+        } else {
+            document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
+        } 
+    }
 
-    // id="tag-2"
-    document.getElementById('tag-2').innerText = "#" + splitArr[2]; 
+    //
+
+    // id="tag-0"
+    // if(roomInformationResponseJSON[0]["tech"] === "technology-access") {
+    //     document.getElementById('tag-0').innerText = "#tech-acess";
+    // } else {
+    //     document.getElementById('tag-0').innerText = "#" + splitArr[0];
+    // }
+
+    // // id="tag-1"
+    // if(roomInformationResponseJSON[1]["tech"] === "technology-access") {
+    //     document.getElementById('tag-1').innerText = "#tech-acess";
+    // } else {
+    //     document.getElementById('tag-1').innerText = "#" + splitArr[1]; 
+    // }
+
+    // // id="tag-2"
+    // if(roomInformationResponseJSON[2]["tech"] === "technology-access") {
+    //     document.getElementById('tag-2').innerText = "#tech-acess";
+    // } else {
+    //     document.getElementById('tag-2').innerText = "#" + splitArr[2]; 
+    // }
 
     // Map 
 

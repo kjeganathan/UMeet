@@ -67,12 +67,11 @@
 }
 
 .tags-text {
-    padding-top: 10px;
-    font-size: 15px;
+    padding-top: 20px;
 }
 
 p.tags-design {
-    width: 160px;
+    width: 150px;
     height: 50px;
     text-align: center;
     line-height: 50px;
@@ -140,6 +139,10 @@ p.tags-design {
 .description {
     font-size: 15px;
     width: 90%;
+}
+
+.popular-features-item {
+    margin-left: 20px
 }
 
 table {
