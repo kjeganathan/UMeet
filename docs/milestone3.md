@@ -48,10 +48,16 @@ We used a PostgreSQL database for this project.
 
 We created the PostgreSQL database and connected it to our Heroku app. From there, we finalized all of the CRUD operations for our application. roomProfile.js and userProfile.js both pull information from the database dependent on the roomid/userid saved in local storage. 
 
-- Create: create a new user 
-- Read: read all room information such as building name, room, popular features, tags, etc. 
-- Update: update user information 
-- Delete: delete a user 
+Some of the CRUD operations we worked on were:
+
+- Create: create a new user
+- Read: read all room information from the database such as building name, room, popular features, tags, etc. 
+- Update: update user information through editing
+- Delete: delete a user from the database
+
+Some pictures to demonstrate the CRUD operations worked on:
+
+Create Account:  A user can create an account with their first name, last name
 
 User Profile: The user email and name can be edited inline, which will update the database. The user can also be deleted from this page.
 
