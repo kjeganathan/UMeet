@@ -64,7 +64,7 @@ Visual Examples:
 <img width="480" src="https://user-images.githubusercontent.com/68821572/143328610-9f100857-8a34-4283-8537-b2d4b0add067.png">
 
 #### iii. Room Profile: The room and building information is pulled from the database, including tags, room and building name, and popular features (and more).
-<img width="480" src="https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png">
+<img width="680" src="https://user-images.githubusercontent.com/26130113/143325801-ffab709e-7f07-4dba-988f-1efd39907f9f.png">
 
 
 ### Database Screenshots 
