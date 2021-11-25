@@ -40,9 +40,9 @@ We used a PostgreSQL database for this project.
 | type              | varchar   | The type of the room              |
 
 ## Contributions
-- Disha: Collected data for on-campus room information and added it to Heroku database, created database connections and completed backend endpoints and functionality for room profile page, added client-side connections to the server for room profile page
-- Kavya: Created database connections and completed backend endpoints and functionality for user profile page + login page, added client-side connections to the server for room profile page + login page, created overall heroku database connection for the app
-- Laura: Worked on milestone 3 documentation as well as worked on creating linkage between booking page and room profile page
+- Disha: Collected data for on-campus room information from multiple UMass information repositories and compiled into one CSV file, then parsed CSV file into Heroku database to create rooms table, also created database connections and completed backend endpoints + functionality for roomProfilePage, finally, added client-side connections to the server for roomProfilePage
+- Kavya: Created database connections and completed backend endpoints + functionality for userProfilePage + logIn page, added client-side connections to the server for userProfilePage + logIn page, finalized Heroku database connection, and created user table in db 
+- Laura: Worked on milestone 3 documentation as well as working on creating linkage between bookingPage and roomProfilePage 
 
 ## Milestone Overview
 
