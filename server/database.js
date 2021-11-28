@@ -99,6 +99,13 @@ async function getRoomInformation(roomid) {
     );
 }
 
+async function getEligibleRooms(startTime, endTime, date, capacity) {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms WHERE startTime =< $1 AND endTime >= $2 AND date = ? AND capacity >= $4;", [roomid])
+    );
+}
+
   module.exports = {
     addUser,
     getUserByEmail,
