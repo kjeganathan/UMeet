@@ -26,3 +26,4 @@ logoutButton.addEventListener('click', () => {
     localStorage.removeItem("password");
     document.location.href = "https://u-meet.herokuapp.com/";
 });
+
