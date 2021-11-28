@@ -89,7 +89,7 @@ body {
     justify-content: flex-start;
     left: 2.17%;
     right: 87.29%;
-    top: 29.33%;
+    top: 25%;
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
@@ -97,7 +97,7 @@ body {
     height: 80px;
 }
 
-.icon{
+.icon {
     padding-left:10%;
     padding-top:12%;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 .inputNavTitle {
-    position: absolute;
+    position: fixed;
     left: 4.89%;
     right: 90.67%;
     top: 33.33%;
@@ -133,14 +133,14 @@ body {
     color: #000000;
 }
 
-.endTime{
+.endTime {
     position: absolute;
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
     left: 18.1%;
     right: 71.36%;
-    top: 29.33%;
+    top: 25%;
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
@@ -155,22 +155,23 @@ body {
     justify-content: flex-start;
     left: 34.09%;
     right: 54.31%;
-    top: 29.33%;
+    top: 25%;
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
-    width: 310px;
+    width: 250px;
     height: 80px;
+    margin-bottom: 30px;
 }
 
-.attendeeNumber{
+.attendeeNumber {
     position: absolute;
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 57.38%;
-    right: 38.02%;
-    top: 29.33%;
+    left: 52.95%;
+    right: 30.02%;
+    top: 25%;
     bottom: 29.33%;
     background: #FFFFFF;
     border-radius: 20px;
@@ -263,17 +264,17 @@ body {
 }
 
 .starRate{
-display:flex;
-flex-direction:row;
-justify-content:center;
-background: #FFFFFF;
-border: 1px solid #AAAAAA;
-box-sizing: border-box;
-height:41px;
-width:73px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-margin-right:20px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+    height:41px;
+    width:73px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-right:20px;
 }
 
 .starText{
@@ -315,16 +316,16 @@ margin-right:20px;
 
   /* Search Button Styling */
 
-.search{
+.search {
     position: absolute;
-    left: 75.67%;
+    left: 71.67%;
     right: 23.15%;
-    top: 26.67%;
+    top: 32%;
     bottom: 32%;
     border-radius: 20px;
 }
 
-#searchButton{
+#searchButton {
     border-radius:20px;
     width:202px;
     height:62px;
