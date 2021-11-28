@@ -312,6 +312,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 20px;
 }
 
   /* Search Button Styling */
@@ -339,3 +340,9 @@ body {
 .form-control {
     border-color: white;
 }
+
+.card-stars {
+    text-align: center;
+    padding-top: 10px;
+  }
+

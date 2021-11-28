@@ -6,7 +6,9 @@
         <meta charset="UTF-8" />
         <title>Booking Page</title>
         <script type="module" src="js/createBooking.js" defer></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -97,86 +99,72 @@
                     </svg>
                     <h4 style="padding-bottom: 30px;"> &nbsp; Filter By </h4>
                 </div>
-
                 <div>
                     <!--Popular Filters Section-->
-                    <div class="boldText">Popular Filters</div>
-                    <br/>
-
-                        <div class="form-check">
+                    <div style="padding-bottom: 30px;" class="boldText">Popular Filters</div>
+                        <div style="padding-bottom: 20px;" class="form-check">
                             <input id="" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="flexCheckDefault">
                             Hybrid Classroom (Tech Enabled)
                             </label>
                         </div>
-                        <br/>
 
-                        <div class="form-check">
+                        <div style="padding-bottom: 20px;" class="form-check">
                             <input class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="flexCheckDefault">
                             Excellent Ratings (4 stars or above)
                             </label>
                         </div>
-                        <br/>
 
-                        <div class="form-check">
+                        <div style="padding-bottom: 20px;" class="form-check">
                             <input class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="flexCheckDefault">
                             Small Capacity (below 40)
                             </label>
                         </div>
-                        <br/>
 
-                        <div class="form-check">
+                        <div style="padding-bottom: 20px;" class="form-check">
                             <input class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="flexCheckDefault">
                             Auditorium
                             </label>
                         </div>
-                        <br/> 
 
-                        <div class="form-check">
+                        <div style="padding-bottom: 20px;" class="form-check">
                             <input class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="flexCheckDefault">
                             Team-Based Learning Classroom
                             </label>
                         </div>
-                        <br/>
-
                     </div>
-                    <br/>
-                    <br/>
-                    <br/>
+                </div>
+            </div>
+        </div>
 
                 <!--Room Cards-->
                 <div class="card" id="card1">
                     <div class="card-horizontal">
-                        <div class="img-square-wrapper" >
-                            <img class="roomPicture" src="https://www.umass.edu/cp/sites/default/files/Integrative%20Learning%20Center%20%28ILC%29_02.jpg" height="180px" width="300px" alt="Card image cap">
-                        </div>
                         <div class="card-body">
                             <div class="flex-card-title">
                                 <!--Card Room Name-->
-                                <h4 id="building1" class="card-title">Ag. Engineering Bldg Room 119</h4>
+                                <h4 id="card-building" class="card-title">Room Name Here</h4>
                                 <!--Card Room Max Capacity-->
-                                <span>Max Capacity: 151</span>
+                                <p id="card-capacty" style="padding-right: 20px">Capacity: Here</p>
                             </div>
-                            <br/>
-                            <!--Card Room Description-->
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                             <!--Card Room Star Rating-->
                             <div class="stars">
-                                <div class="clip-star"></div>
-                                <div class="clip-star"></div>
-                                <div class="clip-star"></div>
-                                <div class="clip-star"></div>
-                                <div class="empty-star"></div>
-                                &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-                                <button type="button" class="btn btn-dark" id="n111details">Details</button>
+                                <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
+                                <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
+                                <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
+                                <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
+                                <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
                             </div>
+                            <!--Card Room Description-->
+                            <p id="card-room-type" class="card-text">Room Type Here</p>
+                            <p id="card-address" class="card-text">Address Here</p>
+                            <button style="margin-left: 600px" type="button" class="card-button btn btn-dark" id="n111details">Details</button>
                         </div>
                     </div>
                 </div>
-  
     </body>
 </html>
