@@ -34,7 +34,6 @@
 
 .banner-stars {
   text-align: center;
-  padding-top: 10px;
 }
 
 .container {
@@ -162,4 +161,11 @@ table {
     background-color: #dddddd;
   }
 
- 
+.bookingButton {
+    height:40px; 
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:5%; 
+    left:90%;
+}

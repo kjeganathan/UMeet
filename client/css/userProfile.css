@@ -126,7 +126,8 @@
   color: black;
   margin-top: 400px;
   left: 0px;
-  margin-left: 0px;
+  margin-left: 10px;
+  font-size: 25px;
 }
 
 /* Login and Create Account Header Banner Styling */

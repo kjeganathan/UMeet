@@ -346,3 +346,8 @@ body {
     padding-top: 10px;
   }
 
+.card-test {
+    padding: 1rem;
+    border: 1px solid black;
+    margin: 1rem;
+}
