@@ -35,4 +35,3 @@ loginButton.addEventListener('click', async () => {
      //store email in localstorage.json
     document.location.href = "https://u-meet.herokuapp.com/profilePage";
     });
-
