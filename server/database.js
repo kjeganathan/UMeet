@@ -106,6 +106,13 @@ async function getEligibleRooms(startTime, endTime, date, capacity) {
     );
 }
 
+async function getAllRooms() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms;")
+    );
+}
+
   module.exports = {
     addUser,
     getUserByEmail,
@@ -114,5 +121,6 @@ async function getEligibleRooms(startTime, endTime, date, capacity) {
     updateUserEmail,
     delUser, 
     getRoomID, 
-    getRoomInformation
+    getRoomInformation,
+    getAllRooms
   };

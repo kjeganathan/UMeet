@@ -92,6 +92,10 @@ app.post('/roomInformation', async (req, res) => {
     res.send(JSON.stringify(await dblast.getRoomInformation(data.roomid)));
 });
 
+app.get('/allRooms', async (req,res) => {
+    res.send(JSON.stringify(await dblast.getAllRooms()));
+})
+
 /*
 * Room objects don't currently have isAvailable attribute
 * Once that is added we can simply check to see if the attribute
