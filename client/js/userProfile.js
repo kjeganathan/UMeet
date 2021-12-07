@@ -109,6 +109,11 @@ window.onclick = function(event) {
   }
 }
 
+// Create booking cards
+let bookings = [
+  
+];
+
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
   localStorage.removeItem("roomid");
