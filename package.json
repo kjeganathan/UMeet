@@ -1,13 +1,20 @@
 {
-  "name": "cs326-final-team-eta",
-  "version": "1.0.0",
-  "description": "",
-  "main": "expressindex.js",
-  "scripts": {
-    "start": "node expressindex.js"
-  },
-  "keywords": [],
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "cs326-final-team-eta",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/index.js"
+    },
+    "keywords": [],
+    "dependencies": {
+        "config": "^3.3.6",
+        "csv": "^6.0.4",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "pg": "^8.7.1",
+        "pg-promise": "^10.11.1",
+        "postgres": "^1.0.2",
+        "requests": "^0.3.0"
+    }
 }

@@ -1,20 +1,14 @@
 'use strict';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
 const express = require('express');
 let http = require('http');
-let url = require('url');
 let fs = require('fs');
 const path = require('path');
+const dblast = require("./database.js");
 const app = express();
 
 app.use(express.json()); // lets you handle JSON input
-
-const port = 3000; // specify the port 
-
 app.use(express.static('client/')); // specify the directory 
-
-let data = {};
-const filename = 'data.json';
-data = JSON.parse(fs.readFileSync(filename));
 
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
@@ -33,9 +27,22 @@ app.get('/roomProfilePage', (req, res) => {
     res.sendFile(path.resolve('./client/roomProfile.html'));
 });
 
-app.get('/editInfo', (req,res) => {
-    console.log("User Info has been updated");
-    res.send();
+// creating API endpoints 
+app.post("/deleteUser", async (req, res) => {
+    const data = req.body;
+    await dblast.delUser(data.email);
+});
+
+app.post('/getRoomById', async (req,res) => {
+    const data = req.body;
+    res.send(JSON.stringify(await dblast.getRoomID(data.building)));
+});
+
+app.post('/editInfo', async (req,res) => {
+    const data = req.body;
+    await dblast.updateUserFirstName(data.firstname, data.password);
+    await dblast.updateUserLastName(data.lastname, data.password);
+    await dblast.updateUserEmail(data.email, data.password);
 });
 
 app.get('/deleteProfile', (req, res) => {
@@ -49,23 +56,16 @@ app.get('/login', (req, res) => {
 });
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-app.post('/createAccount', (req, res) => {
-    data["users"].push(req.body.user);
-    let strInput = JSON.stringify(data);
-    fs.writeFileSync(filename, strInput);
+app.post('/createAccount', async (req, res) => {
+    const data = req.body;
+    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
     console.log(`Created new account successfully!`);
 });
 
 // browser url http://localhost:3000/userInfo?userId=1
-app.get('/userInfo', (req, res) => {
-    const k = req.query["userId"];
-    for(let i = 0 ; i < data["users"].length; ++i){
-        if(k === JSON.stringify(data["users"][i].userId)){
-            console.log(data["users"][i]);
-            res.send(data["users"][i]);
-        }
-    }
-    res.send();
+app.post('/userInfo', async (req, res) => {
+    const data = req.body;
+    res.send(JSON.stringify(await dblast.getUserByEmail(data.email)));
 });
 
 // https://www.codegrepper.com/code-examples/javascript/app.delete%28%29+express
@@ -83,40 +83,18 @@ app.delete('/users/:id', (req, res, next) => {
   // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', (req, res) => {
     data["users"].pop(req.body.user);
-    // let strInput = JSON.stringify(data);
-    // fs.writeFileSync(filename, strInput);
     console.log(`Deleted account successfully!`);
 });
 
-// browser url http://localhost:3000/findByName?roomName=N211
-app.get('/findByName', (req, res) => {
-    const k = req.query["roomName"];
-    // console.log(k);
-    for(let i = 0 ; i < data["rooms"].length; ++i){
-        // console.log(i);
-        // console.log(data["rooms"][i].roomName);
-        if(k === (data["rooms"][i].roomName)) {
-            // console.log("reached inside if statement");
-            console.log(data["rooms"][i]);
-            res.send(data["rooms"][i]);
-        }
-    }
-    res.send();
+// Gather Room Information 
+app.post('/roomInformation', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getRoomInformation(data.roomid)));
 });
 
-// browser url http://localhost:3000/roomProfile?roomId=1
-app.get('/roomProfile', (req, res) => {
-    const k = req.query["roomId"];
-    // console.log(k);
-    for(let i = 0 ; i < data["rooms"].length; ++i){
-        if(k === JSON.stringify(data["rooms"][i].roomId)) {
-            // console.log(i);
-            console.log(data["rooms"][i]);
-            res.send(data["rooms"][i]);
-        }
-    }
-    res.send();
-});
+app.get('/allRooms', async (req,res) => {
+    res.send(JSON.stringify(await dblast.getAllRooms()));
+})
 
 /*
 * Room objects don't currently have isAvailable attribute
@@ -135,6 +113,5 @@ app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
   });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+const port = 3000; // specify the port 
+app.listen(process.env.PORT || port);

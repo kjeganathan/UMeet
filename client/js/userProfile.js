@@ -1,33 +1,85 @@
 'use strict';
 
+const email = localStorage.getItem("email");
+const password = localStorage.getItem("password");
+
+window.addEventListener("load", async function () {
+
 let personDetails = document.getElementById('personDetails');
 const namediv = document.createElement('div');
 namediv.classList.add('profileName');
 namediv.setAttribute('contentEditable', true);
 namediv.setAttribute('id', 'profileName');
-namediv.innerText = "Jane Doe";
+
+let responseUser = await fetch('/userInfo', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+      email:JSON.parse(email)
+  })
+});
+
+let userdata = await responseUser.json(); 
+//console.log(userdata[0]["firstname"] + " " + userdata[0]["lastname"]);
+
+namediv.innerText = userdata[0]["firstname"] + " " + userdata[0]["lastname"];
 personDetails.appendChild(namediv);
 
 const emaildiv = document.createElement('div');
 emaildiv.classList.add('profileEmail');
 emaildiv.setAttribute('contentEditable', true);
 emaildiv.setAttribute('id', 'profileEmail');
-emaildiv.innerText = "janeDoe@umass.edu";
+emaildiv.innerText = userdata[0]["email"];
 personDetails.appendChild(emaildiv);
+
+});
+
 
 let btn = document.getElementById("myBtn");
 let deleteBtn = document.getElementById("deleteBtn");
 
+//Delete User
 deleteBtn.addEventListener('click', async () => {
-    document.location.href = "http://localhost:3000/";
-    await fetch('/deleteProfile');
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    document.location.href = "https://u-meet.herokuapp.com/";
+    await fetch('/deleteUser', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email:JSON.parse(email)
+      })
+    });
+    
 });
 
-
+//Edit User Info
 btn.addEventListener('click', async () => {
     const email = document.getElementById('profileEmail').innerText;
     const name = document.getElementById('profileName').innerText;
-    await fetch('/editInfo');
+    const nameArray = name.split(" ");
+    const firstName = nameArray[0];
+    const lastName = nameArray[1];
+    localStorage.setItem("email", JSON.stringify(email));
+    //edits info based on password
+    await fetch('/editInfo', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email:email,
+          password:JSON.parse(password),
+          firstname:firstName,
+          lastname:lastName
+      })
+    });
+    
+    //person's info is displayed based on their email in localstorage so email in localstorage has to be updated
     window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
 });
 
@@ -57,8 +109,16 @@ window.onclick = function(event) {
   }
 }
 
+// Create booking cards
+let bookings = [
+  
+];
+
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
-    document.location.href = "http://localhost:3000/";
+  localStorage.removeItem("roomid");
+  localStorage.removeItem("email");
+  localStorage.removeItem("password");
+  document.location.href = "https://u-meet.herokuapp.com/";
 });
 

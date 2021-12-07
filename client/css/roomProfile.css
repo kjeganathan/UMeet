@@ -20,17 +20,20 @@
 }
 
 .banner-subtext {
-    padding-top: 200px;
-    margin-left: 70px;
+    padding-top: 150px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
 }
 
-.banner-title{  
-    padding-top: 0px;
-    margin-left: 70px;
+.banner-title {  
+    font-size: 40px;
+    font-weight: 2;
+    text-align: center;
 }
 
 .banner-stars {
-    margin-left: 70px;
+  text-align: center;
 }
 
 .container {
@@ -38,7 +41,8 @@
 }
 
 .popular-features {
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 90px;
 }
 
 .pf-icon {
@@ -46,20 +50,19 @@
 }
 
 .location { 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-/* Set the size of the div element that contains the map */
+.location-title {
+    padding-bottom: 100px; 
+}
+
 .map {
-    height: 200px;
-    /* The height is 400 pixels */
-    width: 100%;
-    /* The width is the width of the web page */
-}
-
-.tags {
-    padding-top: 40px;
+  width: 95%;
+  height: 400px; 
+  border: 0;
+  padding-top: 10px; 
 }
 
 .tags-text {
@@ -71,8 +74,9 @@ p.tags-design {
     height: 50px;
     text-align: center;
     line-height: 50px;
-    background-color: rgba(108, 92, 231, 0.28);
+    background-color: #5E17EB;
     border-radius: 30px;
+    color: white;
   }
 
 .flex-header-bar{
@@ -129,12 +133,39 @@ p.tags-design {
     background-color: rgba(108, 92, 231, 0.749);
     color: white;
     border-radius: 8px;
+    border-color: rgba(108, 92, 231, 0.749);
   }
 
-#dot{ 
-    margin-top:5px;
-    margin-left:30px;
-    margin-right:30px;
-     fill:#FDCB6E;
- }
+.description {
+    font-size: 15px;
+    width: 90%;
+}
 
+.popular-features-item {
+    margin-left: 20px
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.bookingButton {
+    height:40px; 
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:5%; 
+    left:90%;
+}

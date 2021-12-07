@@ -1,0 +1,243 @@
+room,address,building,capacity,tech,type,building_acronym,rating ,address,is_booked,roomid
+308,"250 NATURAL RESOURCES RD, Amherst, MA 01003 ",Ag.Engin Central Room 308,38,,,AEBC,2,,FALSE,1
+119,"250 NATURAL RESOURCES RD, Amherst, MA 01003 ",Ag. Engineering Bldg Room 119,109,ECHO,,AEBN,2,,FALSE,2
+101,"715 N PLEASANT, Amherst, MA 01003 ",Arnold Room 101,43,ECHO,,ARND,3,,FALSE,3
+104,"715 N PLEASANT, Amherst, MA 01003 ",Arnold Room 104,17,,,ARND,4,,FALSE,4
+108,"715 N PLEASANT, Amherst, MA 01003 ",Arnold Room 108,19,,,ARND,4,,FALSE,5
+140,"715 N PLEASANT, Amherst, MA 01003 ",Arnold Room 140,45,,,ARND,5,,FALSE,6
+109,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 109,30,,,BART,4,,FALSE,7
+119,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 119,41,,,BART,2,,FALSE,8
+121,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 121,28,,,BART,2,,FALSE,9
+125,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 125,41,,,BART,2,,FALSE,10
+127,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 127,30,,,BART,2,,FALSE,11
+131,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 131,27,,,BART,2,,FALSE,12
+206,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 206,55,,,BART,2,,FALSE,13
+3,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 3,30,,,BART,2,,FALSE,14
+35,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 35,26,,,BART,2,,FALSE,15
+456,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 456,15,,,BART,2,,FALSE,16
+474,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Room 474,16,,,BART,2,,FALSE,17
+61,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 61,62,ECHO,,BART,2,,FALSE,18
+65,"130 HICKS WAY, Amherst, MA 01003 ",Bartlett Hall Room 65,334,ECHO/HK,AUD,BART,2,,FALSE,19
+209,"201 NATURAL RESOURCES RD, Amherst, MA 01003 ",Bowditch Hall Room 209,21,,,BOWD,2,,FALSE,20
+51,"131 COMMONWEALTH AVE, Amherst, MA 01003 ",Boyden Room 51,49,,,BOYD,2,,FALSE,21
+329,"100 HOLDSWORTH WAY, Amherst, MA 01003 ",Chenoweth Lab Addition Room 329,32,,,CHEN,4,,FALSE,22
+108,"100 HOLDSWORTH WAY, Amherst, MA 01003 ",Chenoweth Lab Room 108,32,,,CHNW,3,,FALSE,23
+113,"100 HOLDSWORTH WAY, Amherst, MA 01003 ",Chenoweth Lab Room 113,41,,,CHNW,5,,FALSE,24
+109,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 109,45,,,DKSN,2,,FALSE,25
+110,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 110,48,ECHO,,DKSN,3,,FALSE,26
+112,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 112,43,ECHO,,DKSN,1,,FALSE,27
+114,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 114,46,,,DKSN,2,,FALSE,28
+206,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 206,25,,,DKSN,3,,FALSE,29
+209,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 209,43,ECHO,,DKSN,4,,FALSE,30
+212,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 212,48,ECHO,,DKSN,2,,FALSE,31
+214,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 214,44,,,DKSN,1,,FALSE,32
+216,"155 HICKS WAY, Amherst, MA 01003 ",Dickinson Hall Room 216,46,,,DKSN,4,,FALSE,33
+124,"40 CAMPUS CENTER WAY, Amherst, MA 01003 ",Draper Hall Room 124,41,ECHO,,DRA,4,,FALSE,34
+303,", Amherst, MA 01003 ",Engineering Laboratory Room 303,81,ECHO,,ELAB,1,,FALSE,35
+304,", Amherst, MA 01003 ",Engineering Laboratory Room 304,64,ECHO,,ELAB,2,,FALSE,36
+305,", Amherst, MA 01003 ",Engineering Laboratory Room 305,38,ECHO,,ELAB,3,,FALSE,37
+306,", Amherst, MA 01003 ",Engineering Laboratory Room 306,52,ECHO,,ELAB,4,,FALSE,38
+323,", Amherst, MA 01003 ",Engineering Laboratory Room 323,62,ECHO,,ELAB,2,,FALSE,39
+325,", Amherst, MA 01003 ",Engineering Laboratory Room 325,35,ECHO,,ELAB,3,,FALSE,40
+327,", Amherst, MA 01003 ",Engineering Laboratory Room 327,29,ECHO,,ELAB,4,,FALSE,41
+119,", Amherst, MA 01003 ",Engineering Lab II Room 119,193,ECHO,AUD,ELABII,5,,FALSE,42
+210,", Amherst, MA 01003 ",Elm Room 210,24,ECHO,,ELM,2,,FALSE,43
+212,", Amherst, MA 01003 ",Elm Room 212,24,ECHO,,ELM,3,,FALSE,44
+214,", Amherst, MA 01003 ",Elm Room 214,24,,,ELM,2,,FALSE,45
+224,", Amherst, MA 01003 ",Elm Room 224,24,,,ELM,4,,FALSE,46
+226,", Amherst, MA 01003 ",Elm Room 226,24,,,ELM,1,,FALSE,47
+227,", Amherst, MA 01003 ",Elm Room 227,24,,,ELM,2,,FALSE,48
+228,", Amherst, MA 01003 ",Elm Room 228,24,,,ELM,4,,FALSE,49
+230,", Amherst, MA 01003 ",Elm Room 230,24,,,ELM,3,,FALSE,50
+301,", Amherst, MA 01003 ",Elm Room 301,24,,,ELM,4,,FALSE,51
+11,", Amherst, MA 01003 ",Fernald Hall Room 11,110,,AUD,FERN,1,,FALSE,52
+103,", Amherst, MA 01003 ",Flint Laboratory Room 103,41,,,FLIN,2,,FALSE,53
+105,", Amherst, MA 01003 ",Flint Laboratory Room 105,65,,,FLIN,3,,FALSE,54
+201,", Amherst, MA 01003 ",Flint Lab Room 201,65,ECHO,,FLIN,1,,FALSE,55
+102,", Amherst, MA 01003 ",French  Hall Room 102,56,ECHO,,FREN,2,,FALSE,56
+106,", Amherst, MA 01003 ",French Hall Room 106,27,,,FREN,3,,FALSE,57
+101,", Amherst, MA 01003 ",Furcolo Hall 101,40,ECHO,,FURC,4,,FALSE,58
+102,", Amherst, MA 01003 ",Furcolo Hall 102,48,ECHO,,FURC,5,,FALSE,59
+125,", Amherst, MA 01003 ",Furcolo Carney Fam Auditorium,195,ECHO/HK,AUD,FURC,2,,FALSE,60
+W107,", Amherst, MA 01003 ",Furcolo W Room 107,42,,,FURC,3,,FALSE,61
+608,", Amherst, MA 01003 ",Goodell Room 608,54,ECHO/HK,TBL,GDLL,4,,FALSE,62
+20,", Amherst, MA 01003 ",Goessmann Laboratory Room 20,159,ECHO/HK,AUD,GOES,5,,FALSE,63
+151,", Amherst, MA 01003 ",Goessmann Lab Addition Room 151,60,ECHO,,GSMN,2,,FALSE,64
+152,", Amherst, MA 01003 ",Goessmann lab Addition 152,60,ECHO,,GSMN,3,,FALSE,65
+51,", Amherst, MA 01003 ",Goessmann Lab. Addtn Room 51,65,ECHO,,GSMN,4,,FALSE,66
+64,", Amherst, MA 01003 ",Goessmann Lab. Add Room 64,180,ECHO/HK,AUD,GSMN,5,,FALSE,67
+130,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 130,31,ECHO,,HAS,2,,FALSE,68
+134,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 134,120,ECHO/HK,AUD,HAS,3,,FALSE,69
+136,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 136,24,ECHO,,HAS,4,,FALSE,70
+137,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 137,42,ECHO,,HAS,5,,FALSE,71
+138,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 138,56,ECHO,,HAS,2,,FALSE,72
+228,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 228,35,ECHO,,HAS,3,,FALSE,73
+230,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 230,30,ECHO,,HAS,4,,FALSE,74
+242,", Amherst, MA 01003 ",Hasbrouck Laboratory Room 242,33,,,HAS,5,,FALSE,75
+104A,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 104A,26,,,HASA,2,,FALSE,76
+104B,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 104B,24,,,HASA,3,,FALSE,77
+106,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 106,20,,,HASA,4,,FALSE,78
+107,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 107,28,,,HASA,5,,FALSE,79
+109,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 109,39,ECHO,,HASA,2,,FALSE,80
+111,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 111,37,,,HASA,3,,FALSE,81
+113,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 113,52,,,HASA,4,,FALSE,82
+124,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 124,120,ECHO/HK,AUD,HASA,5,,FALSE,83
+126,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 126,120,ECHO/HK,AUD,HASA,2,,FALSE,84
+20,", Amherst, MA 01003 ",Hasbrouck Lab Add Room 20,305,ECHO,AUD,HASA,3,,FALSE,85
+102,", Amherst, MA 01003 ",Herter Hall Room 102,30,,,HERT,4,,FALSE,86
+106,", Amherst, MA 01003 ",Herter Hall Room 106,18,,,HERT,5,,FALSE,87
+107,", Amherst, MA 01003 ",Herter Hall Room 107,34,,,HERT,2,,FALSE,88
+108,", Amherst, MA 01003 ",Herter Hall Room 108,21,,,HERT,3,,FALSE,89
+110,", Amherst, MA 01003 ",Herter Hall Room 110,22,,,HERT,4,,FALSE,90
+111,", Amherst, MA 01003 ",Herter Hall Room 111,36,,,HERT,5,,FALSE,91
+112,", Amherst, MA 01003 ",Herter Hall Room 112,18,,,HERT,2,,FALSE,92
+113,", Amherst, MA 01003 ",Herter Hall Room 113,35,,,HERT,3,,FALSE,93
+114,", Amherst, MA 01003 ",Herter Hall Room 114,22,,,HERT,4,,FALSE,94
+116,", Amherst, MA 01003 ",Herter Hall Room 116,42,ECHO,,HERT,5,,FALSE,95
+117,", Amherst, MA 01003 ",Herter Hall Room 117,34,,,HERT,2,,FALSE,96
+118,", Amherst, MA 01003 ",Herter Hall Room 118,34,,,HERT,3,,FALSE,97
+119,", Amherst, MA 01003 ",Herter Hall Room 119,36,,,HERT,4,,FALSE,98
+201,", Amherst, MA 01003 ",Herter Hall Room 201,44,,,HERT,5,,FALSE,99
+202,", Amherst, MA 01003 ",Herter Hall Room 202,22,,,HERT,2,,FALSE,100
+204,", Amherst, MA 01003 ",Herter Hall Room 204,18,,,HERT,3,,FALSE,101
+205,", Amherst, MA 01003 ",Herter Hall Room 205,50,,,HERT,4,,FALSE,102
+206,", Amherst, MA 01003 ",Herter Hall Room 206,35,,,HERT,5,,FALSE,103
+207,", Amherst, MA 01003 ",Herter Hall Room 207,32,,,HERT,2,,FALSE,104
+208,", Amherst, MA 01003 ",Herter Hall Room 208,15,,,HERT,3,,FALSE,105
+209,", Amherst, MA 01003 ",Herter Hall Room 209,35,,,HERT,4,,FALSE,106
+210,", Amherst, MA 01003 ",Herter Hall Room 210,35,,,HERT,5,,FALSE,107
+211,", Amherst, MA 01003 ",Herter Hall Room 211,32,,,HERT,2,,FALSE,108
+212,", Amherst, MA 01003 ",Herter Hall Room 212,29,,,HERT,3,,FALSE,109
+214,", Amherst, MA 01003 ",Herter Hall Room 214,14,,,HERT,4,,FALSE,110
+217,", Amherst, MA 01003 ",Herter Hall Room 217,50,,,HERT,5,,FALSE,111
+222,", Amherst, MA 01003 ",Herter Hall Room 222,23,,,HERT,2,,FALSE,112
+224,", Amherst, MA 01003 ",Herter Hall Room 224,25,,,HERT,3,,FALSE,113
+225,", Amherst, MA 01003 ",Herter Hall Room 225,44,ECHO,,HERT,4,,FALSE,114
+227,", Amherst, MA 01003 ",Herter Hall Room 227,150,ECHO/HK,AUD,HERT,5,,FALSE,115
+231,", Amherst, MA 01003 ",Herter Hall Room 231,150,ECHO/HK,AUD,HERT,2,,FALSE,116
+342,", Amherst, MA 01003 ",Herter Hall Room 342,16,,,HERT,3,,FALSE,117
+400,", Amherst, MA 01003 ",Herter Hall Room 400,16,,,HERT,4,,FALSE,118
+444,", Amherst, MA 01003 ",Herter Hall Room 444,15,,,HERT,5,,FALSE,119
+546,", Amherst, MA 01003 ",Herter Hall Room 546,16,,,HERT,2,,FALSE,120
+640,", Amherst, MA 01003 ",Herter Hall Room 640,16,,,HERT,3,,FALSE,121
+746,", Amherst, MA 01003 ",Herter Hall Room 746,16,,,HERT,4,,FALSE,122
+202,", Amherst, MA 01003 ",Holdsworth Hall Room 202,58,ECHO,,HOLD,5,,FALSE,123
+203,", Amherst, MA 01003 ",Holdsworth Hall Room 203,80,ECHO,,HOLD,2,,FALSE,124
+305,", Amherst, MA 01003 ",Holdsworth Hall Room 305,51,ECHO,,HOLD,3,,FALSE,125
+N101,", Amherst, MA 01003 ",Integ. Learning Center N101,62,ECHO,,ILC,4,,FALSE,126
+N111,", Amherst, MA 01003 ",Integ. Learning Center N 111,63,ECHO,TBL,ILC,5,,FALSE,127
+N151,", Amherst, MA 01003 ",Integ. Learning Center N151,340,ECHO,AUD,ILC,3,,FALSE,128
+N155,", Amherst, MA 01003 ",Integ. Learning Center N155,33,ECHO,,ILC,4,,FALSE,129
+N211,", Amherst, MA 01003 ",Integr. Learning Center N211,52,ECHO,,ILC,5,,FALSE,130
+N255,", Amherst, MA 01003 ",Integ. Learning Center N255,40,ECHO,,ILC,3,,FALSE,131
+S110,", Amherst, MA 01003 ",Integ.learning Center S110,99,ECHO,TBL,ILC,4,,FALSE,132
+S120,", Amherst, MA 01003 ",Integ. Learning Center S120,99,ECHO,TBL,ILC,5,,FALSE,133
+S131,", Amherst, MA 01003 ",Integ. Learning Center S131,115,ECHO,,ILC,3,,FALSE,134
+S140,", Amherst, MA 01003 ",Integ. Learning Center S140,102,ECHO,,ILC,4,,FALSE,135
+S211,", Amherst, MA 01003 ",Integ. Learning Center S211,102,ECHO,,ILC,5,,FALSE,136
+S220,", Amherst, MA 01003 ",Integ. Learning Center S220,99,ECHO,TBL,ILC,3,,FALSE,137
+S231,", Amherst, MA 01003 ",Integ. Learning Center S231,60,ECHO,TBLITE,ILC,4,,FALSE,138
+S240,", Amherst, MA 01003 ",Integ. Learning Center S240,125,ECHO,,ILC,5,,FALSE,139
+S311,", Amherst, MA 01003 ",Integ. Learning Center S311,81,ECHO,TBL,ILC,3,,FALSE,140
+S331,", Amherst, MA 01003 ",Integ. Learning Center S331,150,ECHO,AUD,ILC,4,,FALSE,141
+135,", Amherst, MA 01003 ",Integrated Sciences Bldg 135,300,ECHO,AUD,ISB,5,,FALSE,142
+221,", Amherst, MA 01003 ",Integrated Sciences Bldg 221,85,ECHO,,ISB,3,,FALSE,143
+329,", Amherst, MA 01003 ",Integrated Sciences Bldg 329,48,,,ISB,4,,FALSE,144
+A201,", Amherst, MA 01003 ",Lederle Grad Res. Ctr rm A201,42,,,LGRC,5,,FALSE,145
+A203,", Amherst, MA 01003 ",Lederle Grad Res Ctr rm A203,38,ECHO,,LGRC,3,,FALSE,146
+A301,", Amherst, MA 01003 ",Lederle Grad Res Ctr rm A301,66,ECHO/HK,,LGRC,4,,FALSE,147
+1114,", Amherst, MA 01003 ",Lederle Grad Res Tower Room 1114,18,,,LGRT,5,,FALSE,148
+121,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  121,72,ECHO/HK,,LGRT,3,,FALSE,149
+123,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  123,77,ECHO/HK,,LGRT,4,,FALSE,150
+1234,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  1234,21,,,LGRT,5,,FALSE,151
+1322,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  1322,18,,,LGRT,1,,FALSE,152
+1334,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  1334,21,,,LGRT,2,,FALSE,153
+141,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  141,35,,,LGRT,5,,FALSE,154
+143,", Amherst, MA 01003 ",Lederle Grad Res Tower Room 143,33,,,LGRT,3,,FALSE,155
+145,", Amherst, MA 01003 ",Lederle Grad Res Tower Room 145,33,,,LGRT,2,,FALSE,156
+147,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  147,31,,,LGRT,1,,FALSE,157
+171,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  171,34,,,LGRT,4,,FALSE,158
+173,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  173,34,ECHO,,LGRT,5,,FALSE,159
+177,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  177,33,ECHO,,LGRT,3,,FALSE,160
+202,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  202,36,ECHO,,LGRT,4,,FALSE,161
+204,", Amherst, MA 01003 ",Lederle Grad Res Tower Room  204,36,ECHO,,LGRT,2,,FALSE,162
+206,", Amherst, MA 01003 ",Lederle Grad Res Tower Room 206,34,,,LGRT,1,,FALSE,163
+413,", Amherst, MA 01003 ",Machmer Hall Room 413,16,,,MACH,5,,FALSE,164
+E-10,", Amherst, MA 01003 ",Machmer Hall Room E-10,35,,,MACH,3,,FALSE,165
+E-33,", Amherst, MA 01003 ",Machmer Hall Room E-33,36,,,MACH,2,,FALSE,166
+E-35,", Amherst, MA 01003 ",Machmer Hall Room E-35,43,,,MACH,4,,FALSE,167
+E-37,", Amherst, MA 01003 ",Machmer Hall Room E-37,53,,,MACH,1,,FALSE,168
+W-11,", Amherst, MA 01003 ",Machmer Hall Room W-11,34,,,MACH,5,,FALSE,169
+W-15,", Amherst, MA 01003 ",Machmer Hall Room W-15,42,,,MACH,3,,FALSE,170
+W-21,", Amherst, MA 01003 ",Machmer Hall Room W-21,34,,,MACH,2,,FALSE,171
+W-22,", Amherst, MA 01003 ",Machmer Hall Room W-22,36,,,MACH,3,,FALSE,172
+W-23,", Amherst, MA 01003 ",Machmer Hall Room W-23,42,,,MACH,4,,FALSE,173
+W-24,", Amherst, MA 01003 ",Machmer Hall Room W-24,42,,,MACH,5,,FALSE,174
+W-25,", Amherst, MA 01003 ",Machmer Hall Room W-25,42,,,MACH,1,,FALSE,175
+W-26,", Amherst, MA 01003 ",Machmer Hall Room W-26,52,,,MACH,2,,FALSE,176
+W-27,", Amherst, MA 01003 ",Machmer Hall Room W-27,37,,,MACH,3,,FALSE,177
+108,", Amherst, MA 01003 ",Mahar Room 108,469,ECHO/HK,AUD,MAH,4,,FALSE,178
+131,", Amherst, MA 01003 ",Marcus Hall Room 131,325,ECHO,AUD,MARC,5,,FALSE,179
+326,", Amherst, MA 01003 ",Morrill Sci. Ctr.1 Room N326,70,ECHO,,MOR1,3,,FALSE,180
+444,", Amherst, MA 01003 ",Morrill I Room 444,24,,,MOR1,2,,FALSE,181
+N336,", Amherst, MA 01003 ",Morrill Sci. Ctr. I Room  N336,20,,,MOR1,3,,FALSE,182
+N338,", Amherst, MA 01003 ",Morrill Sci. Ctr. I Room  N338,17,,,MOR1,1,,FALSE,183
+N345,", Amherst, MA 01003 ",Morrill Sc Ctr 1 Room N345,30,ECHO,,MOR1,5,,FALSE,184
+N347,", Amherst, MA 01003 ",Morrill Sci Ctr 1 Room  N 347,32,,,MOR1,3,,FALSE,185
+N349,", Amherst, MA 01003 ",Morrill Sci Ctr I  Room N349,22,,,MOR1,2,,FALSE,186
+N375,", Amherst, MA 01003 ",Morrill Sci Ctr 1  Room N375,235,ECHO/HK,AUD,MOR1,4,,FALSE,187
+131,", Amherst, MA 01003 ",Morrill Sci. Ctr. II Room  131,208,ECHO/HK,AUD,MOR2,1,,FALSE,188
+222,", Amherst, MA 01003 ",Morrill Sci Ctr II  Room 222,92,HK,,MOR2,5,,FALSE,189
+319,", Amherst, MA 01003 ",Morrill Sci Ctr II Room 319,50,,,MOR2,3,,FALSE,190
+203,", Amherst, MA 01003 ",Morrill Sci. Ctr. III Room 203,63,,,MOR3,2,,FALSE,191
+317,", Amherst, MA 01003 ",Morrill Sci. Ctr. III Room 317,28,,,MOR3,3,,FALSE,192
+132,", Amherst, MA 01003 ",Marston Hall Room 132,80,HK,,MRST,4,,FALSE,193
+15,", Amherst, MA 01003 ",Marston Hall Room 15,31,,,MRST,5,,FALSE,194
+211,", Amherst, MA 01003 ",Marston Hall Room 211,50,ECHO,,MRST,1,,FALSE,195
+220,", Amherst, MA 01003 ",Marston Hall Room 220,44,ECHO,,MRST,2,,FALSE,196
+21,", Amherst, MA 01003 ",New Africa House Room 21,40,,,NAH,3,,FALSE,197
+26,", Amherst, MA 01003 ",New Africa House Room 26,20,,,NAH,4,,FALSE,198
+311,", Amherst, MA 01003 ",New Africa House Room 311,45,,,NAH,5,,FALSE,199
+401,", Amherst, MA 01003 ",New Africa House Room 401,20,,,NAH,3,,FALSE,200
+E241,", Amherst, MA 01003 ",South College Room E241,40,ECHO,,SC,4,,FALSE,201
+E245,", Amherst, MA 01003 ",South College Room E245,40,ECHO,,SC,3,,FALSE,202
+E470,", Amherst, MA 01003 ",South College Room E470,55,ECHO,,SC,5,,FALSE,203
+E480,", Amherst, MA 01003 ",South College Room E480,30,ECHO,,SC,5,,FALSE,204
+W101,", Amherst, MA 01003 ",South College Room W101,36,ECHO,,SC,3,,FALSE,205
+W201,", Amherst, MA 01003 ",South College Room W201,36,ECHO,,SC,4,,FALSE,206
+W205,", Amherst, MA 01003 ",South College Room W205,30,ECHO,,SC,5,,FALSE,207
+W211,", Amherst, MA 01003 ",South College Room W211,30,ECHO,,SC,4,,FALSE,208
+W219,", Amherst, MA 01003 ",South College Room W219,30,ECHO,,SC,3,,FALSE,209
+W245,", Amherst, MA 01003 ",South College Room W245,106,ECHO,,SC,5,,FALSE,210
+106,", Amherst, MA 01003 ",Skinner Room 106,36,,,SKIN,3,,FALSE,211
+112,", Amherst, MA 01003 ",Skinner Room 112,90,ECHO/HK,,SKIN,2,,FALSE,212
+12,", Amherst, MA 01003 ",Skinner Room 12,72,ECHO/HK,,SKIN,1,,FALSE,213
+201,", Amherst, MA 01003 ",Skinner Room 201,52,,,SKIN,3,,FALSE,214
+117,", Amherst, MA 01003 ",Isenberg School of Management 117,36,,,SOM,4,,FALSE,215
+118,", Amherst, MA 01003 ",Isenberg School of Management 118,44,,,SOM,5,,FALSE,216
+119,", Amherst, MA 01003 ",Isenberg School of Management 119,46,,,SOM,3,,FALSE,217
+120,", Amherst, MA 01003 ",Isenberg School of Management 120,25,,,SOM,4,,FALSE,218
+122,", Amherst, MA 01003 ",Isenberg School of Management 122,34,,,SOM,5,,FALSE,219
+123,", Amherst, MA 01003 ",Isenberg School of Management 123,35,,,SOM,3,,FALSE,220
+124,", Amherst, MA 01003 ",Isenberg School of Management 124,44,,,SOM,4,,FALSE,221
+125,", Amherst, MA 01003 ",Isenberg School of Management 125,34,,,SOM,5,,FALSE,222
+126,", Amherst, MA 01003 ",Isenberg School of Management 126,44,,,SOM,3,,FALSE,223
+127,", Amherst, MA 01003 ",Isenberg School of Management 127,44,,,SOM,4,,FALSE,224
+129,", Amherst, MA 01003 ",Isenberg School of Management 129,35,,,SOM,5,,FALSE,225
+137,", Amherst, MA 01003 ",Isenberg School of Management 137,220,ECHO/HK,AUD,SOM,3,,FALSE,226
+G26,", Amherst, MA 01003 ",Isenberg School of Management G26,42,,,SOM,4,,FALSE,227
+G31,", Amherst, MA 01003 ",Isenberg School of Management G31,32,,,SOM,5,,FALSE,228
+G35,", Amherst, MA 01003 ",Isenberg School of Management G35,31,,,SOM,3,,FALSE,229
+N390,", Amherst, MA 01003 ",Isenberg School of Management N390,0,,,SOM,4,,FALSE,230
+124,", Amherst, MA 01003 ",Stockbridge Hall Room 124,49,,,STK,5,,FALSE,231
+301,", Amherst, MA 01003 ",Stockbridge Hall Room 301,46,ECHO,,STK,3,,FALSE,232
+102,", Amherst, MA 01003 ",Thompson Hall Room 102,229,ECHO/HK,AUD,THOM,4,,FALSE,233
+104,", Amherst, MA 01003 ",Thompson Hall Room 104,301,ECHO/HK,AUD,THOM,5,,FALSE,234
+106,", Amherst, MA 01003 ",Thompson Hall Room 106,229,ECHO/HK,AUD,THOM,1,,FALSE,235
+204,", Amherst, MA 01003 ",Tobin Hall Room 204,64,ECHO,,TOBN,4,,FALSE,236
+304,", Amherst, MA 01003 ",Tobin Hall Room 304,68,ECHO,,TOBN,3,,FALSE,237
+307,", Amherst, MA 01003 ",Tobin Hall Room 307,38,,,TOBN,2,,FALSE,238
+504,", Amherst, MA 01003 ",Tobin Hall Room 504,16,,,TOBN,5,,FALSE,239
+520,", Amherst, MA 01003 ",Tobin Hall Room 520,30,ECHO,,TOBN,3,,FALSE,240
+153,", Amherst, MA 01003 ",Totman Phys. Ed. Bldg. Room 153,50,ECHO,,TOTM,2,,FALSE,241
+156,", Amherst, MA 01003 ",Totman Phys. Ed. Bldg. Room 156,35,ECHO,,TOTM,1,,FALSE,242

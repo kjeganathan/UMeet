@@ -1,74 +1,93 @@
 'use strict';
 
-// Banner: Building name 
-// <div id = "buildingName"></div>
-let buildingName = document.getElementById('buildingName'); 
-const buildingDiv = document.createElement('div');
-buildingDiv.classList.add('building');
-buildingDiv.setAttribute('id', 'building');
-buildingDiv.innerText = "Integrated Learning Center";
-buildingName.appendChild(buildingDiv);
+let roomid = localStorage.getItem("roomid"); 
 
-// Banner: Room name 
-// <div id = "roomName"></div>
-let roomName = document.getElementById('roomName'); 
-const roomDiv = document.createElement('div');
-roomDiv.classList.add('room');
-roomDiv.setAttribute('id', 'room');
-roomDiv.innerText = "N211";
-roomName.appendChild(roomDiv);
+window.addEventListener("load", async function () {
 
-// Banner: stars 
-// <div id = "stars"></div>
+    // fetch room information 
+    let roomInformationResponse = await fetch('/roomInformation', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            roomid:JSON.parse(roomid)
+        })
+    });
 
-// Body left-col: description 
-// <div id = "description"></div>
-let description = document.getElementById('description'); 
-const descriptionDiv = document.createElement('div');
-descriptionDiv.classList.add('room');
-descriptionDiv.setAttribute('id', 'description');
-descriptionDiv.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-description.appendChild(descriptionDiv);
+    // parse response 
+    let roomInformationResponseJSON = await roomInformationResponse.json(); 
+    
+    // Banner: Building name 
+    // id = "building"
+    document.getElementById('building').innerText = roomInformationResponseJSON[0]["building"]; 
 
-// Body left-col: maximum capacity
-// <div id = "maximum-capacity"></div>
-let maximumCapacity = document.getElementById('maximum-capacity'); 
-const maximumCapacityDiv = document.createElement('div');
-maximumCapacityDiv.classList.add('maximumCapacity');
-maximumCapacityDiv.setAttribute('id', 'maximumCapacity');
-maximumCapacityDiv.innerText = "200";
-maximumCapacity.appendChild(maximumCapacityDiv);
+    // Banner: Room name 
+    // id = "room"
+    document.getElementById('room').innerText = "Room: " + roomInformationResponseJSON[0]["room"]; 
 
-// Body left-col: room type  
-// <div id = "room-type"></div>
-let roomType = document.getElementById('room-type'); 
-const roomTypeDiv = document.createElement('div');
-roomTypeDiv.classList.add('roomType');
-roomTypeDiv.setAttribute('id', 'roomType');
-roomTypeDiv.innerText = "Lecture Hall";
-roomType.appendChild(roomTypeDiv);
+    // Banner: stars 
+    // id = "star-i"
+    let starCount = roomInformationResponseJSON[0]["rating"]; 
+    console.log(starCount); 
 
-// Body left-col: list of popular features 
-// <div id = "popular-features"></div>
+    for(let i = 1; i <= starCount; ++i) {
+       document.getElementById("star-" + i).style.color = "#FFFF2E"; 
+       console.log("star-" + i);
+    }
+    
+    // Popular Features 
+    // id="room-type" 
+    if(roomInformationResponseJSON[0]["type"] === null) {
+        document.getElementById('room-type').innerText = "Traditional Classroom"; 
+    } else {
+        document.getElementById('room-type').innerText = roomInformationResponseJSON[0]["type"]; 
+    }
+    
+    // Popular Features 
+    // id="room-capacity" 
+    document.getElementById('room-capacity').innerText = roomInformationResponseJSON[0]["capacity"]; 
 
-// Body left-col: location text 
-// <div id="location-text"></div>
-let locationText = document.getElementById('location-text'); 
-const locationTextDiv = document.createElement('div');
-locationTextDiv.classList.add('locationText');
-locationTextDiv.setAttribute('id', 'locationText');
-locationTextDiv.innerText = "650 N Pleasant St, Amherst, MA 01003";
-locationText.appendChild(locationTextDiv);
+    // Popular Features 
+    // id="room-tech" 
+    document.getElementById('room-tech').innerText = roomInformationResponseJSON[0]["tech"]; 
 
-let logoutButton = document.getElementById('logOut');
-logoutButton.addEventListener('click', () => {
-    document.location.href = "http://localhost:3000/";
+     // Popular Features 
+    // id="room-building-acronym" 
+    document.getElementById('room-building-acronym').innerText = roomInformationResponseJSON[0]["building_acronym"]; 
+
+    // Tags 
+    let arr = roomInformationResponseJSON[0]["tags"]; 
+    let splitArr = arr.split(','); 
+
+    for(let i = 0; i < 3; ++i) {
+        if(splitArr[i] === " technology-access") {
+            document.getElementById('tag-' + i).innerText = "#tech-access";
+        } else {
+            document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
+        } 
+    }
+
+    // Map 
+    // https://mrvirk.com/passing-url-parameters-to-iframe-using-javascript.html
+    let getAddress = roomInformationResponseJSON[0]["address"];
+    let srcURL = "https://www.google.com/maps/embed/v1/place?key=AIzaSyADk8mwzYNCnqs8f7DjNwMllMXPGxiHrE8&q=" + getAddress;
+    let mapElement = document.getElementById('map'); 
+    mapElement.src = srcURL; 
 });
 
-// Body left-col: location map 
-// <div id="map">
+// Book a Room 
+let bookRoomButton = document.getElementById('bookRoom');
+logoutButton.addEventListener('click', () => {
+    localStorage.setItem("roomid"); 
+    document.location.href = "https://u-meet.herokuapp.com/userProfile";
+});
 
-// Body right-col: slideshow 
-
-// Body right-col: tags 
-// <div id="tags" class="tags">
+// Log Out Button in Navbar 
+let logoutButton = document.getElementById('logOut');
+logoutButton.addEventListener('click', () => {
+    localStorage.removeItem("roomid");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    document.location.href = "https://u-meet.herokuapp.com/";
+});
