@@ -1,11 +1,16 @@
 'use strict';
 process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
+require('dotenv').config();
 const express = require('express');
+const expressSession = require('express-session');  // for managing session state 
 let http = require('http');
 let fs = require('fs');
 const path = require('path');
 const dblast = require("./database.js");
+const minicrypt = require('./miniCrypt');
 const app = express();
+
+const mc = new minicrypt();
 
 app.use(express.json()); // lets you handle JSON input
 app.use(express.static('client/')); // specify the directory 
