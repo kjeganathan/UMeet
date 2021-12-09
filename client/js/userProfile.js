@@ -1,9 +1,9 @@
 'use strict';
 
+window.addEventListener("load", async function () {
+
 const email = localStorage.getItem("email");
 const password = localStorage.getItem("password");
-
-window.addEventListener("load", async function () {
 
 let personDetails = document.getElementById('personDetails');
 const namediv = document.createElement('div');
@@ -34,7 +34,58 @@ emaildiv.setAttribute('id', 'profileEmail');
 emaildiv.innerText = userdata[0]["email"];
 personDetails.appendChild(emaildiv);
 
+//call the function to display booking cards
+loadBookings(email);
+
 });
+
+async function loadBookings(email) {
+  let tentative_html = "";
+  let btn = "";
+  let result = await fetch(`/bookingInformation`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email
+    })
+  })
+  let bookings = await result.json();
+  bookings.forEach((my_booking) => {
+    let meeting_html = `<div class="card" id="card1">
+    <div class="card-horizontal">
+        
+        <div class="card-body">
+            <div class="flex-card-title">
+                <!--Card Room Name-->
+                <h4 id="card-building" class="card-title">${my_booking.building}</h4>
+                
+            </div>
+            <!--Card Room Star Rating-->
+            <div class="stars">
+                <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
+                <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
+                <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
+                <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
+                <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
+            </div>
+            <!--Card Room Description-->
+            <p id="card-room-type" class="card-text">Date: ${my_booking.date}</p>
+            <p id="card-address" class="card-text">Time: ${my_booking.time}</p>
+            <!--<div class="flex-container-buttons">
+                <button type="button" class="card-button btn btn-dark" id="n111details">Details</button>
+            </div>-->
+        </div>
+    </div>
+</div>`;
+tentative_html += meeting_html;
+  });
+  document.getElementById("booking-cards").innerHTML = tentative_html;
+
+
+
+}
 
 
 let btn = document.getElementById("myBtn");
