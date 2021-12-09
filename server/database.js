@@ -55,6 +55,19 @@ async function addUser(firstname, lastname, email, password, previousbookings, u
     );
   }
 
+  async function updateDate(date, roomid) {
+    return await connectAndRun((db) =>
+      db.none("UPDATE rooms SET date = $1 where roomid = $2", [date, roomid])
+    );
+  }
+
+  async function getDate(roomid){
+    return await connectAndRun((db) =>
+      db.any(
+        "SELECT date FROM rooms where roomid = $1;",[roomid])
+    );
+  }
+
 async function getUserByEmail(email){
   return await connectAndRun((db) =>
       db.any(
@@ -114,6 +127,8 @@ async function getAllRooms() {
 }
 
 
+
+
   module.exports = {
     addUser,
     getUserByEmail,
@@ -123,5 +138,7 @@ async function getAllRooms() {
     delUser, 
     getRoomID, 
     getRoomInformation,
-    getAllRooms
+    getAllRooms,
+    updateDate,
+    getDate
   };

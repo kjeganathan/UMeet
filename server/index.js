@@ -201,6 +201,16 @@ app.get('/allRooms', async (req,res) => {
     res.send(JSON.stringify(await dblast.getAllRooms()));
 })
 
+app.post('/dateInformation', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getDate(data.roomid)));
+});
+
+app.post('/updateDate', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.updateDate(data.date, data.roomid)));
+});
+
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
   });

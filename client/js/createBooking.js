@@ -81,7 +81,9 @@ async function loadTentativeMeetings(email) {
                                                 <h4 class="modal-header">Date Selection</h4>
                                                 <br/>
                                                 <!--Date Input Box-->
+                                                
                                                 <div class="modal-body">
+                                                <form>
                                                 <div class="date">
                                                     <div class="icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor"
@@ -92,15 +94,17 @@ async function loadTentativeMeetings(email) {
                                                                 d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                                         </svg>
                                                     </div>
-        
+
                                                     <div class="text">
                                                         <span id="inputNavTitle">Date</span>
                                                         <br />
-                                                        <input style="width: 165px; height:30px; margin-top: 4px" type="date" id="inputNavInput"
+                                                        <input style="width: 165px; name="date" height:30px; margin-top: 4px" type="date" id="inputNavInput"
                                                             class="form-control" placeholder="date" aria-label="date" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
+                                                </form>
                                                 </div>
+                                                
                                                 <div class="modal-footer">
                                                     <button type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Submit</button>
                                                 </div>
@@ -129,9 +133,9 @@ async function loadTentativeMeetings(email) {
       bookingButtons.forEach((button) => {
         button.addEventListener("click", bookMeeting);
       });
-    //   dateButtons.forEach((button) => {
-    //     button.addEventListener("click", datePicker);
-    //   });
+      dateButtons.forEach((button) => {
+        button.addEventListener("click", datePicker);
+      });
       detailsButton.forEach((button) => {
         button.addEventListener("click", bookingDetails);
       });
@@ -151,6 +155,44 @@ async function bookingDetails(){
     const roomid = this.id;
     localStorage.setItem("roomid", roomid);
     document.location.href = "http://localhost:3000/roomProfilePage";
+}
+
+async function datePicker(){
+    const roomid = this.id;
+    //let formData = document.querySelector('form-control');
+    let date = document.forms[0].elements[0].value;
+    console.log(date);
+
+    let result = await fetch('/dateInformation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                roomid: roomid
+        })
+    });
+      //console.log(result);
+      let resJSON = await result.json();
+      let dateArray = resJSON[0]["date"];
+      if(dateArray === null){  //isEmpty date array for a room
+        dateArray = [];
+      }
+
+      //We need to add conditions on this part
+      dateArray.push(date);
+    
+      await fetch('/updateDate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                roomid: roomid,
+                date: dateArray
+                
+        })
+    });
 }
 
 
