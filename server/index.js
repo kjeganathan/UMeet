@@ -60,15 +60,15 @@ passport.deserializeUser((uid, done) => {
 });
 
 // let users = { 'emery' : 'compsci326' } // default user
-let usersResponse = await fetch('/getUserByEmail', {
-    method: 'POST',
-    headers: {
-    'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        users:JSON.parse(users)
-    })
-});
+// let usersResponse = await fetch('/getUserByEmail', {
+//     method: 'POST',
+//     headers: {
+//     'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//         users:JSON.parse(users)
+//     })
+// });
 
 let users = { 'emery' : [
     '2401f90940e037305f71ffa15275fb0d',
