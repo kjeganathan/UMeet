@@ -21,7 +21,6 @@ async function loadTentativeMeetings(email) {
 
       // Implementing logic to render star ratings 
       let starCount = my_booking.rating; 
-      console.log(starCount); 
 
       /* for(let i = 1; i <= starCount; ++i) {
         document.getElementById("star-" + i).style.color = "#FFFF2E"; 
@@ -56,7 +55,7 @@ async function loadTentativeMeetings(email) {
                                     <!-- Modal content -->
                                     <div class="my-modal">
                                         <div class="modal-content">
-                                            <span class="close">&times;</span>
+                                            <div class="close" data-dismiss="modal">&times;</div>
                                                 <h4 class="modal-header">Date Selection</h4>
                                                 <br/>
                                                 <!--Date Input Box-->
