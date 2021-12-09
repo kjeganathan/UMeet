@@ -70,7 +70,7 @@ async function loadTentativeMeetings(email) {
                         <p id="card-room-type" class="card-text">${my_booking.time}</p>
                         <p id="card-address" class="card-text">${my_booking.address}</p>
                         <div class="flex-container-buttons">
-                            <button type="button" class="card-button btn btn-dark" id="n111details">Details</button>
+                            <button type="button" class="card-button btn btn-secondary" id="n111details">Details</button>
                             <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Book</button>
 
                                 <div id="myModal" class="modal fade">
@@ -92,6 +92,7 @@ async function loadTentativeMeetings(email) {
                                                                 d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                                         </svg>
                                                     </div>
+        
                                                     <div class="text">
                                                         <span id="inputNavTitle">Date</span>
                                                         <br />
@@ -101,7 +102,7 @@ async function loadTentativeMeetings(email) {
                                                 </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                                    <button type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Submit</button>
                                                 </div>
                                         </div>
                                     </div>
@@ -110,14 +111,48 @@ async function loadTentativeMeetings(email) {
                     </div>
                 </div>
             </div>`;
+        // localStorage.setItem("time", my_booking.time);
+        // let date = document.getElementById("inputNavInput").value;
+        // localStorage.setItem("date", date);
         tentative_html += meeting_html;
+        
+        //for each card we have a date submit button
+        // let dateSubmitButton = document.getElementById(my_booking.roomid);
+        // dateSubmitButton.addEventListener("click", () => {
+            
+        // });
       });
       document.getElementById("booking-rooms").innerHTML = tentative_html;
+      const bookingButtons = document.querySelectorAll(".btn-dark");
+      const dateButtons = document.querySelectorAll(".btn-default");
+      bookingButtons.forEach((button) => {
+        button.addEventListener("click", bookMeeting);
+      });
+      dateButtons.forEach((button) => {
+        button.addEventListener("click", datePicker);
+      });
     })
     .catch((error) => {
       console.log(error);
     });
 }
+
+//Booking Button
+async function bookMeeting(){
+    const roomid = this.id;
+    localStorage.setItem("booking_room_id", roomid);
+}
+
+
+//Making Date Submit Button functional
+let dateButton = document.getElementById("dateSubmit");
+dateButton.addEventListener("click", () => {
+    //on click we check if on the selected date at the selected time there already exists a room, if not we do the following:
+        //we populate the date array in rooms db
+        //we make a booking in the bookings db
+    //if it already exists, we say that the room cannot be booked at that time for that particular date and suggest a user chooses a new day
+
+})
 
 let buildingName = document.getElementById("building1").innerText;
 
