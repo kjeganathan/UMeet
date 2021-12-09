@@ -78,9 +78,10 @@ async function loadTentativeMeetings(email) {
                                     <div class="my-modal">
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
-                                                <h2>Date Selection</h2>
+                                                <h4 class="modal-header">Date Selection</h4>
                                                 <br/>
                                                 <!--Date Input Box-->
+                                                <div class="modal-body">
                                                 <div class="date">
                                                     <div class="icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor"
@@ -97,6 +98,10 @@ async function loadTentativeMeetings(email) {
                                                         <input style="width: 165px; height:30px; margin-top: 4px" type="date" id="inputNavInput"
                                                             class="form-control" placeholder="date" aria-label="date" aria-describedby="basic-addon1">
                                                     </div>
+                                                </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                                                 </div>
                                         </div>
                                     </div>

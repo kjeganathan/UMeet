@@ -149,11 +149,10 @@ body {
 }
 
 .date {
-    position: absolute;
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 34.09%;
+    left: 20%;
     right: 54.31%;
     top: 25%;
     bottom: 29.33%;
@@ -239,16 +238,34 @@ body {
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
+    background-color: #212529;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+
+  /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #212529;
+    color: white;
+  }
+  
+  /* Modal Body */
+  /* .modal-body {padding: 2px 16px;} */
+  
+  /* Modal Footer */
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: white;
+    color: white;
+  }
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    z-index:1000;
+    color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -256,7 +273,7 @@ body {
   
   .close:hover,
   .close:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
   }
