@@ -160,6 +160,7 @@ async function bookingDetails(){
 async function datePicker(){
     const roomid = this.id;
     //let formData = document.querySelector('form-control');
+    let email = localStorage.getItem("email");
     let date = document.forms[0].elements[0].value;
     console.log(date);
 
@@ -191,6 +192,34 @@ async function datePicker(){
                 roomid: roomid,
                 date: dateArray
                 
+        })
+    });
+
+    
+
+    let roomInfo = await fetch('/roomInformation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                roomid: roomid
+        })
+    });
+
+    let roomInfoJSON = await roomInfo.json();
+    
+
+    await fetch('/createBooking', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                building: roomInfoJSON[0]["building"],
+                date: date,
+                email: email,
+                time: roomInfoJSON[0]["time"]
         })
     });
 }

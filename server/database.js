@@ -52,7 +52,7 @@ async function addUser(firstname, lastname, email, password, previousbookings, u
   async function addBooking(building, date, email, time) {
     return await connectAndRun((db) =>
       db.none(
-        "INSERT INTO rooms (building, date, email, time) VALUES ($1, $2, $3, $4);",
+        "INSERT INTO bookings (building, date, email, time) VALUES ($1, $2, $3, $4);",
         [building, date, email, time]
       )
     );
