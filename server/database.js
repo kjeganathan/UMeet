@@ -49,6 +49,15 @@ async function addUser(firstname, lastname, email, password, previousbookings, u
     );
   }
 
+  async function addBooking(building, date, email, time) {
+    return await connectAndRun((db) =>
+      db.none(
+        "INSERT INTO rooms (building, date, email, time) VALUES ($1, $2, $3, $4);",
+        [building, date, email, time]
+      )
+    );
+  }
+
   async function delUser(email) {
     return await connectAndRun((db) =>
       db.none("DELETE FROM users where email = $1;", [email])
@@ -140,5 +149,6 @@ async function getAllRooms() {
     getRoomInformation,
     getAllRooms,
     updateDate,
-    getDate
+    getDate,
+    addBooking
   };
