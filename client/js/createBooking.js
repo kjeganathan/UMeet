@@ -18,6 +18,15 @@ async function loadTentativeMeetings(email) {
     .then((result) => {
       let meetings = JSON.parse(result);
       meetings.forEach((my_booking) => {
+
+      // Implementing logic to render star ratings 
+      let starCount = my_booking.rating; 
+      console.log(starCount); 
+
+      /* for(let i = 1; i <= starCount; ++i) {
+        document.getElementById("star-" + i).style.color = "#FFFF2E"; 
+        console.log("star-" + i);
+      } */ 
         
         let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
@@ -26,7 +35,7 @@ async function loadTentativeMeetings(email) {
                             <!--Card Room Name-->
                             <h4 id="card-building" class="card-title">${my_booking.building}</h4>
                             <!--Card Room Max Capacity-->
-                            <p id="card-capacty" style="padding-right: 20px">Capacity: ${my_booking.capacity}</p>
+                            <p id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
                         <!--Card Room Star Rating-->
                         <div class="stars">
@@ -76,7 +85,7 @@ async function loadTentativeMeetings(email) {
                                                 </div>
                                                 
                                                 <div class="modal-footer">
-                                                    <button type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Book</button>
+                                                    <button style="background-color: rgba(108, 92, 231, 0.28)" type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Book</button>
                                                 </div>
                                         </div>
                                     </div>
@@ -85,6 +94,7 @@ async function loadTentativeMeetings(email) {
                     </div>
                 </div>
             </div>`;
+
         // localStorage.setItem("time", my_booking.time);
         // let date = document.getElementById("inputNavInput").value;
         // localStorage.setItem("date", date);
@@ -115,7 +125,7 @@ async function loadTentativeMeetings(email) {
     });
 }
 
-//Booking Button
+// Booking Button
 async function bookMeeting(){
     const roomid = this.id;
     localStorage.setItem("roomid", roomid);
@@ -128,13 +138,13 @@ async function bookingDetails(){
 }
 
 async function datePicker(){
-    const roomid = this.id; //gets the room id
-    //let formData = document.querySelector('form-control');
-    let email = localStorage.getItem("email"); //gets the email of a user
-    let date = document.forms[0].elements[0].value; //gets the date which was picked
+    const roomid = this.id; // gets the room id
+    // let formData = document.querySelector('form-control');
+    let email = localStorage.getItem("email"); // gets the email of a user
+    let date = document.forms[0].elements[0].value; // gets the date which was picked
     console.log(date);
 
-    let result = await fetch('/dateInformation', { //gets the dates stored in the rooms db
+    let result = await fetch('/dateInformation', { // gets the dates stored in the rooms db
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -143,28 +153,28 @@ async function datePicker(){
                 roomid: roomid
         })
     });
-      //console.log(result);
+      // console.log(result);
       let resJSON = await result.json();
       let dateArray = resJSON[0]["date"];
       let isFull = false;
-      if(dateArray === null){  //isEmpty date array for a room used if date array in rooms db is empty
+      if(dateArray === null){  // isEmpty date array for a room used if date array in rooms db is empty
         dateArray = [];
         console.log(dateArray);
         console.log("hi");
       }
-        //date array is not empty
+        // date array is not empty
         for(let i = 0; i<dateArray.length; i++){
               if(dateArray[i] === date){
                   isFull = true;
-                  break; //breaks out of the loop if a date picked is already in the db
+                  break; // breaks out of the loop if a date picked is already in the db
               }
         }
 
-      //if the date picked is not already in the rooms db for that particular room
+      // if the date picked is not already in the rooms db for that particular room
       if(isFull === false){
         dateArray.push(date);
 
-        //update the dates array in the rooms db 
+        // update the dates array in the rooms db 
         await fetch('/updateDate', {
             method: 'POST',
             headers: {
@@ -177,7 +187,7 @@ async function datePicker(){
             })
         });
 
-        //get room info for the room we are working with associated with the card
+        // get room info for the room we are working with associated with the card
         let roomInfo = await fetch('/roomInformation', {
             method: 'POST',
             headers: {
@@ -190,7 +200,7 @@ async function datePicker(){
     
         let roomInfoJSON = await roomInfo.json();
 
-        //create a booking only if the date picked is not already in the db
+        // create a booking only if the date picked is not already in the db
         await fetch('/createBooking', {
             method: 'POST',
             headers: {
@@ -206,7 +216,7 @@ async function datePicker(){
 
       }
       else{
-          window.alert("Choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
+          window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
       }
     
 }
