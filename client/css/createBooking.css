@@ -215,9 +215,8 @@ body {
 }
 
 #card1{
-    position: absolute;
-    left: 550px;
-    top: 319px;
+    margin-left: 550px;
+    margin-top: 119px;
     background: #F8F8FF;
 }
 

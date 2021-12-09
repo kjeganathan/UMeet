@@ -10,6 +10,8 @@
     // we need to take it into an array of objects 
     // we can pull it in forEach() 
 
+    
+
     data.forEach(res => {
         let card = document.createElement("div");
 
@@ -27,6 +29,8 @@
     });
 
     window.addEventListener("load", async function () {
+        let email = localStorage.getItem("email");
+        loadTentativeMeetings(email);
     });
 
     async function loadTentativeMeetings(email) {
@@ -41,14 +45,15 @@
         .then((result) => {
             let meetings = JSON.parse(result);
             meetings.forEach((my_booking) => {
+                console.log(my_booking);
                 let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
                             <!--Card Room Name-->
-                            <h4 id="card-building" class="card-title">Room Name Here</h4>
+                            <h4 id="card-building" class="card-title">${my_booking.building}</h4>
                             <!--Card Room Max Capacity-->
-                            <p id="card-capacty" style="padding-right: 20px">Capacity: Here</p>
+                            <p id="card-capacty" style="padding-right: 20px">Capacity: ${my_booking.capacity}</p>
                         </div>
                         <!--Card Room Star Rating-->
                         <div class="stars">
@@ -59,11 +64,11 @@
                             <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
                         </div>
                         <!--Card Room Description-->
-                        <p id="card-room-type" class="card-text">Room Type Here</p>
-                        <p id="card-address" class="card-text">Address Here</p>
+                        <p id="card-room-type" class="card-text">${my_booking.time}</p>
+                        <p id="card-address" class="card-text">${my_booking.address}</p>
                         <div class="flex-container-buttons">
                             <button type="button" class="card-button btn btn-dark" id="n111details">Details</button>
-                            <button type="button" class="card-button btn btn-dark" id="bookRoom">Book</button>
+                            <button type="button" class="card-button btn btn-dark" id="${my_booking.roomid}">Book</button>
                         </div>
                     </div>
                 </div>
