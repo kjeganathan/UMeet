@@ -87,7 +87,7 @@ body {
     display: flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 2.17%;
+    left: 31.17%;
     right: 87.29%;
     top: 25%;
     bottom: 29.33%;
@@ -138,7 +138,7 @@ body {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 18.1%;
+    left: 50.1%;
     right: 71.36%;
     top: 25%;
     bottom: 29.33%;
@@ -391,7 +391,7 @@ body {
 
 .search {
     position: absolute;
-    left: 71.67%;
+    left: 69.67%;
     right: 23.15%;
     top: 32%;
     bottom: 32%;
