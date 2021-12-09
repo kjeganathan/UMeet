@@ -121,6 +121,13 @@ async function getRoomInformation(roomid) {
     );
 }
 
+async function getBookingInformation(email) { 
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM bookings WHERE email = $1;", [email])
+    );
+}
+
 async function getEligibleRooms(startTime, endTime, date, capacity) {
   return await connectAndRun((db) => 
     db.any(
