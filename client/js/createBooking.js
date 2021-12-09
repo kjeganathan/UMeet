@@ -1,35 +1,5 @@
 "use strict";
 
-let data = [
-  { name: "name0", description: "description", date: "XX/XX/XXXX" },
-  { name: "name1", description: "description", date: "XX/XX/XXXX" },
-  { name: "name2", description: "description", date: "XX/XX/XXXX" },
-];
-
-// we need to grab room data
-// we need to take it into an array of objects
-// we can pull it in forEach()
-
-data.forEach((res) => {
-  let card = document.createElement("div");
-
-  let name = document.createTextNode("Name:" + res.name + ", ");
-  card.appendChild(name);
-
-  let description = document.createTextNode(
-    "Description:" + res.description + ", "
-  );
-  card.appendChild(description);
-
-  let date = document.createTextNode("date:" + res.date);
-  card.appendChild(date);
-
-  let container = document.querySelector("#container");
-  container.appendChild(card);
-});
-
-
-
 window.addEventListener("load", async function () {
   let email = localStorage.getItem("email");
   loadTentativeMeetings(email);
