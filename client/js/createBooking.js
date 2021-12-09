@@ -71,7 +71,7 @@ async function loadTentativeMeetings(email) {
                         <p id="card-address" class="card-text">${my_booking.address}</p>
                         <div class="flex-container-buttons">
                             <button type="button" class="card-button btn btn-secondary" id="${my_booking.roomid}">Details</button>
-                            <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Book</button>
+                            <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Pick Date</button>
 
                                 <div id="myModal" class="modal fade">
                                     <!-- Modal content -->
@@ -106,7 +106,7 @@ async function loadTentativeMeetings(email) {
                                                 </div>
                                                 
                                                 <div class="modal-footer">
-                                                    <button type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                                    <button type="button" id="${my_booking.roomid}" class="btn btn-default" data-dismiss="modal">Book</button>
                                                 </div>
                                         </div>
                                     </div>
@@ -158,13 +158,13 @@ async function bookingDetails(){
 }
 
 async function datePicker(){
-    const roomid = this.id;
+    const roomid = this.id; //gets the room id
     //let formData = document.querySelector('form-control');
-    let email = localStorage.getItem("email");
-    let date = document.forms[0].elements[0].value;
+    let email = localStorage.getItem("email"); //gets the email of a user
+    let date = document.forms[0].elements[0].value; //gets the date which was picked
     console.log(date);
 
-    let result = await fetch('/dateInformation', {
+    let result = await fetch('/dateInformation', { //gets the dates stored in the rooms db
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -176,52 +176,69 @@ async function datePicker(){
       //console.log(result);
       let resJSON = await result.json();
       let dateArray = resJSON[0]["date"];
-      if(dateArray === null){  //isEmpty date array for a room
+      let isFull = false;
+      if(dateArray === null){  //isEmpty date array for a room used if date array in rooms db is empty
         dateArray = [];
+        console.log(dateArray);
+        console.log("hi");
       }
+        //date array is not empty
+        for(let i = 0; i<dateArray.length; i++){
+              if(dateArray[i] === date){
+                  isFull = true;
+                  break; //breaks out of the loop if a date picked is already in the db
+              }
+        }
 
-      //We need to add conditions on this part
-      dateArray.push(date);
+      //if the date picked is not already in the rooms db for that particular room
+      if(isFull === false){
+        dateArray.push(date);
+
+        //update the dates array in the rooms db 
+        await fetch('/updateDate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                    roomid: roomid,
+                    date: dateArray
+                    
+            })
+        });
+
+        //get room info for the room we are working with associated with the card
+        let roomInfo = await fetch('/roomInformation', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                    roomid: roomid
+            })
+        });
     
-      await fetch('/updateDate', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-                roomid: roomid,
-                date: dateArray
-                
-        })
-    });
+        let roomInfoJSON = await roomInfo.json();
 
+        //create a booking only if the date picked is not already in the db
+        await fetch('/createBooking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                    building: roomInfoJSON[0]["building"],
+                    date: date,
+                    email: email,
+                    time: roomInfoJSON[0]["time"]
+            })
+        });
+
+      }
+      else{
+          window.alert("Choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
+      }
     
-
-    let roomInfo = await fetch('/roomInformation', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-                roomid: roomid
-        })
-    });
-
-    let roomInfoJSON = await roomInfo.json();
-    
-
-    await fetch('/createBooking', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-                building: roomInfoJSON[0]["building"],
-                date: date,
-                email: email,
-                time: roomInfoJSON[0]["time"]
-        })
-    });
 }
 
 
