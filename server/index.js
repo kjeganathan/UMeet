@@ -167,6 +167,12 @@ app.post('/createAccount', async (req, res) => {
     console.log(`Created new account successfully!`);
 });
 
+app.post('/createBooking', async (req, res) => {
+    const data = req.body;
+    await dblast.addUser(data.building, data.date, data.email, data.time);
+    console.log(`Created new booking successfully!`);
+});
+
 // browser url http://localhost:3000/userInfo?userId=1
 app.post('/userInfo', async (req, res) => {
     const data = req.body;
@@ -210,6 +216,8 @@ app.post('/updateDate', async (req, res) => {
     const data = req.body;    
     res.send(JSON.stringify(await dblast.updateDate(data.date, data.roomid)));
 });
+
+
 
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
