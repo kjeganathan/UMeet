@@ -70,7 +70,7 @@ async function loadTentativeMeetings(email) {
                         <p id="card-room-type" class="card-text">${my_booking.time}</p>
                         <p id="card-address" class="card-text">${my_booking.address}</p>
                         <div class="flex-container-buttons">
-                            <button type="button" class="card-button btn btn-secondary" id="n111details">Details</button>
+                            <button type="button" class="card-button btn btn-secondary" id="${my_booking.roomid}">Details</button>
                             <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Book</button>
 
                                 <div id="myModal" class="modal fade">
@@ -125,11 +125,15 @@ async function loadTentativeMeetings(email) {
       document.getElementById("booking-rooms").innerHTML = tentative_html;
       const bookingButtons = document.querySelectorAll(".btn-dark");
       const dateButtons = document.querySelectorAll(".btn-default");
+      const detailsButton = document.querySelectorAll(".btn-secondary");
       bookingButtons.forEach((button) => {
         button.addEventListener("click", bookMeeting);
       });
-      dateButtons.forEach((button) => {
-        button.addEventListener("click", datePicker);
+    //   dateButtons.forEach((button) => {
+    //     button.addEventListener("click", datePicker);
+    //   });
+      detailsButton.forEach((button) => {
+        button.addEventListener("click", bookingDetails);
       });
     })
     .catch((error) => {
@@ -140,7 +144,13 @@ async function loadTentativeMeetings(email) {
 //Booking Button
 async function bookMeeting(){
     const roomid = this.id;
-    localStorage.setItem("booking_room_id", roomid);
+    localStorage.setItem("roomid", roomid);
+}
+
+async function bookingDetails(){
+    const roomid = this.id;
+    localStorage.setItem("roomid", roomid);
+    document.location.href = "http://localhost:3000/roomProfilePage";
 }
 
 

@@ -113,6 +113,7 @@ async function getAllRooms() {
     );
 }
 
+
   module.exports = {
     addUser,
     getUserByEmail,
