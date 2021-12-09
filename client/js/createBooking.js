@@ -154,46 +154,6 @@ async function bookingDetails(){
 }
 
 
-//Making Date Submit Button functional
-let dateButton = document.getElementById("dateSubmit");
-dateButton.addEventListener("click", () => {
-    //on click we check if on the selected date at the selected time there already exists a room, if not we do the following:
-        //we populate the date array in rooms db
-        //we make a booking in the bookings db
-    //if it already exists, we say that the room cannot be booked at that time for that particular date and suggest a user chooses a new day
-
-})
-
-let buildingName = document.getElementById("building1").innerText;
-
-let n111Button = document.getElementById("n111details");
-n111Button.addEventListener("click", async () => {
-  let building1response = await fetch("/getRoomById", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      building: buildingName,
-    }),
-  });
-  let building1responseJSON = await building1response.json();
-  console.log(JSON.stringify(building1responseJSON[0]["roomid"]));
-  localStorage.setItem(
-    "roomid",
-    JSON.stringify(building1responseJSON[0]["roomid"])
-  );
-  document.location.href = "https://u-meet.herokuapp.com/roomProfilePage";
-});
-
-// Details Button
-let getRoomDetailsButton = document.getElementById("getRoomDetails");
-getRoomDetailsButton.addEventListener("click", async () => {
-  // get the room id somehow
-  localStorage.setItem("roomid", roomid);
-  document.location.href = "https://u-meet.herokuapp.com/roomProfilePage";
-});
-
 // Log Out Button
 let logoutButton = document.getElementById("logOut");
 logoutButton.addEventListener("click", () => {
