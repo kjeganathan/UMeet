@@ -217,7 +217,10 @@ app.post('/updateDate', async (req, res) => {
     res.send(JSON.stringify(await dblast.updateDate(data.date, data.roomid)));
 });
 
-
+app.post('/bookingInformation', async (req, res) => {
+    const data = req.body;    
+    res.send(JSON.stringify(await dblast.getBookingInformation(data.email)));
+});
 
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');

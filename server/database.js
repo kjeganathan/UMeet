@@ -157,5 +157,6 @@ async function getAllRooms() {
     getAllRooms,
     updateDate,
     getDate,
-    addBooking
+    addBooking,
+    getBookingInformation
   };
