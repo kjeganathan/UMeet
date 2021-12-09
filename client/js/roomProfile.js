@@ -76,13 +76,6 @@ window.addEventListener("load", async function () {
     mapElement.src = srcURL; 
 });
 
-// Book a Room 
-let bookRoomButton = document.getElementById('bookRoom');
-logoutButton.addEventListener('click', () => {
-    localStorage.setItem("roomid"); 
-    document.location.href = "https://u-meet.herokuapp.com/userProfile";
-});
-
 // Log Out Button in Navbar 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
