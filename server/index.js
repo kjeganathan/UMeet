@@ -169,7 +169,7 @@ app.post('/createAccount', async (req, res) => {
 
 app.post('/createBooking', async (req, res) => {
     const data = req.body;
-    await dblast.addUser(data.building, data.date, data.email, data.time);
+    await dblast.addBooking(data.building, data.date, data.email, data.time);
     console.log(`Created new booking successfully!`);
 });
 
