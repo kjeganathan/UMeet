@@ -1,6 +1,6 @@
 'use strict';
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 require('dotenv').config();
 
 const express = require('express');
@@ -12,37 +12,38 @@ const passport = require('passport');               // handles authentication
 const expressSession = require('express-session');  // for managing session state 
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 const dblast = require("./database.js");
+const bcrypt = require('bcrypt');
 
 // session configuration
 const session = {
-    secret : process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
-    resave : false,
+    secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+    resave: false,
     saveUninitialized: false
 };
 
 // passport configuration
 const strategy = new LocalStrategy(
     async (username, password, done) => {
-	if (!findUser(username)) {
-	    // no such user
-	    return done(null, false, { 'message' : 'Wrong username' });
-	}
-	if (!validatePassword(username, password)) {
-	    // invalid password
-	    // should disable logins after N messages
-	    // delay return to rate-limit brute-force attacks
-	    await new Promise((r) => setTimeout(r, 2000)); // two second delay
-	    return done(null, false, { 'message' : 'Wrong password' });
-	}
-	// success!
-	// should create a user object here, associated with a unique identifier
-	return done(null, username);
+        if (!findUser(username)) {
+            // no such user
+            return done(null, false, { 'message': 'Wrong username' });
+        }
+        if (!validatePassword(username, password)) {
+            // invalid password
+            // should disable logins after N messages
+            // delay return to rate-limit brute-force attacks
+            await new Promise((r) => setTimeout(r, 2000)); // two second delay
+            return done(null, false, { 'message': 'Wrong password' });
+        }
+        // success!
+        // should create a user object here, associated with a unique identifier
+        return done(null, username);
     });
 
 // app configurations
 app.use(express.json()); // lets you handle JSON input
 app.use(express.static('client/')); // specify the directory
-app.use(express.urlencoded({'extended' : true})); // allow URLencoded data
+app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 app.use(expressSession(session));
 passport.use(strategy);
 app.use(passport.initialize());
@@ -57,26 +58,26 @@ passport.deserializeUser((uid, done) => {
     done(null, uid);
 });
 
-const users = {};
+const users = [];
 
 let userMap = {};
 
 // Returns true iff the user exists.
 function findUser(username) {
     if (!users[username]) {
-	return false;
+        return false;
     } else {
-	return true;
+        return true;
     }
 }
 
 // Returns true iff the password is the one we have stored (in plaintext = bad but easy).
 function validatePassword(name, pwd) {
     if (!findUser(name)) {
-	return false;
+        return false;
     }
     if (!mc.check(pwd, users[name][0], users[name][1])) {
-	return false;
+        return false;
     }
     return true;
 }
@@ -85,7 +86,7 @@ function validatePassword(name, pwd) {
 // TODO
 function addUser(name, pwd) {
     if (findUser(name)) {
-	return false;
+        return false;
     }
     const [salt, hash] = mc.hash(pwd);
     users[name] = [salt, hash];
@@ -98,8 +99,41 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
 });
 
-app.get('users', (req, res) => {
+app.get('/users', (req, res) => {
     res.json(users);
+});
+
+app.post('/users', async (req, res) => {
+    try {
+        const salt = await bcrypt.genSalt();
+        const hashedPass = await bcrypt.hash(req.body.password, salt);
+        console.log(salt);
+        console.log(hashedPass);
+        // TODO: need to update to database, not this local array
+        const user = {
+            name: req.body.name,
+            password: hashedPass
+        };
+        users.push(user);
+        res.status(201).send();
+    } catch {
+        res.status(500).send();
+    }
+});
+
+app.post('/users/login', async (req, res) => {
+    const user = users.findUser(req.body.name);
+    try {
+        // takes care of timing algorithms
+        if (bcrypt.compare(req.body.password, user.password)) {
+            res.send('Success');
+        }
+        else {
+            res.send('Not allowed');
+        }
+    } catch {
+        res.status(500).send();
+    }
 });
 
 app.get('/profilePage', (req, res) => {
@@ -120,12 +154,12 @@ app.post("/deleteUser", async (req, res) => {
     await dblast.delUser(data.email);
 });
 
-app.post('/getRoomById', async (req,res) => {
+app.post('/getRoomById', async (req, res) => {
     const data = req.body;
     res.send(JSON.stringify(await dblast.getRoomID(data.building)));
 });
 
-app.post('/editInfo', async (req,res) => {
+app.post('/editInfo', async (req, res) => {
     const data = req.body;
     await dblast.updateUserFirstName(data.firstname, data.password);
     await dblast.updateUserLastName(data.lastname, data.password);
@@ -139,21 +173,21 @@ app.get('/deleteProfile', (req, res) => {
 // Handle post data from the login.html form.
 // TO DO: probably need to redirect differently
 app.post('/login',
-	 passport.authenticate('local' , {     // use username/password authentication
-	     'successRedirect' : '/userProfile',  
-	     'failureRedirect' : '/login'      // otherwise, back to login
-	 }));
+    passport.authenticate('local', {     // use username/password authentication
+        'successRedirect': '/userProfile',
+        'failureRedirect': '/login'      // otherwise, back to login
+    }));
 
 // browser url http://localhost:3000/login
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
-    res.sendFile(path.resolve('./client/userProfile.html', 
-                        { 'root' : __dirname }));
+    res.sendFile(path.resolve('./client/userProfile.html',
+        { 'root': __dirname }));
 });
 
 // handle logging out
 app.get('/logout', (req, res) => {
-    req.logout(); 
+    req.logout();
     res.redirect('/login');
 })
 
@@ -182,14 +216,14 @@ app.post('/userInfo', async (req, res) => {
 app.delete('/users/:id', (req, res, next) => {
     const expressionIndex = getIndexById(req.params.id, expressions);
     if (expressionIndex !== -1) {
-      expressions.splice(expressionIndex, 1);
-      res.status(204).send();
+        expressions.splice(expressionIndex, 1);
+        res.status(204).send();
     } else {
-      res.status(404).send();
+        res.status(404).send();
     }
-  });
+});
 
-  // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
+// curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', (req, res) => {
     data["users"].pop(req.body.user);
     console.log(`Deleted account successfully!`);
@@ -197,32 +231,32 @@ app.post('/deleteAccount', (req, res) => {
 
 // Gather Room Information 
 app.post('/roomInformation', async (req, res) => {
-    const data = req.body;    
+    const data = req.body;
     res.send(JSON.stringify(await dblast.getRoomInformation(data.roomid)));
 });
 
-app.get('/allRooms', async (req,res) => {
+app.get('/allRooms', async (req, res) => {
     res.send(JSON.stringify(await dblast.getAllRooms()));
 })
 
 app.post('/dateInformation', async (req, res) => {
-    const data = req.body;    
+    const data = req.body;
     res.send(JSON.stringify(await dblast.getDate(data.roomid)));
 });
 
 app.post('/updateDate', async (req, res) => {
-    const data = req.body;    
+    const data = req.body;
     res.send(JSON.stringify(await dblast.updateDate(data.date, data.roomid)));
 });
 
 app.post('/bookingInformation', async (req, res) => {
-    const data = req.body;    
+    const data = req.body;
     res.send(JSON.stringify(await dblast.getBookingInformation(data.email)));
 });
 
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
-  });
+});
 
 const port = 3000; // specify the port 
 app.listen(process.env.PORT || port);
