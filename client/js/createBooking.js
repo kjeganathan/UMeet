@@ -34,7 +34,7 @@ async function loadTentativeMeetings(email) {
                             <!--Card Room Name-->
                             <h4 id="card-building" class="card-title">${my_booking.building}</h4>
                             <!--Card Room Max Capacity-->
-                            <p id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
+                            <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
                         <!--Card Room Star Rating-->
                         <div class="stars">
@@ -45,8 +45,8 @@ async function loadTentativeMeetings(email) {
                             <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
                         </div>
                         <!--Card Room Description-->
-                        <p id="card-room-type" class="card-text">${my_booking.time}</p>
-                        <p id="card-address" class="card-text">${my_booking.address}</p>
+                        <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
+                        <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
                         <div class="flex-container-buttons">
                             <button type="button" class="card-button btn btn-secondary" id="${my_booking.roomid}">Details</button>
                             <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Pick Date</button>

@@ -87,7 +87,7 @@ body {
     display: flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 31.17%;
+    left: 2.17%;
     right: 87.29%;
     top: 25%;
     bottom: 29.33%;
@@ -138,7 +138,7 @@ body {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 50.1%;
+    left: 18.1%;
     right: 71.36%;
     top: 25%;
     bottom: 29.33%;
@@ -149,10 +149,11 @@ body {
 }
 
 .date {
+    position: absolute;
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 20%;
+    left: 52.95%;
     right: 54.31%;
     top: 25%;
     bottom: 29.33%;
@@ -168,7 +169,7 @@ body {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 52.95%;
+    left: 71.67%;
     right: 30.02%;
     top: 25%;
     bottom: 29.33%;
@@ -269,17 +270,29 @@ body {
     display: flex;
     margin-left: 320px;
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #card1{
     background: #F8F8FF;
 }
 
-.card-horizontal{
+.card-horizontal {
     display: flex;
     height:200px;
   }
+
+.card-capacity {
+    font-weight: 300;
+}
+
+.card-address {
+    font-size: 14px;
+}
+
+.card-time {
+    font-weight: 600;
+}
 
 .img-square-wrapper{
     height:180px;
@@ -364,10 +377,9 @@ body {
 }
 
   /* Search Button Styling */
-
 .search {
     position: absolute;
-    left: 69.67%;
+    left: 34.09%;
     right: 23.15%;
     top: 32%;
     bottom: 32%;
@@ -411,3 +423,9 @@ body {
     margin-right: 20px;
     border-radius: 30px;
 }
+
+.vl {
+    border-left: 2px solid grey;
+    height: 150px;
+    margin-left: 50%;
+  }
