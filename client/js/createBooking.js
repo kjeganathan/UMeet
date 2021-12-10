@@ -36,14 +36,6 @@ async function loadTentativeMeetings(email) {
                             <!--Card Room Max Capacity-->
                             <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
-                        <!--Card Room Star Rating-->
-                        <div class="stars">
-                            <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
-                        </div>
                         <!--Card Room Description-->
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
@@ -255,14 +247,6 @@ starButton.addEventListener("click", async() => {
                             <!--Card Room Max Capacity-->
                             <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
-                        <!--Card Room Star Rating-->
-                        <div class="stars">
-                            <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
-                        </div>
                         <!--Card Room Description-->
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
@@ -367,14 +351,7 @@ largeCapButton.addEventListener("click", async() => {
                             <!--Card Room Max Capacity-->
                             <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
-                        <!--Card Room Star Rating-->
-                        <div class="stars">
-                            <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
-                        </div>
+                        
                         <!--Card Room Description-->
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
@@ -478,14 +455,7 @@ mediumCapButton.addEventListener("click", async() => {
                             <!--Card Room Max Capacity-->
                             <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
-                        <!--Card Room Star Rating-->
-                        <div class="stars">
-                            <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
-                        </div>
+                        
                         <!--Card Room Description-->
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
@@ -589,14 +559,7 @@ techButton.addEventListener("click", async() => {
                             <!--Card Room Max Capacity-->
                             <p class="card-capacity" id="card-capacty" style="padding-right: 20px">Attendee Capacity: ${my_booking.capacity}</p>
                         </div>
-                        <!--Card Room Star Rating-->
-                        <div class="stars">
-                            <i id="card-star-1" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-2" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-3" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-4" class="fas fa-star" style="color: #dddddd"></i>
-                            <i id="card-star-5" class="fas fa-star" style="color: #dddddd"></i>
-                        </div>
+                        
                         <!--Card Room Description-->
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
