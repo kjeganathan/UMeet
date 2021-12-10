@@ -1,33 +1,33 @@
 "use strict";
 
-window.addEventListener("load", async function () {
-  let email = localStorage.getItem("email");
-  loadTentativeMeetings(email);
+window.addEventListener("load", async function() {
+	let email = localStorage.getItem("email");
+	loadTentativeMeetings(email);
 });
 
 async function loadTentativeMeetings(email) {
-  let tentative_html = "";
-  let btn = "";
-  await fetch(`/allRooms`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.text())
-    .then((result) => {
-      let meetings = JSON.parse(result);
-      meetings.forEach((my_booking) => {
+	let tentative_html = "";
+	let btn = "";
+	await fetch(`/allRooms`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		.then((response) => response.text())
+		.then((result) => {
+			let meetings = JSON.parse(result);
+			meetings.forEach((my_booking) => {
 
-        // Implementing logic to render star ratings 
-        let starCount = my_booking.rating;
+				// Implementing logic to render star ratings 
+				let starCount = my_booking.rating;
 
-        /* for(let i = 1; i <= starCount; ++i) {
-          document.getElementById("star-" + i).style.color = "#FFFF2E"; 
-          console.log("star-" + i);
-        } */
+				/* for(let i = 1; i <= starCount; ++i) {
+				  document.getElementById("star-" + i).style.color = "#FFFF2E"; 
+				  console.log("star-" + i);
+				} */
 
-        let meeting_html = `<div class="card" id="card1">
+				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
@@ -89,155 +89,154 @@ async function loadTentativeMeetings(email) {
                 </div>
             </div>`;
 
-        // localStorage.setItem("time", my_booking.time);
-        // let date = document.getElementById("inputNavInput").value;
-        // localStorage.setItem("date", date);
-        tentative_html += meeting_html;
+				// localStorage.setItem("time", my_booking.time);
+				// let date = document.getElementById("inputNavInput").value;
+				// localStorage.setItem("date", date);
+				tentative_html += meeting_html;
 
-        //for each card we have a date submit button
-        // let dateSubmitButton = document.getElementById(my_booking.roomid);
-        // dateSubmitButton.addEventListener("click", () => {
+				//for each card we have a date submit button
+				// let dateSubmitButton = document.getElementById(my_booking.roomid);
+				// dateSubmitButton.addEventListener("click", () => {
 
-        // });
-      });
-      document.getElementById("booking-rooms").innerHTML = tentative_html;
-      const bookingButtons = document.querySelectorAll(".btn-dark");
-      const dateButtons = document.querySelectorAll(".btn-default");
-      const detailsButton = document.querySelectorAll(".btn-secondary");
-      const closeButton = document.querySelectorAll(".close");
-      bookingButtons.forEach((button) => {
-        button.addEventListener("click", bookMeeting);
-      });
-      dateButtons.forEach((button) => {
-        button.addEventListener("click", datePicker);
-      });
-      detailsButton.forEach((button) => {
-        button.addEventListener("click", bookingDetails);
-      });
-      closeButton.forEach((button) => {
-        button.addEventListener("click", closeModal);
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+				// });
+			});
+			document.getElementById("booking-rooms").innerHTML = tentative_html;
+			const bookingButtons = document.querySelectorAll(".btn-dark");
+			const dateButtons = document.querySelectorAll(".btn-default");
+			const detailsButton = document.querySelectorAll(".btn-secondary");
+			const closeButton = document.querySelectorAll(".close");
+			bookingButtons.forEach((button) => {
+				button.addEventListener("click", bookMeeting);
+			});
+			dateButtons.forEach((button) => {
+				button.addEventListener("click", datePicker);
+			});
+			detailsButton.forEach((button) => {
+				button.addEventListener("click", bookingDetails);
+			});
+			closeButton.forEach((button) => {
+				button.addEventListener("click", closeModal);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 }
 
 async function closeModal() {
-  location.reload();
+	location.reload();
 }
 // Booking Button
 async function bookMeeting() {
-  const roomid = this.id;
-  localStorage.setItem("roomid", roomid);
+	const roomid = this.id;
+	localStorage.setItem("roomid", roomid);
 }
 
 async function bookingDetails() {
-  const roomid = this.id;
-  localStorage.setItem("roomid", roomid);
-  document.location.href = "http://localhost:3000/roomProfilePage";
+	const roomid = this.id;
+	localStorage.setItem("roomid", roomid);
+	document.location.href = "http://localhost:3000/roomProfilePage";
 }
 
 async function datePicker() {
-  const roomid = this.id; // gets the room id
-  // let formData = document.querySelector('form-control');
-  let email = localStorage.getItem("email"); // gets the email of a user
-  let date = document.forms[0].elements[0].value; // gets the date which was picked
-  console.log(date);
+	const roomid = this.id; // gets the room id
+	// let formData = document.querySelector('form-control');
+	let email = localStorage.getItem("email"); // gets the email of a user
+	let date = document.forms[0].elements[0].value; // gets the date which was picked
+	console.log(date);
 
-  let result = await fetch('/dateInformation', { // gets the dates stored in the rooms db
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      roomid: roomid
-    })
-  });
-  // console.log(result);
-  let resJSON = await result.json();
-  let dateArray = resJSON[0]["date"];
-  let isFull = false;
-  if (dateArray === null) {  // isEmpty date array for a room used if date array in rooms db is empty
-    dateArray = [];
-    console.log(dateArray);
-    console.log("hi");
-  }
-  // date array is not empty
-  for (let i = 0; i < dateArray.length; i++) {
-    if (dateArray[i] === date) {
-      isFull = true;
-      break; // breaks out of the loop if a date picked is already in the db
-    }
-  }
+	let result = await fetch('/dateInformation', { // gets the dates stored in the rooms db
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			roomid: roomid
+		})
+	});
+	// console.log(result);
+	let resJSON = await result.json();
+	let dateArray = resJSON[0]["date"];
+	let isFull = false;
+	if (dateArray === null) { // isEmpty date array for a room used if date array in rooms db is empty
+		dateArray = [];
+		console.log(dateArray);
+		console.log("hi");
+	}
+	// date array is not empty
+	for (let i = 0; i < dateArray.length; i++) {
+		if (dateArray[i] === date) {
+			isFull = true;
+			break; // breaks out of the loop if a date picked is already in the db
+		}
+	}
 
-  // if the date picked is not already in the rooms db for that particular room
-  if (isFull === false) {
-    dateArray.push(date);
+	// if the date picked is not already in the rooms db for that particular room
+	if (isFull === false) {
+		dateArray.push(date);
 
-    // update the dates array in the rooms db 
-    await fetch('/updateDate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        roomid: roomid,
-        date: dateArray
+		// update the dates array in the rooms db 
+		await fetch('/updateDate', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				roomid: roomid,
+				date: dateArray
 
-      })
-    });
+			})
+		});
 
-    // get room info for the room we are working with associated with the card
-    let roomInfo = await fetch('/roomInformation', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        roomid: roomid
-      })
-    });
+		// get room info for the room we are working with associated with the card
+		let roomInfo = await fetch('/roomInformation', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				roomid: roomid
+			})
+		});
 
-    let roomInfoJSON = await roomInfo.json();
+		let roomInfoJSON = await roomInfo.json();
 
-    // create a booking only if the date picked is not already in the db
-    await fetch('/createBooking', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        building: roomInfoJSON[0]["building"],
-        date: date,
-        email: email,
-        time: roomInfoJSON[0]["time"]
-      })
-    });
+		// create a booking only if the date picked is not already in the db
+		await fetch('/createBooking', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				building: roomInfoJSON[0]["building"],
+				date: date,
+				email: email,
+				time: roomInfoJSON[0]["time"]
+			})
+		});
 
-  }
-  else {
-    window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
-  }
+	} else {
+		window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
+	}
 }
 
 // Above 3 Star Filter
 let starButton = document.getElementById("above3StarsBtn");
-starButton.addEventListener("click", async() => {
+starButton.addEventListener("click", async () => {
 
-  let tentative_html = "";
-  let btn = "";
-  await fetch(`/getAbove3Stars`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    })
-    .then((response) => response.text())
-    .then((result) => {
-        let filteredBookings = JSON.parse(result);
-        filteredBookings.forEach((my_booking) => {
-            let meeting_html = `<div class="card" id="card1">
+	let tentative_html = "";
+	let btn = "";
+	await fetch(`/getAbove3Stars`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		.then((response) => response.text())
+		.then((result) => {
+			let filteredBookings = JSON.parse(result);
+			filteredBookings.forEach((my_booking) => {
+				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
@@ -298,50 +297,50 @@ starButton.addEventListener("click", async() => {
                     </div>
                 </div>
             </div>`;
-            tentative_html += meeting_html;
-        });
-        document.getElementById("booking-rooms").innerHTML = tentative_html;
-        const bookingButtons = document.querySelectorAll(".btn-dark");
-        const dateButtons = document.querySelectorAll(".btn-default");
-        const detailsButton = document.querySelectorAll(".btn-secondary");
-        const closeButton = document.querySelectorAll(".close");
-        bookingButtons.forEach((button) => {
-            button.addEventListener("click", bookMeeting);
-        });
-        dateButtons.forEach((button) => {
-            button.addEventListener("click", datePicker);
-        });
-        detailsButton.forEach((button) => {
-            button.addEventListener("click", bookingDetails);
-        });
-        closeButton.forEach((button) => {
-            button.addEventListener("click", closeModal);
-        });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
+				tentative_html += meeting_html;
+			});
+			document.getElementById("booking-rooms").innerHTML = tentative_html;
+			const bookingButtons = document.querySelectorAll(".btn-dark");
+			const dateButtons = document.querySelectorAll(".btn-default");
+			const detailsButton = document.querySelectorAll(".btn-secondary");
+			const closeButton = document.querySelectorAll(".close");
+			bookingButtons.forEach((button) => {
+				button.addEventListener("click", bookMeeting);
+			});
+			dateButtons.forEach((button) => {
+				button.addEventListener("click", datePicker);
+			});
+			detailsButton.forEach((button) => {
+				button.addEventListener("click", bookingDetails);
+			});
+			closeButton.forEach((button) => {
+				button.addEventListener("click", closeModal);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
 
 
 // Large Capacity Filter
 
 let largeCapButton = document.getElementById("largeCapacityBtn");
-largeCapButton.addEventListener("click", async() => {
+largeCapButton.addEventListener("click", async () => {
 
-  let tentative_html = "";
-  let btn = "";
-  await fetch(`/getLargeCapacity`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    })
-    .then((response) => response.text())
-    .then((result) => {
-        let filteredBookings = JSON.parse(result);
-        filteredBookings.forEach((my_booking) => {
-            let meeting_html = `<div class="card" id="card1">
+	let tentative_html = "";
+	let btn = "";
+	await fetch(`/getLargeCapacity`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		.then((response) => response.text())
+		.then((result) => {
+			let filteredBookings = JSON.parse(result);
+			filteredBookings.forEach((my_booking) => {
+				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
@@ -403,49 +402,49 @@ largeCapButton.addEventListener("click", async() => {
                     </div>
                 </div>
             </div>`;
-            tentative_html += meeting_html;
-        });
-        document.getElementById("booking-rooms").innerHTML = tentative_html;
-        const bookingButtons = document.querySelectorAll(".btn-dark");
-        const dateButtons = document.querySelectorAll(".btn-default");
-        const detailsButton = document.querySelectorAll(".btn-secondary");
-        const closeButton = document.querySelectorAll(".close");
-        bookingButtons.forEach((button) => {
-            button.addEventListener("click", bookMeeting);
-        });
-        dateButtons.forEach((button) => {
-            button.addEventListener("click", datePicker);
-        });
-        detailsButton.forEach((button) => {
-            button.addEventListener("click", bookingDetails);
-        });
-        closeButton.forEach((button) => {
-            button.addEventListener("click", closeModal);
-        });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
+				tentative_html += meeting_html;
+			});
+			document.getElementById("booking-rooms").innerHTML = tentative_html;
+			const bookingButtons = document.querySelectorAll(".btn-dark");
+			const dateButtons = document.querySelectorAll(".btn-default");
+			const detailsButton = document.querySelectorAll(".btn-secondary");
+			const closeButton = document.querySelectorAll(".close");
+			bookingButtons.forEach((button) => {
+				button.addEventListener("click", bookMeeting);
+			});
+			dateButtons.forEach((button) => {
+				button.addEventListener("click", datePicker);
+			});
+			detailsButton.forEach((button) => {
+				button.addEventListener("click", bookingDetails);
+			});
+			closeButton.forEach((button) => {
+				button.addEventListener("click", closeModal);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
 
 // Medium Capacity Filter
 
 let mediumCapButton = document.getElementById("mediumCapacityBtn");
-mediumCapButton.addEventListener("click", async() => {
+mediumCapButton.addEventListener("click", async () => {
 
-  let tentative_html = "";
-  let btn = "";
-  await fetch(`/getMediumCapacity`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    })
-    .then((response) => response.text())
-    .then((result) => {
-        let filteredBookings = JSON.parse(result);
-        filteredBookings.forEach((my_booking) => {
-            let meeting_html = `<div class="card" id="card1">
+	let tentative_html = "";
+	let btn = "";
+	await fetch(`/getMediumCapacity`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		.then((response) => response.text())
+		.then((result) => {
+			let filteredBookings = JSON.parse(result);
+			filteredBookings.forEach((my_booking) => {
+				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
@@ -507,49 +506,49 @@ mediumCapButton.addEventListener("click", async() => {
                     </div>
                 </div>
             </div>`;
-            tentative_html += meeting_html;
-        });
-        document.getElementById("booking-rooms").innerHTML = tentative_html;
-        const bookingButtons = document.querySelectorAll(".btn-dark");
-        const dateButtons = document.querySelectorAll(".btn-default");
-        const detailsButton = document.querySelectorAll(".btn-secondary");
-        const closeButton = document.querySelectorAll(".close");
-        bookingButtons.forEach((button) => {
-            button.addEventListener("click", bookMeeting);
-        });
-        dateButtons.forEach((button) => {
-            button.addEventListener("click", datePicker);
-        });
-        detailsButton.forEach((button) => {
-            button.addEventListener("click", bookingDetails);
-        });
-        closeButton.forEach((button) => {
-            button.addEventListener("click", closeModal);
-        });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
+				tentative_html += meeting_html;
+			});
+			document.getElementById("booking-rooms").innerHTML = tentative_html;
+			const bookingButtons = document.querySelectorAll(".btn-dark");
+			const dateButtons = document.querySelectorAll(".btn-default");
+			const detailsButton = document.querySelectorAll(".btn-secondary");
+			const closeButton = document.querySelectorAll(".close");
+			bookingButtons.forEach((button) => {
+				button.addEventListener("click", bookMeeting);
+			});
+			dateButtons.forEach((button) => {
+				button.addEventListener("click", datePicker);
+			});
+			detailsButton.forEach((button) => {
+				button.addEventListener("click", bookingDetails);
+			});
+			closeButton.forEach((button) => {
+				button.addEventListener("click", closeModal);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
 
 // Tech Availability Filter
 
 let techButton = document.getElementById("techEnabledBtn");
-techButton.addEventListener("click", async() => {
+techButton.addEventListener("click", async () => {
 
-  let tentative_html = "";
-  let btn = "";
-  await fetch(`/getTechRooms`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    })
-    .then((response) => response.text())
-    .then((result) => {
-        let filteredBookings = JSON.parse(result);
-        filteredBookings.forEach((my_booking) => {
-            let meeting_html = `<div class="card" id="card1">
+	let tentative_html = "";
+	let btn = "";
+	await fetch(`/getTechRooms`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+		.then((response) => response.text())
+		.then((result) => {
+			let filteredBookings = JSON.parse(result);
+			filteredBookings.forEach((my_booking) => {
+				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
                         <div class="flex-card-title">
@@ -611,34 +610,34 @@ techButton.addEventListener("click", async() => {
                     </div>
                 </div>
             </div>`;
-            tentative_html += meeting_html;
-        });
-        document.getElementById("booking-rooms").innerHTML = tentative_html;
-        const bookingButtons = document.querySelectorAll(".btn-dark");
-        const dateButtons = document.querySelectorAll(".btn-default");
-        const detailsButton = document.querySelectorAll(".btn-secondary");
-        const closeButton = document.querySelectorAll(".close");
-        bookingButtons.forEach((button) => {
-            button.addEventListener("click", bookMeeting);
-        });
-        dateButtons.forEach((button) => {
-            button.addEventListener("click", datePicker);
-        });
-        detailsButton.forEach((button) => {
-            button.addEventListener("click", bookingDetails);
-        });
-        closeButton.forEach((button) => {
-            button.addEventListener("click", closeModal);
-        });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  });
+				tentative_html += meeting_html;
+			});
+			document.getElementById("booking-rooms").innerHTML = tentative_html;
+			const bookingButtons = document.querySelectorAll(".btn-dark");
+			const dateButtons = document.querySelectorAll(".btn-default");
+			const detailsButton = document.querySelectorAll(".btn-secondary");
+			const closeButton = document.querySelectorAll(".close");
+			bookingButtons.forEach((button) => {
+				button.addEventListener("click", bookMeeting);
+			});
+			dateButtons.forEach((button) => {
+				button.addEventListener("click", datePicker);
+			});
+			detailsButton.forEach((button) => {
+				button.addEventListener("click", bookingDetails);
+			});
+			closeButton.forEach((button) => {
+				button.addEventListener("click", closeModal);
+			});
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+});
 
 // Log Out Button
 let logoutButton = document.getElementById("logOut");
 logoutButton.addEventListener("click", () => {
-  localStorage.clear();
-  document.location.href = "https://u-meet.herokuapp.com/";
+	localStorage.clear();
+	document.location.href = "https://u-meet.herokuapp.com/";
 });

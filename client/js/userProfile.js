@@ -1,59 +1,59 @@
 'use strict';
 
-window.addEventListener("load", async function () {
+window.addEventListener("load", async function() {
 
-const email = localStorage.getItem("email");
-const password = localStorage.getItem("password");
+	const email = localStorage.getItem("email");
+	const password = localStorage.getItem("password");
 
-let personDetails = document.getElementById('personDetails');
-const namediv = document.createElement('div');
-namediv.classList.add('profileName');
-namediv.setAttribute('contentEditable', true);
-namediv.setAttribute('id', 'profileName');
+	let personDetails = document.getElementById('personDetails');
+	const namediv = document.createElement('div');
+	namediv.classList.add('profileName');
+	namediv.setAttribute('contentEditable', true);
+	namediv.setAttribute('id', 'profileName');
 
-let responseUser = await fetch('/userInfo', {
-  method: 'POST',
-  headers: {
-  'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-      email:JSON.parse(email)
-  })
-});
+	let responseUser = await fetch('/userInfo', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			email: JSON.parse(email)
+		})
+	});
 
-let userdata = await responseUser.json(); 
-//console.log(userdata[0]["firstname"] + " " + userdata[0]["lastname"]);
+	let userdata = await responseUser.json();
+	//console.log(userdata[0]["firstname"] + " " + userdata[0]["lastname"]);
 
-namediv.innerText = userdata[0]["firstname"] + " " + userdata[0]["lastname"];
-personDetails.appendChild(namediv);
+	namediv.innerText = userdata[0]["firstname"] + " " + userdata[0]["lastname"];
+	personDetails.appendChild(namediv);
 
-const emaildiv = document.createElement('div');
-emaildiv.classList.add('profileEmail');
-emaildiv.setAttribute('contentEditable', true);
-emaildiv.setAttribute('id', 'profileEmail');
-emaildiv.innerText = userdata[0]["email"];
-personDetails.appendChild(emaildiv);
+	const emaildiv = document.createElement('div');
+	emaildiv.classList.add('profileEmail');
+	emaildiv.setAttribute('contentEditable', true);
+	emaildiv.setAttribute('id', 'profileEmail');
+	emaildiv.innerText = userdata[0]["email"];
+	personDetails.appendChild(emaildiv);
 
-//call the function to display booking cards
-loadBookings(email);
+	//call the function to display booking cards
+	loadBookings(email);
 
 });
 
 async function loadBookings(email) {
-  let tentative_html = "";
-  let btn = "";
-  let result = await fetch(`/bookingInformation`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      email: email
-    })
-  })
-  let bookings = await result.json();
-  bookings.forEach((my_booking) => {
-    let meeting_html = `<div class="card" id="card1">
+	let tentative_html = "";
+	let btn = "";
+	let result = await fetch(`/bookingInformation`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			email: email
+		})
+	})
+	let bookings = await result.json();
+	bookings.forEach((my_booking) => {
+		let meeting_html = `<div class="card" id="card1">
     <div class="card-horizontal">
         <div class="card-body-pic">
           <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
@@ -98,9 +98,9 @@ async function loadBookings(email) {
         </div>
     </div>
 </div>`;
-tentative_html += meeting_html;
-  });
-  document.getElementById("booking-cards").innerHTML = tentative_html;
+		tentative_html += meeting_html;
+	});
+	document.getElementById("booking-cards").innerHTML = tentative_html;
 
 
 
@@ -112,45 +112,45 @@ let deleteBtn = document.getElementById("deleteBtn");
 
 //Delete User
 deleteBtn.addEventListener('click', async () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-    document.location.href = "https://u-meet.herokuapp.com/";
-    await fetch('/deleteUser', {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          email:JSON.parse(email)
-      })
-    });
-    
+	localStorage.removeItem("email");
+	localStorage.removeItem("password");
+	document.location.href = "https://u-meet.herokuapp.com/";
+	await fetch('/deleteUser', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			email: JSON.parse(email)
+		})
+	});
+
 });
 
 //Edit User Info
 btn.addEventListener('click', async () => {
-    const email = document.getElementById('profileEmail').innerText;
-    const name = document.getElementById('profileName').innerText;
-    const nameArray = name.split(" ");
-    const firstName = nameArray[0];
-    const lastName = nameArray[1];
-    localStorage.setItem("email", JSON.stringify(email));
-    //edits info based on password
-    await fetch('/editInfo', {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          email:email,
-          password:JSON.parse(password),
-          firstname:firstName,
-          lastname:lastName
-      })
-    });
-    
-    //person's info is displayed based on their email in localstorage so email in localstorage has to be updated
-    window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
+	const email = document.getElementById('profileEmail').innerText;
+	const name = document.getElementById('profileName').innerText;
+	const nameArray = name.split(" ");
+	const firstName = nameArray[0];
+	const lastName = nameArray[1];
+	localStorage.setItem("email", JSON.stringify(email));
+	//edits info based on password
+	await fetch('/editInfo', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			email: email,
+			password: JSON.parse(password),
+			firstname: firstName,
+			lastname: lastName
+		})
+	});
+
+	//person's info is displayed based on their email in localstorage so email in localstorage has to be updated
+	window.alert(`user info has been edited to name: ${name} and email: ${email}!`);
 });
 
 // Get the modal
@@ -169,24 +169,23 @@ let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+	modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
 }
 
 // Create booking cards
 let bookings = [
-  
+
 ];
 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
-  localStorage.clear(); 
-  document.location.href = "https://u-meet.herokuapp.com/";
+	localStorage.clear();
+	document.location.href = "https://u-meet.herokuapp.com/";
 });
-
