@@ -48,7 +48,7 @@ async function loadTentativeMeetings(email) {
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
                         <div class="flex-container-buttons">
-                            <button type="button" class="card-button btn btn-secondary" id="${my_booking.roomid}">Details</button>
+                            <button style="background-color: grey; color: white" type="button" class="card-button btn" id="${my_booking.roomid}">Details</button>
                             <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Pick Date</button>
 
                                 <div id="myModal" class="modal fade">
@@ -61,11 +61,11 @@ async function loadTentativeMeetings(email) {
                                                     <button type="button" id=close${my_booking.roomid} class="close">&times;</button>
                                                 </div>
                                                 <br/>
+
                                                 <!--Date Input Box-->
-                                                
                                                 <div class="modal-body">
                                                 <form>
-                                                <div class="date">
+                                                <div class="modalDate">
                                                     <div class="icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="currentColor"
                                                             class="bi bi-calendar3" viewBox="0 0 16 16">
