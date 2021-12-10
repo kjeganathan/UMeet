@@ -55,8 +55,11 @@ async function loadTentativeMeetings(email) {
                                     <!-- Modal content -->
                                     <div class="my-modal">
                                         <div class="modal-content">
-                                            <button type="button" id=close${my_booking.roomid} class="close">&times;</button>
-                                                <h4 class="modal-header">Date Selection</h4>
+                                            
+                                                <div id="flex-modal-head">
+                                                    <h4 class="modal-header">Date Selection</h4>
+                                                    <button type="button" id=close${my_booking.roomid} class="close">&times;</button>
+                                                </div>
                                                 <br/>
                                                 <!--Date Input Box-->
                                                 
