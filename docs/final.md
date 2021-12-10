@@ -1,4 +1,6 @@
-# Final Milestone
+# Team-eta
+## UMeet
+## Fall 2021
 
 ### Overview
 - The team name: team-eta
