@@ -4,10 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node server/index.js"
+        "start": "node server/index.js",
+        "devStart": "nodemon server/index.js"
     },
     "keywords": [],
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "config": "^3.3.6",
         "csv": "^6.0.4",
         "dotenv": "^10.0.0",
@@ -19,5 +21,8 @@
         "pg-promise": "^10.11.1",
         "postgres": "^1.0.2",
         "requests": "^0.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
     }
 }

@@ -1,0 +1,2 @@
+// can use to test API calls with REST Client extension on VSCode
+GET http://localhost:3000/users

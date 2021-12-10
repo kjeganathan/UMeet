@@ -2,18 +2,16 @@
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
 require('dotenv').config();
+
 const express = require('express');
-const passport = require('passport');               // handles authentication
-const expressSession = require('express-session');  // for managing session state 
-const LocalStrategy = require('passport-local').Strategy; // username/password strategy
+const app = express();
 let http = require('http');
 let fs = require('fs');
 const path = require('path');
+const passport = require('passport');               // handles authentication
+const expressSession = require('express-session');  // for managing session state 
+const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 const dblast = require("./database.js");
-const minicrypt = require('./miniCrypt');
-const app = express();
-
-const mc = new minicrypt();
 
 // session configuration
 const session = {
@@ -59,21 +57,7 @@ passport.deserializeUser((uid, done) => {
     done(null, uid);
 });
 
-// let users = { 'emery' : 'compsci326' } // default user
-// let usersResponse = await fetch('/getUserByEmail', {
-//     method: 'POST',
-//     headers: {
-//     'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         users:JSON.parse(users)
-//     })
-// });
-
-let users = { 'emery' : [
-    '2401f90940e037305f71ffa15275fb0d',
-    '61236629f33285cbc73dc563cfc49e96a00396dc9e3a220d7cd5aad0fa2f3827d03d41d55cb2834042119e5f495fc3dc8ba3073429dd5a5a1430888e0d115250'
-  ] };
+const users = {};
 
 let userMap = {};
 
@@ -114,6 +98,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
 });
 
+app.get('users', (req, res) => {
+    res.json(users);
+});
+
 app.get('/profilePage', (req, res) => {
     res.sendFile(path.resolve('./client/userProfile.html'));
 });
@@ -152,7 +140,7 @@ app.get('/deleteProfile', (req, res) => {
 // TO DO: probably need to redirect differently
 app.post('/login',
 	 passport.authenticate('local' , {     // use username/password authentication
-	     'successRedirect' : '/private',   // when we login, go to /private 
+	     'successRedirect' : '/userProfile',  
 	     'failureRedirect' : '/login'      // otherwise, back to login
 	 }));
 
@@ -173,7 +161,7 @@ app.get('/logout', (req, res) => {
 // TO DO: need to check redirection
 app.post('/createAccount', async (req, res) => {
     const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email, data.password);
+    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
     console.log(`Created new account successfully!`);
 });
 
