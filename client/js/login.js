@@ -30,6 +30,5 @@ loginButton.addEventListener('click', async () => {
 	localStorage.setItem("email", JSON.stringify(email));
 	localStorage.setItem("password", JSON.stringify(password));
 	await fetch('/login');
-	//store email in localstorage.json
 	document.location.href = "https://u-meet.herokuapp.com/profilePage";
 });

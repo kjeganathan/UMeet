@@ -19,14 +19,6 @@ async function loadTentativeMeetings(email) {
 			let meetings = JSON.parse(result);
 			meetings.forEach((my_booking) => {
 
-				// Implementing logic to render star ratings 
-				let starCount = my_booking.rating;
-
-				/* for(let i = 1; i <= starCount; ++i) {
-				  document.getElementById("star-" + i).style.color = "#FFFF2E"; 
-				  console.log("star-" + i);
-				} */
-
 				let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
@@ -89,16 +81,8 @@ async function loadTentativeMeetings(email) {
                 </div>
             </div>`;
 
-				// localStorage.setItem("time", my_booking.time);
-				// let date = document.getElementById("inputNavInput").value;
-				// localStorage.setItem("date", date);
 				tentative_html += meeting_html;
 
-				//for each card we have a date submit button
-				// let dateSubmitButton = document.getElementById(my_booking.roomid);
-				// dateSubmitButton.addEventListener("click", () => {
-
-				// });
 			});
 			document.getElementById("booking-rooms").innerHTML = tentative_html;
 			const bookingButtons = document.querySelectorAll(".btn-dark");
@@ -126,6 +110,7 @@ async function loadTentativeMeetings(email) {
 async function closeModal() {
 	location.reload();
 }
+
 // Booking Button
 async function bookMeeting() {
 	const roomid = this.id;
@@ -154,15 +139,17 @@ async function datePicker() {
 			roomid: roomid
 		})
 	});
-	// console.log(result);
-	let resJSON = await result.json();
+
+    let resJSON = await result.json();
 	let dateArray = resJSON[0]["date"];
 	let isFull = false;
-	if (dateArray === null) { // isEmpty date array for a room used if date array in rooms db is empty
+	
+    if (dateArray === null) { // isEmpty date array for a room used if date array in rooms db is empty
 		dateArray = [];
 		console.log(dateArray);
 		console.log("hi");
 	}
+
 	// date array is not empty
 	for (let i = 0; i < dateArray.length; i++) {
 		if (dateArray[i] === date) {
@@ -324,7 +311,6 @@ starButton.addEventListener("click", async () => {
 
 
 // Large Capacity Filter
-
 let largeCapButton = document.getElementById("largeCapacityBtn");
 largeCapButton.addEventListener("click", async () => {
 
@@ -428,7 +414,6 @@ largeCapButton.addEventListener("click", async () => {
 });
 
 // Medium Capacity Filter
-
 let mediumCapButton = document.getElementById("mediumCapacityBtn");
 mediumCapButton.addEventListener("click", async () => {
 
@@ -532,7 +517,6 @@ mediumCapButton.addEventListener("click", async () => {
 });
 
 // Tech Availability Filter
-
 let techButton = document.getElementById("techEnabledBtn");
 techButton.addEventListener("click", async () => {
 
