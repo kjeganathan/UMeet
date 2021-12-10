@@ -173,7 +173,7 @@ app.get('/logout', (req, res) => {
 // TO DO: need to check redirection
 app.post('/createAccount', async (req, res) => {
     const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
+    await dblast.addUser(data.firstname, data.lastname, data.email, data.password);
     console.log(`Created new account successfully!`);
 });
 
