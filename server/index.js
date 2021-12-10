@@ -62,6 +62,7 @@ const users = [];
 
 let userMap = {};
 
+/*
 // Returns true iff the user exists.
 function findUser(username) {
     if (!users[username]) {
@@ -91,8 +92,7 @@ function addUser(name, pwd) {
     const [salt, hash] = mc.hash(pwd);
     users[name] = [salt, hash];
     return true;
-}
-
+} */
 
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
@@ -191,7 +191,6 @@ app.get('/logout', (req, res) => {
 })
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-// TO DO: need to check redirection
 app.post('/createAccount', async (req, res) => {
     const data = req.body;
     await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);

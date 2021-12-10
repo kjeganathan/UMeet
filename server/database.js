@@ -142,6 +142,12 @@ async function getAllRooms() {
     );
 }
 
+async function getAllUsers() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM users;")
+    );
+}
 
 
 
@@ -155,6 +161,7 @@ async function getAllRooms() {
     getRoomID, 
     getRoomInformation,
     getAllRooms,
+    getAllUsers,
     updateDate,
     getDate,
     addBooking,
