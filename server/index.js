@@ -122,7 +122,7 @@ app.post('/users', async (req, res) => {
 });
 
 app.post('/users/login', async (req, res) => {
-    const user = users.findUser(req.body.name);
+    const user = users.find(user => user.name = req.body.name);
     try {
         // takes care of timing algorithms
         if (bcrypt.compare(req.body.password, user.password)) {
