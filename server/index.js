@@ -60,10 +60,6 @@ passport.deserializeUser((uid, done) => {
     done(null, uid);
 });
 
-const users = dblast.getAllUsers();
-
-let userMap = {};
-
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
@@ -114,7 +110,7 @@ app.post('/login',
 // browser url http://localhost:3000/login 
 app.get('/login', async (req, res) => {
     const body = req.body;
-    const user = await dblast.getUserByEmail({email: body.email});
+    const user = await dblast.getUserByEmail({ email: body.email });
     console.log(user.password);
     if (user) {
         const valid = await bcrypt.compare(body.password, user.password);
@@ -124,7 +120,7 @@ app.get('/login', async (req, res) => {
                 { 'root': __dirname }));
         } else {
             res.status(400).json({ message: "Invalid password" });
-        } 
+        }
     } else {
         res.status(401).json({ message: "User doesn't exist" });
     }
@@ -146,20 +142,30 @@ app.get('/logout', (req, res) => {
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', async (req, res) => {
-   const data = req.body;
-   try {
-       const hashed = await bcrypt.hash(data.password, 10);
-       await dblast.addUser(
-           data.firstname,
-           data.lastname,
-           data.email,
-           hashed
-       );
-       console.log("Account created!");
-       res.redirect('/')
-    } catch {
-       res.redirect('/')
+    const data = req.body;
+    let errors = [];
+    /*
+    if (!data.firstname || !data.lastname || !data.email || !data.password || !data.validatePassword) {
+        errors.push({ msg: "Please fill in all fields" });
+    } 
+    if (data.password !== data.validatePassword) {
+        errors.push({ msg: "Passwords do not match"});
     }
+    if (errors.length > 0) {
+        console.log(JSON.stringify(errors));
+        res.redirect('/');
+    }
+    else 
+    */
+        const hashed = await bcrypt.hash(data.password, 10);
+        await dblast.addUser(
+            data.firstname,
+            data.lastname,
+            data.email,
+            hashed
+        );
+        console.log("Account created!");
+        res.redirect('/')
 });
 
 app.post('/createBooking', async (req, res) => {
