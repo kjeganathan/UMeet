@@ -48,7 +48,7 @@ async function loadTentativeMeetings(email) {
                         <p id="card-time" class="card-time card-text">Time Slot: ${my_booking.time}</p>
                         <p id="card-address" class="card-address card-text">Address: ${my_booking.address}</p>
                         <div class="flex-container-buttons">
-                            <button style="background-color: grey; color: white" type="button" class="card-button btn" id="${my_booking.roomid}">Details</button>
+                            <button style="background-color: grey; color: white" type="button" class="card-button btn btn-secondary" id="${my_booking.roomid}">Details</button>
                             <button type="button" class="card-button btn btn-dark" data-toggle="modal" data-target="#myModal" id="${my_booking.roomid}">Pick Date</button>
 
                                 <div id="myModal" class="modal fade">
