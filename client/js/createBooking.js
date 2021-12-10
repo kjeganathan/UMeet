@@ -222,7 +222,6 @@ async function datePicker() {
 }
 
 // Above 3 Star Filter
-
 let starButton = document.getElementById("above3StarsBtn");
 starButton.addEventListener("click", async() => {
 

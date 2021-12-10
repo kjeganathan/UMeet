@@ -1,171 +1,181 @@
- /* General body CSS */ 
- body { 
-    width: 100%;
-    overflow-x: hidden; 
-    margin: 0;
-    font-family: system-ui;
-    font-size: 16px;
-    font-weight: 300;
-    color: black;
-    text-align: center;
-  }
-  
+/* General body CSS */
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	font-family: system-ui;
+	font-size: 16px;
+	font-weight: 300;
+	color: black;
+	text-align: center;
+}
+
+
 /* Banner */
+
 .banner {
-    position: absolute;
-    height: 346px;
-    width: 100%; 
-    background: rgba(108, 92, 231, 0.28);
-    text-align: left;
+	position: absolute;
+	height: 346px;
+	width: 100%;
+	background: rgba(108, 92, 231, 0.28);
+	text-align: left;
 }
 
 .banner-subtext {
-    padding-top: 150px;
-    font-size: 20px;
-    font-weight: 200;
-    text-align: center;
+	padding-top: 150px;
+	font-size: 20px;
+	font-weight: 200;
+	text-align: center;
 }
 
-.banner-title {  
-    font-size: 40px;
-    font-weight: 2;
-    text-align: center;
+.banner-title {
+	font-size: 40px;
+	font-weight: 2;
+	text-align: center;
 }
 
 .banner-stars {
-  text-align: center;
+	text-align: center;
 }
 
 .container {
-    margin-top: 400px;
+	margin-top: 400px;
 }
 
 .popular-features {
-    padding-top: 20px;
-    padding-bottom: 90px;
+	padding-top: 20px;
+	padding-bottom: 90px;
 }
 
 .pf-icon {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
-.location { 
-    padding-top: 10px;
-    padding-bottom: 10px;
+.location {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .location-title {
-    padding-bottom: 100px; 
+	padding-bottom: 100px;
 }
 
 .map {
-  width: 95%;
-  height: 400px; 
-  border: 0;
-  padding-top: 10px; 
+	width: 95%;
+	height: 400px;
+	border: 0;
+	padding-top: 10px;
 }
 
 .tags-text {
-    padding-top: 20px;
+	padding-top: 20px;
 }
 
 p.tags-design {
-    width: 150px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background-color: #5E17EB;
-    border-radius: 30px;
-    color: white;
-  }
-
-.flex-header-bar{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #5E17EB;
+	border-radius: 30px;
+	color: white;
 }
 
-#link-header-bar{
-    margin-top:5px;
+.flex-header-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
 }
+
+#link-header-bar {
+	margin-top: 5px;
+}
+
 
 /* Adding a background color to the top navigation */
+
 .navbar {
-    position: absolute;
-    height: 96px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .navbar a {
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    background-color: rgba(108, 92, 231, 0.28);
-    color: black;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  /* Change the color of links on hover */
-  .navbar a:hover {
-    background-color: rgba(108, 92, 231, 0.749);
-    color: white;
-    border-radius: 8px;
-  }
-  
-  #logOut {
-    padding-left:30px;
-    padding-right:30px;
-    margin-right:30px;
-    border-radius:30px;
-    width: 150px;
-  }
-  
-  #logOut:hover {
-    background-color: rgba(108, 92, 231, 0.749);
-    color: white;
-    border-radius: 8px;
-    border-color: rgba(108, 92, 231, 0.749);
-  }
+	position: absolute;
+	height: 96px;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
+	overflow: hidden;
+	width: 100%;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.navbar a {
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	background-color: rgba(108, 92, 231, 0.28);
+	color: black;
+	border-radius: 8px;
+	margin-right: 20px;
+}
+
+
+/* Change the color of links on hover */
+
+.navbar a:hover {
+	background-color: rgba(108, 92, 231, 0.749);
+	color: white;
+	border-radius: 8px;
+}
+
+#logOut {
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-right: 30px;
+	border-radius: 30px;
+	width: 150px;
+}
+
+#logOut:hover {
+	background-color: rgba(108, 92, 231, 0.749);
+	color: white;
+	border-radius: 8px;
+	border-color: rgba(108, 92, 231, 0.749);
+}
 
 .description {
-    font-size: 15px;
-    width: 90%;
+	font-size: 15px;
+	width: 90%;
 }
 
 .popular-features-item {
-    margin-left: 20px
+	margin-left: 20px
 }
 
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
 
 .bookingButton {
-    height:40px; 
-    width:100px; 
-    margin: -20px -50px; 
-    position:relative;
-    top:5%; 
-    left:90%;
+	height: 40px;
+	width: 100px;
+	margin: -20px -50px;
+	position: relative;
+	top: 5%;
+	left: 90%;
 }

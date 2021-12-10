@@ -79,8 +79,6 @@ window.addEventListener("load", async function () {
 // Log Out Button in Navbar 
 let logoutButton = document.getElementById('logOut');
 logoutButton.addEventListener('click', () => {
-    localStorage.removeItem("roomid");
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
+    localStorage.clear(); 
     document.location.href = "https://u-meet.herokuapp.com/";
 });

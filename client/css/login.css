@@ -1,108 +1,116 @@
- /* General body CSS */ 
- body { 
-    width: 100%;
-    overflow-x: hidden; 
-    margin: 0;
-    font-family: system-ui;
-    font-size: 16px;
-    font-weight: 300;
-    color: black;
-    text-align: center;
-  }
+/* General body CSS */
 
-  /*Login and Create Account Grid Styling*/
-.border-right {
-    border-right: 1px solid #6C5CE7;
+body {
+	width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	font-family: system-ui;
+	font-size: 16px;
+	font-weight: 300;
+	color: black;
+	text-align: center;
 }
+
+
+/*Login and Create Account Grid Styling*/
+
+.border-right {
+	border-right: 1px solid #6C5CE7;
+}
+
 
 /* Login and Create Account Header Banner Styling */
 
-#loginCol{
-    position: absolute;
-    left:0%;
-    width:50%;
-    height: 240px;
-    background: rgba(108, 92, 231, 0.28);
-    text-align: left;
+#loginCol {
+	position: absolute;
+	left: 0%;
+	width: 50%;
+	height: 240px;
+	background: rgba(108, 92, 231, 0.28);
+	text-align: left;
 }
 
-#createAccountCol{
-    position: absolute;
-    left:50%;
-    width:50%;
-    height: 240px;
-    background: rgba(108, 92, 231, 0.28);
-    text-align: left;
-    border-left-width: 5px;
-    border-left-color: black;
+#createAccountCol {
+	position: absolute;
+	left: 50%;
+	width: 50%;
+	height: 240px;
+	background: rgba(108, 92, 231, 0.28);
+	text-align: left;
+	border-left-width: 5px;
+	border-left-color: black;
 }
 
-.loginBannerTitle, .createAccountBannerTitle{
-    color:#2D3436;
-     height: 32px;
-     font-style: normal;
-     font-weight: normal;
-     font-size: 38px;
-     line-height: 32px;
-     text-align: center;
-     margin-top:15%;
-     color: #2D3436;
- }
+.loginBannerTitle,
+.createAccountBannerTitle {
+	color: #2D3436;
+	height: 32px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 38px;
+	line-height: 32px;
+	text-align: center;
+	margin-top: 15%;
+	color: #2D3436;
+}
+
 
 /* Login and Create Account Form Styling */
 
-#loginForm{
-    position: absolute;
-    left:0%;
-    top: 330px;
-    width:50%;
-    height:100%;
+#loginForm {
+	position: absolute;
+	left: 0%;
+	top: 330px;
+	width: 50%;
+	height: 100%;
 }
 
-#createAccountForm{
-    position: absolute;
-    left:50%;
-    top: 330px;
-    width:50%;
+#createAccountForm {
+	position: absolute;
+	left: 50%;
+	top: 330px;
+	width: 50%;
 }
 
-.form-group{
-    margin-top:50px;
-    width:50%;
-    margin-left:25%;
+.form-group {
+	margin-top: 50px;
+	width: 50%;
+	margin-left: 25%;
 }
 
-#login, #createAccountLogin{
-    padding-right:30px;
-    padding-left:30px;
-    margin-top:50px;
-    margin-left:42%;
+#login,
+#createAccountLogin {
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-top: 50px;
+	margin-left: 42%;
 }
+
 
 /* Header Bar Styling */
 
-.navbar{
-    position: absolute;
-    height: 96px;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
+.navbar {
+	position: absolute;
+	height: 96px;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	filter: drop-shadow(0px 2px 4px rgba(38, 50, 56, 0.16)) drop-shadow(0px 4px 8px rgba(38, 50, 56, 0.08));
 }
 
-.flex-header-bar{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
+.flex-header-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
 }
 
-#link-header-bar{
-    margin-top:5px;
+#link-header-bar {
+	margin-top: 5px;
 }
 
-#logOut{
-    padding-left:30px;
-    padding-right:30px;
-    margin-right:30px;
-    border-radius:30px;
+#logOut {
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-right: 30px;
+	border-radius: 30px;
 }
