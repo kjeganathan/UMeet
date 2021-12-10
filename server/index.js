@@ -107,7 +107,8 @@ app.post('/login',
         'failureRedirect': '/login'      // otherwise, back to login
     }));
 
-// browser url http://localhost:3000/login 
+/*
+    // browser url http://localhost:3000/login 
 app.get('/login', async (req, res) => {
     const body = req.body;
     const user = await dblast.getUserByEmail({ email: body.email });
@@ -125,14 +126,14 @@ app.get('/login', async (req, res) => {
         res.status(401).json({ message: "User doesn't exist" });
     }
 });
+*/
 
-/*
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
     res.sendFile(path.resolve('./client/userProfile.html',
         { 'root': __dirname }));
 });
-*/
+
 
 // handle logging out
 app.get('/logout', (req, res) => {
