@@ -164,6 +164,21 @@ body {
     margin-bottom: 30px;
 }
 
+.modalDate {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    left: 20%;
+    right: 54.31%;
+    top: 25%;
+    bottom: 29.33%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 260px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
 .attendeeNumber {
     position: absolute;
     display:flex;
