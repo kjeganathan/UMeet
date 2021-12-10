@@ -1,111 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script type="module" src="js/roomProfile.js" defer></script>
-        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-        <link rel="stylesheet" href="css/roomProfile.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta charset="UTF-8"/>
-        <title>Room Profile Page</title>
-        <link rel="icon" href="images/favicon.png" type="image/png">
-    </head>
-    <body>
-        <nav class="navbar">
-            <img class="logo" src="images/UMeetLogo.png" height="84px" width="200px" alt="Card image cap">
-            <div class="flex-header-bar">
-                <a href="createBooking.html" id="link-header-bar" class="link-dark">Book a Room</a>
-                <a href="userProfile.html" id="link-header-bar" class="link-dark">My Profile</a>
-                <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
+   <head>
+      <script type="module" src="js/roomProfile.js" defer></script>
+      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+      <link rel="stylesheet" href="css/roomProfile.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta charset="UTF-8"/>
+      <title>Room Profile Page</title>
+      <link rel="icon" href="images/favicon.png" type="image/png">
+   </head>
+   <body>
+      <nav class="navbar">
+         <img class="logo" src="images/UMeetLogo.png" height="84px" width="200px" alt="Card image cap">
+         <div class="flex-header-bar">
+            <a href="createBooking.html" id="link-header-bar" class="link-dark">Book a Room</a>
+            <a href="userProfile.html" id="link-header-bar" class="link-dark">My Profile</a>
+            <button type="button" class="btn btn-dark" id="logOut">Log Out</button>
+         </div>
+      </nav>
+      <div class="banner">
+         <div class="banner-subtext" id="building"></div>
+         <div class="banner-title" id="room"></div>
+         <div class="banner-stars">
+            <i id="star-1" class="fas fa-star" style="color:white"></i>
+            <i id="star-2" class="fas fa-star" style="color: white"></i>
+            <i id="star-3" class="fas fa-star" style="color: white"></i>
+            <i id="star-4" class="fas fa-star" style="color: white"></i>
+            <i id="star-5" class="fas fa-star" style="color: white"></i>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <!-- Left Column -->
+            <div class="col">
+               <!-- Description-->
+               <p class="description">Welcome to the UMass Amherst campus! Before booking a meeting room, please take note of the following. If you are in an ECHO enabled room, this refers to Lecture Capture: Echo360; lecture capture technology allows you to record course content on your computers using the Echo360 Personal Capture software.</p>
+               <p class="description">In addition, many classroom technology upgrades have been completed in the past year. These include “hybrid kits” (HK) now available in some classrooms and enhancements to classroom audiovisual equipment. In all technology-access labeled rooms, you will find an HDMI port and most likely projector access.</p>
+               <p class="description">Finally, please note: no food or drinks allowed in academic classrooms.</p>
+               <p class="description">For more information, please visit: https://www.umass.edu/it/technology-resources/teaching</p>
+               <!-- Line-->
+               <hr>
+               <!-- Popular Features -->
+               <div class="popular-features">
+                  <!-- <b>Popular Features</b> -->
+                  <table>
+                     <caption>Popular Information</caption>
+                     <tr>
+                        <td><i class="fas fa-chalkboard"></i></td>
+                        <td>Room Type</td>
+                        <td id="room-type"></td>
+                     </tr>
+                     <tr>
+                        <td><i class="fas fa-people-arrows"></i></td>
+                        <td>Attendee Capacity</td>
+                        <td id="room-capacity"></td>
+                     </tr>
+                     <tr>
+                        <td><i class="fas fa-plug"></i></td>
+                        <td>Technology Available</td>
+                        <td id="room-tech"></td>
+                     </tr>
+                     <tr>
+                        <td><i class="fas fa-building"></td>
+                        <td>Building Acronym</td>
+                        <td id="room-building-acronym"></td>
+                     </tr>
+                  </table>
+               </div>
             </div>
-        </nav>
-
-        <div class="banner">
-            <div class="banner-subtext" id="building"></div>
-            <div class="banner-title" id="room"></div>
-            <div class="banner-stars">
-                <i id="star-1" class="fas fa-star" style="color:white"></i>
-                <i id="star-2" class="fas fa-star" style="color: white"></i>
-                <i id="star-3" class="fas fa-star" style="color: white"></i>
-                <i id="star-4" class="fas fa-star" style="color: white"></i>
-                <i id="star-5" class="fas fa-star" style="color: white"></i>
+            <!-- Right Column -->
+            <div class="col">
+               <!-- Tags -->
+               <div id="tags" class="tags">
+                  <b>Tags</b>
+                  <div class="row tags-text">
+                     <div class="col-sm">
+                        <p id="tag-0" class="tags-design"></p>
+                     </div>
+                     <div class="col-sm">
+                        <p id="tag-1" class="tags-design"></p>
+                     </div>
+                     <div class="col-sm">
+                        <p id="tag-2" class="tags-design"></p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Map -->
+               <div class="location">
+                  <b>Location</b>
+                  <iframe
+                     class="map"
+                     id="map"
+                     loading="lazy"
+                     allowfullscreen
+                     src="">
+                  </iframe>    
+               </div>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <!-- Left Column -->
-                <div class="col">
-                    <!-- Description-->
-                    <p class="description">Welcome to the UMass Amherst campus! Before booking a meeting room, please take note of the following. If you are in an ECHO enabled room, this refers to Lecture Capture: Echo360; lecture capture technology allows you to record course content on your computers using the Echo360 Personal Capture software.</p>
-                    <p class="description">In addition, many classroom technology upgrades have been completed in the past year. These include “hybrid kits” (HK) now available in some classrooms and enhancements to classroom audiovisual equipment. In all technology-access labeled rooms, you will find an HDMI port and most likely projector access.</p> 
-                    <p class="description">Finally, please note: no food or drinks allowed in academic classrooms.</p> 
-                    <p class="description">For more information, please visit: https://www.umass.edu/it/technology-resources/teaching</p>
-                    <!-- Line-->
-                    <hr> 
-                    <!-- Popular Features -->
-                    <div class="popular-features">
-                        <!-- <b>Popular Features</b> -->
-                            <!-- <li class="popular-features-item-1" id="room-type"></li>
-                            <li class="popular-features-item-2" id="room-capacity"></li>
-                            <li class="popular-features-item-3" id="room-tech"></li> -->
-
-                            <table>
-                                <caption>Popular Information</caption>
-                                <tr>
-                                  <td><i class="fas fa-chalkboard"></i></td>
-                                  <td>Room Type</td>
-                                  <td id="room-type"></td>
-                                </tr>
-                                <tr>
-                                  <td><i class="fas fa-people-arrows"></i></td>
-                                  <td>Attendee Capacity</td>
-                                  <td id="room-capacity"></td>
-                                </tr>
-                                <tr>
-                                  <td><i class="fas fa-plug"></i></td>
-                                  <td>Technology Available</td>
-                                  <td id="room-tech"></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-building"></td>
-                                    <td>Building Acronym</td>
-                                    <td id="room-building-acronym"></td>
-                                </tr>
-                            </table>
-                    </div>       
-                </div>
-
-                <!-- Right Column -->
-                <div class="col">
-                    <!-- Tags -->
-                    <div id="tags" class="tags">
-                        <b>Tags</b>
-                        <div class="row tags-text">
-                            <div class="col-sm">
-                                <p id="tag-0" class="tags-design"></p>
-                            </div>
-                            <div class="col-sm">
-                                <p id="tag-1" class="tags-design"></p>
-                            </div>
-                            <div class="col-sm">
-                                <p id="tag-2" class="tags-design"></p>
-                            </div> 
-                        </div>    
-                    </div>
-                    <!-- Map -->
-                    <div class="location">
-                        <b>Location</b>
-                        <iframe
-                            class="map"
-                            id="map"
-                            loading="lazy"
-                            allowfullscreen
-                            src="">
-                        </iframe>    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+         </div>
+      </div>
+   </body>
 </html>
