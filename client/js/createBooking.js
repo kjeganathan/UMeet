@@ -55,7 +55,7 @@ async function loadTentativeMeetings(email) {
                                     <!-- Modal content -->
                                     <div class="my-modal">
                                         <div class="modal-content">
-                                            <div class="close" data-dismiss="modal">&times;</div>
+                                            <button type="button" id=close${my_booking.roomid} class="close">&times;</button>
                                                 <h4 class="modal-header">Date Selection</h4>
                                                 <br/>
                                                 <!--Date Input Box-->
@@ -109,6 +109,7 @@ async function loadTentativeMeetings(email) {
       const bookingButtons = document.querySelectorAll(".btn-dark");
       const dateButtons = document.querySelectorAll(".btn-default");
       const detailsButton = document.querySelectorAll(".btn-secondary");
+      const closeButton = document.querySelectorAll(".close");
       bookingButtons.forEach((button) => {
         button.addEventListener("click", bookMeeting);
       });
@@ -118,12 +119,18 @@ async function loadTentativeMeetings(email) {
       detailsButton.forEach((button) => {
         button.addEventListener("click", bookingDetails);
       });
+      closeButton.forEach((button) => {
+        button.addEventListener("click", closeModal);
+      });
     })
     .catch((error) => {
       console.log(error);
     });
 }
 
+async function closeModal(){
+    location.reload();
+}
 // Booking Button
 async function bookMeeting(){
     const roomid = this.id;
@@ -212,20 +219,17 @@ async function datePicker(){
                     time: roomInfoJSON[0]["time"]
             })
         });
-
+        
       }
       else{
           window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
       }
-    
 }
 
 
 // Log Out Button
 let logoutButton = document.getElementById("logOut");
 logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("roomid");
-  localStorage.removeItem("email");
-  localStorage.removeItem("password");
+  localStorage.clear();
   document.location.href = "https://u-meet.herokuapp.com/";
 });
