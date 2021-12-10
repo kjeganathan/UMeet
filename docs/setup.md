@@ -1,0 +1,1 @@
+Run node server/index.js or npm start 
