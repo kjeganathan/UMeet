@@ -62,38 +62,6 @@ const users = dblast.getAllUsers();
 
 let userMap = {};
 
-/*
-// Returns true iff the user exists.
-function findUser(username) {
-    if (!users[username]) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-// Returns true iff the password is the one we have stored (in plaintext = bad but easy).
-function validatePassword(name, pwd) {
-    if (!findUser(name)) {
-        return false;
-    }
-    if (!mc.check(pwd, users[name][0], users[name][1])) {
-        return false;
-    }
-    return true;
-}
-
-// Add a user to the "database".
-// TODO
-function addUser(name, pwd) {
-    if (findUser(name)) {
-        return false;
-    }
-    const [salt, hash] = mc.hash(pwd);
-    users[name] = [salt, hash];
-    return true;
-} */
-
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
