@@ -13,6 +13,7 @@ const expressSession = require('express-session');  // for managing session stat
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 const dblast = require("./database.js");
 const bcrypt = require('bcrypt');
+const flash = require("connect-flash");
 
 // session configuration
 const session = {
@@ -48,6 +49,7 @@ app.use(expressSession(session));
 passport.use(strategy);
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // convert user object to a unique identifier.
 passport.serializeUser((user, done) => {
@@ -109,12 +111,11 @@ app.post('/login',
         'failureRedirect': '/login'      // otherwise, back to login
     }));
 
-// browser url http://localhost:3000/login /*
-/*
+// browser url http://localhost:3000/login 
 app.get('/login', async (req, res) => {
     const body = req.body;
     const user = await dblast.getUserByEmail({email: body.email});
-    // How is the user returned?
+    console.log(user.password);
     if (user) {
         const valid = await bcrypt.compare(body.password, user.password);
         if (valid) {
@@ -127,13 +128,15 @@ app.get('/login', async (req, res) => {
     } else {
         res.status(401).json({ message: "User doesn't exist" });
     }
-});*/
+});
 
+/*
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
     res.sendFile(path.resolve('./client/userProfile.html',
         { 'root': __dirname }));
 });
+*/
 
 // handle logging out
 app.get('/logout', (req, res) => {
