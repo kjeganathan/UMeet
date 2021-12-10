@@ -1,4 +1,4 @@
-Steps to Build the Project
+# Steps to Build the Project
 
 First create a login.html file which will be the first page that the application opens on.  The login.html file has the functionality to both create an account for a new user as well as to login to the UMeet application.  When logging into the application, a user is prompted to enter in their email as well as their password.  When creating an account, a user is prompted to enter their first name, last name, email as well as a new password.  After logging into the application successfully, a user is routed to their profile page which is created using a userProfile.html file.
 
