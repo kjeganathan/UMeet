@@ -87,7 +87,7 @@ body {
     display: flex;
     flex-direction:row;
     justify-content: flex-start;
-    left: 2.17%;
+    left: 6.17%;
     right: 87.29%;
     top: 25%;
     bottom: 29.33%;
@@ -96,6 +96,32 @@ body {
     width: 210px;
     height: 80px;
 }
+
+.popular-features {
+    position: absolute;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    margin-left: 56.17%;
+    top: 32%;
+    bottom: 32%;
+
+}
+
+#above4StarsBtn {
+    padding-left:30px;
+    padding-right:30px;
+    margin-right:30px;
+    border-radius:30px;
+    width: 150px;
+  }
+  
+  #logOut:hover {
+    background-color: rgba(108, 92, 231, 0.749);
+    color: white;
+    border-radius: 8px;
+    border-color: rgba(108, 92, 231, 0.749);
+  }
 
 .icon {
     padding-left:10%;
@@ -444,3 +470,5 @@ body {
     height: 150px;
     margin-left: 50%;
   }
+
+  

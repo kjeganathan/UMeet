@@ -222,6 +222,22 @@ app.post('/bookingInformation', async (req, res) => {
     res.send(JSON.stringify(await dblast.getBookingInformation(data.email)));
 });
 
+app.get('/getAbove3Stars', async (req, res) => {
+    res.send(JSON.stringify(await dblast.getAbove3Stars()));
+})
+
+app.get('/getLargeCapacity', async (req, res) => {
+    res.send(JSON.stringify(await dblast.getLargeCapacity()));
+})
+
+app.get('/getMediumCapacity', async (req, res) => {
+    res.send(JSON.stringify(await dblast.getMediumCapacity()));
+})
+
+app.get('/getTechRooms', async (req, res) => {
+    res.send(JSON.stringify(await dblast.getTechRooms()));
+})
+
 app.get('*', (req, res) => {
     res.send('NO FOOL, BAD COMMAND');
 });

@@ -19,14 +19,14 @@ async function loadTentativeMeetings(email) {
       let meetings = JSON.parse(result);
       meetings.forEach((my_booking) => {
 
-      // Implementing logic to render star ratings 
-      let starCount = my_booking.rating; 
+        // Implementing logic to render star ratings 
+        let starCount = my_booking.rating;
 
-      /* for(let i = 1; i <= starCount; ++i) {
-        document.getElementById("star-" + i).style.color = "#FFFF2E"; 
-        console.log("star-" + i);
-      } */ 
-        
+        /* for(let i = 1; i <= starCount; ++i) {
+          document.getElementById("star-" + i).style.color = "#FFFF2E"; 
+          console.log("star-" + i);
+        } */
+
         let meeting_html = `<div class="card" id="card1">
                 <div class="card-horizontal">
                     <div class="card-body">
@@ -101,11 +101,11 @@ async function loadTentativeMeetings(email) {
         // let date = document.getElementById("inputNavInput").value;
         // localStorage.setItem("date", date);
         tentative_html += meeting_html;
-        
+
         //for each card we have a date submit button
         // let dateSubmitButton = document.getElementById(my_booking.roomid);
         // dateSubmitButton.addEventListener("click", () => {
-            
+
         // });
       });
       document.getElementById("booking-rooms").innerHTML = tentative_html;
@@ -131,102 +131,102 @@ async function loadTentativeMeetings(email) {
     });
 }
 
-async function closeModal(){
-    location.reload();
+async function closeModal() {
+  location.reload();
 }
 // Booking Button
-async function bookMeeting(){
-    const roomid = this.id;
-    localStorage.setItem("roomid", roomid);
+async function bookMeeting() {
+  const roomid = this.id;
+  localStorage.setItem("roomid", roomid);
 }
 
-async function bookingDetails(){
-    const roomid = this.id;
-    localStorage.setItem("roomid", roomid);
-    document.location.href = "http://localhost:3000/roomProfilePage";
+async function bookingDetails() {
+  const roomid = this.id;
+  localStorage.setItem("roomid", roomid);
+  document.location.href = "http://localhost:3000/roomProfilePage";
 }
 
-async function datePicker(){
-    const roomid = this.id; // gets the room id
-    // let formData = document.querySelector('form-control');
-    let email = localStorage.getItem("email"); // gets the email of a user
-    let date = document.forms[0].elements[0].value; // gets the date which was picked
-    console.log(date);
+async function datePicker() {
+  const roomid = this.id; // gets the room id
+  // let formData = document.querySelector('form-control');
+  let email = localStorage.getItem("email"); // gets the email of a user
+  let date = document.forms[0].elements[0].value; // gets the date which was picked
+  console.log(date);
 
-    let result = await fetch('/dateInformation', { // gets the dates stored in the rooms db
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-                roomid: roomid
-        })
+  let result = await fetch('/dateInformation', { // gets the dates stored in the rooms db
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      roomid: roomid
+    })
+  });
+  // console.log(result);
+  let resJSON = await result.json();
+  let dateArray = resJSON[0]["date"];
+  let isFull = false;
+  if (dateArray === null) {  // isEmpty date array for a room used if date array in rooms db is empty
+    dateArray = [];
+    console.log(dateArray);
+    console.log("hi");
+  }
+  // date array is not empty
+  for (let i = 0; i < dateArray.length; i++) {
+    if (dateArray[i] === date) {
+      isFull = true;
+      break; // breaks out of the loop if a date picked is already in the db
+    }
+  }
+
+  // if the date picked is not already in the rooms db for that particular room
+  if (isFull === false) {
+    dateArray.push(date);
+
+    // update the dates array in the rooms db 
+    await fetch('/updateDate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        roomid: roomid,
+        date: dateArray
+
+      })
     });
-      // console.log(result);
-      let resJSON = await result.json();
-      let dateArray = resJSON[0]["date"];
-      let isFull = false;
-      if(dateArray === null){  // isEmpty date array for a room used if date array in rooms db is empty
-        dateArray = [];
-        console.log(dateArray);
-        console.log("hi");
-      }
-        // date array is not empty
-        for(let i = 0; i<dateArray.length; i++){
-              if(dateArray[i] === date){
-                  isFull = true;
-                  break; // breaks out of the loop if a date picked is already in the db
-              }
-        }
 
-      // if the date picked is not already in the rooms db for that particular room
-      if(isFull === false){
-        dateArray.push(date);
+    // get room info for the room we are working with associated with the card
+    let roomInfo = await fetch('/roomInformation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        roomid: roomid
+      })
+    });
 
-        // update the dates array in the rooms db 
-        await fetch('/updateDate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                    roomid: roomid,
-                    date: dateArray
-                    
-            })
-        });
+    let roomInfoJSON = await roomInfo.json();
 
-        // get room info for the room we are working with associated with the card
-        let roomInfo = await fetch('/roomInformation', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                    roomid: roomid
-            })
-        });
-    
-        let roomInfoJSON = await roomInfo.json();
+    // create a booking only if the date picked is not already in the db
+    await fetch('/createBooking', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        building: roomInfoJSON[0]["building"],
+        date: date,
+        email: email,
+        time: roomInfoJSON[0]["time"]
+      })
+    });
 
-        // create a booking only if the date picked is not already in the db
-        await fetch('/createBooking', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                    building: roomInfoJSON[0]["building"],
-                    date: date,
-                    email: email,
-                    time: roomInfoJSON[0]["time"]
-            })
-        });
-        
-      }
-      else{
-          window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
-      }
+  }
+  else {
+    window.alert("Please choose a different date or different room and time, as the room is already booked for that day at the chosen time!");
+  }
 }
 
 
@@ -235,4 +235,33 @@ let logoutButton = document.getElementById("logOut");
 logoutButton.addEventListener("click", () => {
   localStorage.clear();
   document.location.href = "https://u-meet.herokuapp.com/";
+});
+
+
+// Select a time slot 
+window.addEventListener("load", async function () {
+
+  // fetch time slots 
+  let timeSlotsResponse2 = await fetch('/getTimeSlotFilteredCards', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      time:JSON.parse(time)
+    })
+  });
+
+  // parse response 
+  // let timeSlotsResponseJSON = await timeSlotsResponse.json();
+  // console.log(timeSlotsResponseJSON);
+
+  let timeSlotsResponseJSON = ['8:00am - 10:00am', '10:00am-12:00pm', '12:00pm-2:00pm', '2:00pm-4:00pm', '4:00pm-6:00pm', '6:00pm-8:00pm'] 
+ 
+  // id = "timeSlotItem"
+  for(let i = 0; i < timeSlotsResponseJSON.length; ++i) {
+    var opt = document.createElement("option");
+    document.getElementById("timeSlotItem").innerHTML += '<option id="' + i + '">' + timeSlotsResponseJSON[i] + '</option>';
+  }
+
 });

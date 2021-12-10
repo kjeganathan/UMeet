@@ -128,13 +128,6 @@ async function getBookingInformation(email) {
     );
 }
 
-async function getEligibleRooms(startTime, endTime, date, capacity) {
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT * FROM rooms WHERE startTime =< $1 AND endTime >= $2 AND date = ? AND capacity >= $4;", [roomid])
-    );
-}
-
 async function getAllRooms() {
   return await connectAndRun((db) => 
     db.any(
@@ -149,7 +142,33 @@ async function getAllUsers() {
     );
 }
 
+async function getAbove3Stars() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms WHERE rating >= 4;")
+    );
+}
 
+async function getLargeCapacity() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms WHERE capacity >= 100;")
+    );
+}
+
+async function getMediumCapacity() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms WHERE capacity < 100;")
+    );
+}
+
+async function getTechRooms() {
+  return await connectAndRun((db) => 
+    db.any(
+      "SELECT * FROM rooms WHERE tech IS NOT NULL;")
+    );
+}
 
   module.exports = {
     addUser,
@@ -165,5 +184,9 @@ async function getAllUsers() {
     updateDate,
     getDate,
     addBooking,
-    getBookingInformation
+    getBookingInformation,
+    getAbove3Stars,
+    getLargeCapacity,
+    getMediumCapacity,
+    getTechRooms
   };
