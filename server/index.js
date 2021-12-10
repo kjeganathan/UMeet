@@ -58,7 +58,7 @@ passport.deserializeUser((uid, done) => {
     done(null, uid);
 });
 
-const users = [];
+const users = dblast.getAllUsers();
 
 let userMap = {};
 
@@ -97,42 +97,6 @@ function addUser(name, pwd) {
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
-});
-
-app.get('/users', (req, res) => {
-    res.json(users);
-});
-
-app.post('/users', async (req, res) => {
-    try {
-        const salt = await bcrypt.genSalt();
-        const hashedPass = await bcrypt.hash(req.body.password, salt);
-        console.log(salt);
-        console.log(hashedPass);
-        // TODO: need to update to database, not this local array
-        const user = {
-            name: req.body.name,
-            password: hashedPass
-        };
-        users.push(user);
-        res.status(201).send();
-    } catch {
-        res.status(500).send();
-    }
-});
-
-app.post('/users/login', async (req, res) => {
-    const user = users.find(user => user.name = req.body.name);
-    if (user == null) return res.status(400);
-    try {
-        if (await bcrypt.compare(req.body.password, user.password)) {
-            res.send('Success');
-        } else {
-            res.send('Not allowed');
-        }
-    } catch {
-        res.status(500).send();
-    }
 });
 
 app.get('/profilePage', (req, res) => {
@@ -177,7 +141,26 @@ app.post('/login',
         'failureRedirect': '/login'      // otherwise, back to login
     }));
 
-// browser url http://localhost:3000/login
+// browser url http://localhost:3000/login /*
+/*
+app.get('/login', async (req, res) => {
+    const body = req.body;
+    const user = await dblast.getUserByEmail({email: body.email});
+    // How is the user returned?
+    if (user) {
+        const valid = await bcrypt.compare(body.password, user.password);
+        if (valid) {
+            console.log("Login Succeeded!");
+            res.sendFile(path.resolve('./client/userProfile.html',
+                { 'root': __dirname }));
+        } else {
+            res.status(400).json({ message: "Invalid password" });
+        } 
+    } else {
+        res.status(401).json({ message: "User doesn't exist" });
+    }
+});*/
+
 app.get('/login', (req, res) => {
     console.log("Login Succeeded!");
     res.sendFile(path.resolve('./client/userProfile.html',
@@ -192,9 +175,20 @@ app.get('/logout', (req, res) => {
 
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', async (req, res) => {
-    const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
-    console.log(`Created new account successfully!`);
+   const data = req.body;
+   try {
+       const hashed = await bcrypt.hash(data.password, 10);
+       await dblast.addUser(
+           data.firstname,
+           data.lastname,
+           data.email,
+           hashed
+       );
+       console.log("Account created!");
+       res.redirect('/')
+    } catch {
+       res.redirect('/')
+    }
 });
 
 app.post('/createBooking', async (req, res) => {
@@ -203,14 +197,12 @@ app.post('/createBooking', async (req, res) => {
     console.log(`Created new booking successfully!`);
 });
 
-// browser url http://localhost:3000/userInfo?userId=1
 app.post('/userInfo', async (req, res) => {
     const data = req.body;
     res.send(JSON.stringify(await dblast.getUserByEmail(data.email)));
 });
 
 // https://www.codegrepper.com/code-examples/javascript/app.delete%28%29+express
-// browser url http://localhost:3000/deleteAccount?userId=1
 app.delete('/users/:id', (req, res, next) => {
     const expressionIndex = getIndexById(req.params.id, expressions);
     if (expressionIndex !== -1) {
