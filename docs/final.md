@@ -1,13 +1,13 @@
-### 1. Title
+## 1. Title
 Team-eta
 
-### 2. Subtitle
+## 2. Subtitle
 UMeet
 
-### 3. Semester
+## 3. Semester
 Fall 2021
 
-### 4. Overview
+## 4. Overview
 UMeet is a web application used to book meeting/event spaces around campus, specifically for student organizations and RSO's to book classrooms more easily. This web app will include functionality for users to create an account, view available meeting rooms, learn details about each room, and book a room for a specific date and time slot. 
 
 There is an existing web application for booking group study rooms in the W. E. B. Du Bois Library (https://libcal.library.umass.edu/reserve/groupstudyrooms). However, these rooms provided by the library have a maximum capacity of 6-8 students which are too small for RSO and student organization meetings. If a student organization in CICS or a campus RSO would like to book a classroom for meetings in the Integrated Learning Center, Isenberg School of Management Building, or any other classroom building on campus, they currently have to go through an extensive process of reaching out to CCM administration or submitting an application to Campus Pulse. 
@@ -16,12 +16,12 @@ Our goal is to create a standardized and efficient web platform which will make 
 
 Application Heroku Link: https://u-meet.herokuapp.com/
 
-### 5. Team Overview 
+## 5. Team Overview 
 - Name: Kavya Jeganathan, Github: kjeganathan
 - Name: Disha Srivastava, Github: dishsrivastava
 - Name: Laura Nepo, Github: lauranepo
 
-### 6. User Interface 
+## 6. User Interface 
 | UI View                   | Purpose |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Login / Create an Account | This page enables a user to login to the web platform or create an account. |
@@ -40,7 +40,7 @@ Here are a few screenshots of our UI views:
 | User Profile | <img width="1440" alt="Screen Shot 2021-12-11 at 4 33 23 PM" src="https://user-images.githubusercontent.com/20649388/145692324-72f88491-3d5d-4099-9fcb-296625698f8b.png"> | 
 | User Profile => Scroll Page Down | <img width="1439" alt="Screen Shot 2021-12-11 at 4 34 12 PM" src="https://user-images.githubusercontent.com/20649388/145692338-3ca9cc9d-bb96-4b8e-8692-919110be7462.png"> | 
 
-### 7. Our APIs
+## 7. Our APIs
 Here is a consolidated list of our RESTful APIs: 
 
 | Route               |  Description                                                                                                 |
@@ -63,7 +63,7 @@ Here is a consolidated list of our RESTful APIs:
 | /getTechRooms       |  filters all rooms in the rooms database table based on having technology enabled                            |
 | *                   |  indicates error                                                                                             |
 
-### 8. Our Database
+## 8. Our Database
 We used a PostgreSQL database for this project. 
 ### Users Table
 | Column            | Data Type | Description                       |
@@ -99,7 +99,7 @@ We used a PostgreSQL database for this project.
 | time              | varchar   | The time the booking is made for  |
 
 
-### 9. URL Routes/Mappings 
+## 9. URL Routes/Mappings 
 | URL Routes            | Description |
 |-------------------|-----------|
 | / | routes to log in / create an account landing page and requires email/password authentication before advancing to any other pages | 
@@ -108,19 +108,63 @@ We used a PostgreSQL database for this project.
 | /roomProfilePage | routes to Room Profile Page and populates room details and information | 
 
 
-### 10. Authentication/Authorization 
+## 10. Authentication/Authorization 
 
-### 11. Contributions
+## 11. Contributions
 - Disha: Created full-stack for Room Profile Page including the HTML, JS, and CSS. Additionally, created a Rooms table in Heroku DB and scraped classroom/building information from UMass information repositories to populate the database with classrooms and classroom information/details. Created Google Maps API integration to transform building address into fetch URl and display a Google Map rendering with building address and directions. Created back-end queries and API endpoints for Booking Page; also completed HTML/CSS UI styling for displaying cards and filtering buttons. Completed final documentation. 
 
 - Kavya: Created full-stack for Log In / Create Account Page and User Profile Page including HTML, JS, and CSS. Additionally, created the Heroku DB connection and built the users and bookings database tables. Created functionality (frontend javascript and backend endpoints with database interactions) for booking cards to be populated on Book a Room page including when selecting a filter, functionality for creating a booking through selecting a date, and populating a user's bookings on User Profile Page. Also created the edit profile / delete profile functionality for User Profile Page. Completed setup.md documentation. 
 
 - Laura: Worked on documentation, creating linkage between booking page and room profile page, building foundational HTML/CSS for User Profile Page, and completing authentication for login / create an account page through implementing bCrypt 
 
-### 12. Conclusion  
+## 12. Conclusion  
 Our team thoroughly enjoyed working on this project, as we learned how to connect a backend psql database, backend JS logic, and a frontend HTML/CSS all together. We also learned how to prioritize which features are the most important for the user and create a design that is focused around them. An example of this would be creating filter buttons on the Book a Room page so a user can filter rooms based on popular features. Additionally, on the Room Profile Page we selected the most important room features and displayed them in an organized, user-friendly design. The implementation process being broken down into frontend, then backend logic, and then connecting the two while adding the DB connection helped us stay organized and build a workflow. We did encounter difficulties with passport authentication and with dynamically displaying cards based on available bookings, but were thankfully able to work through both. Something that our team would have liked to know before starting the project that would have helped us later, would be that the best way to organize bookings is through creating time slots and then allowing the user to select dates based on availability. Creating a system that can check for room booking availability was a new concept to us, and definitely a big learning process. Overall, we had a wonderful time working together on this project and we hope that UMass Amherst does implement a web application such as UMeet to make it easier for students to book meeting spaces across campus. 
 
 Here are a few innovative features we worked on for the 10 extra points: 
 - Integrating with Google Maps API to dynamically display the address and driving directions to each room/building's location 
 - Filtering available rooms based on popular features such as being highly rating (at least 4 stars), or filtering for medium capacity (<100) versus large capacity (>= 100) rooms, and finally, being able to filter for rooms with technology access
 - Creating a modal with functionality and an interface to select a meeting booking date 
+
+&nbsp
+
+### Grading Rubric 
+
+### General &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 20 pts
+- Authentication
+  - Successfully create a user through 'Create an Account'
+  - Successfully login a user
+- Navbar successfuly routes to specific pages 
+- Log Out button successfuly logs out user and clears local storage 
+- Linting/ code style
+
+### Book a Room Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfully load available rooms and display cards 
+- Successfully filter between large/medium capacity, above 3 stars, and technology access
+- Date Selection modal efficiently allows a user to select a date 
+- Once a user clicks the "Book" button in the modal, they can successfuly click the X to exit the modal and view the booking on the User Profile Page 
+- "Details" button successfully routes to the Room Profile Page for the correct room 
+
+### Room Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfuly load all room information and dynamically display all features and details 
+- Successfuly load and display Google Maps API Integration 
+- Roomid is successfuly stored in local storage 
+
+### User Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfully load user's name and email 
+- Successfully populate user's previous and upcoming bookings in booking cards 
+
+### CRUD &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  ___ / 5 pts									
+- Create: **1 pt**
+  - User 
+  - Booking 
+- Read: **1 pt**
+  - View room details 
+  - View available bookings 
+  - View a user's bookings s
+- Update: **1 pt**
+  - Edit user's email 
+  - Edit user's first and last name 
+- Delete: **1 pt**
+  - Delete a user 
+
+### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Total:  ___ / 100 points
