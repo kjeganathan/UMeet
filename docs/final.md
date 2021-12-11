@@ -13,7 +13,7 @@ UMeet is a web application used to book meeting/event spaces around campus, spec
 There is an existing library application in order to book rooms in the library. Since the rooms provided by the library are too small to host large RSO and club groups, these library rooms cannot be used by RSO’s and club’s in order to hold events or meetings.
 Instead, we would like to create a platform which will make it easier for clubs and RSOs to book large meeting spaces in order to host their events in a standardized and articulate manner.
 
-### Team Overview 
+## Team Overview 
 - Name: Kavya Jeganathan, Github: kjeganathan
 - Name: Laura Nepo, Github: lauranepo
 - Name: Disha Srivastava, Github: dishsrivastava
@@ -21,9 +21,32 @@ Instead, we would like to create a platform which will make it easier for clubs 
 ## Heroku Link
 https://u-meet.herokuapp.com/
 
+## Our APIs
+RESTful APIs
+
+| Route               |  Description                                                                                                 |
+|---------------------|--------------------------------------------------------------------------------------------------------------|
+| /deleteUser         |  deletes a user from user table in the database                                                              |
+| /editInfo           |  edits a user's information like email and name                                                              |
+| /login              |  performs authentication, if not registered redirects to login page, else takes user to profile page         |
+| /logout             |  logs out signed in user, redirects to login page and emptys local storage                                   |
+| /createAccount      |  adds a new user to user table in the database                                                               |
+| /createBooking      |  adds a new booking to booking table in the database                                                         |
+| /userInfo           |  gets a user's information based on email froom the useres table in the database                             |
+| /roomInformation    |  gets a room's information based on roomid from the rooms table in the database                              |
+| /allRooms           |  gets all the rooms stored in the rooms table in the database                                                |
+| /dateInformation    |  gets date of room booked based on roomid from the rooms table in the database                               |
+| /updateDate         |  updates the date array of the rooms table in the database                                                   |
+| /bookingInformation |  gets a booking's information based on email of the user making the booking from the bookings database table |
+| /getAbove3Stars     |  filters all rooms in the rooms database table based on having above 3 stars                                 |
+| /getLargeCapcity    |  filters all rooms in the rooms database table based on having above or equal to 100 capacity                |
+| /getMediumCapcity   |  filters all rooms in the rooms database table based on having less than 100 capacity                        |
+| /getTechRooms       |  filters all rooms in the rooms database table based on having technology enabled                            |
+| *                   |  indicates error                                                                                             |
+
 ## Our Database
 We used a PostgreSQL database for this project. 
-### User Table
+### Users Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | email             | text      | The email of the user             |
@@ -31,7 +54,7 @@ We used a PostgreSQL database for this project.
 | last name         | text      | The last name of the user         |
 | password          | text      | The password of the user          |
 | userid            | int4      | The user ID of the user           |
-### Room Table
+### Rooms Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | address           | varchar   | The address of the room           |
