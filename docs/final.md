@@ -1,13 +1,13 @@
-## 1. Title
+### 1. Title
 Team-eta
 
-## 2. Subtitle
+### 2. Subtitle
 UMeet
 
-## 3. Semester
+### 3. Semester
 Fall 2021
 
-## 4. Overview
+### 4. Overview
 UMeet is a web application used to book meeting/event spaces around campus, specifically for student organizationsand RSO's to book classrooms more easily. This web app will include functionality for users to create an account, view available meeting rooms, learn details about each room, and book a room for a specific date and time slot. 
 
 There is an existing web application for booking group study rooms in the W. E. B. Du Bois Library (https://libcal.library.umass.edu/reserve/groupstudyrooms). However, these rooms provided by the library have a maximum capacity 6-8 students which are too small for RSO and student organization meetings. If a student organization in CICS or a campus RSO would like to book a classroom for meetings in the Integrated Learning Center, Isernberg School of Management Building, or any other classroom building on campus, they currently have to go through an extensive process of reaching out to CCM administration or submitting an application to Campus Pulse. 
@@ -20,19 +20,12 @@ Our goal is to create a standardized and efficent web platform which will make i
 - Name: Laura Nepo, Github: lauranepo
 
 ## 6. User Interface 
-| UI View                       | Purpose   | Visual                                                                                  |
-|-------------------------------|-----------|-----------------------------------------------------------------------------
-------------|
-| Login / Create an Account     
-| This page enables a user to login to the web platform or create an account. 
-| <img width="1440" alt="Screen Shot 2021-12-11 at 3 59 24 PM" src="https://user-images.githubusercontent.com/20649388/145691911-2459b4b0-b703-4d80-aa67-96a0128c31f1.png"> |
-
-| Book a Room                   
-| This page provides a user with an overview of the available classrooms and their corresponding timeslots. Additonally, a user can filter based on a few popular features. A user can select "Details" to be directed to the Room Profile Page or select "Pick a Date" to be prompted with a modal popup to select a date and make a booking. 
-| Image |
-| Room Profile                  | text      | Image |
-| User Profile                  | This page allows a user to view all the previous and upcoming bookings associated with their account. In addition, they can edit account details (such as name and email) and delete their account.| Image |
-
+| UI View                   | Purpose |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Login / Create an Account | This page enables a user to login to the web platform or create an account. |
+| Book a Room               | This page provides a user with an overview of the available classrooms and their corresponding time slots.   Additionally, a user can filter based on a few popular features such as capacity, ratings, and technology access.   A user can select "Details" to be directed to the Room Profile Page or select "Pick a Date" to be prompted with a modal popup to select a date and make a booking. |
+| Room Profile              | This page provides a holistic overview of each room, so that a student can verify the rooms capabilities before creating a booking.   The room details available to view include: room type, attendee capacity, technology available, building acronym, specific room tags, and finally, a room address and Google Maps API integration.                                                            |
+| User Profile              | This page allows a user to view all the previous and upcoming bookings associated with their account.   In addition, they can edit account details (such as name and email) and delete their account.                                                                                                                                                                                               |
 
 ## Heroku Link
 https://u-meet.herokuapp.com/
