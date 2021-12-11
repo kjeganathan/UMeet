@@ -131,6 +131,7 @@ deleteBtn.addEventListener('click', async () => {
 btn.addEventListener('click', async () => {
 	const email = document.getElementById('profileEmail').innerText;
 	const name = document.getElementById('profileName').innerText;
+	const password = localStorage.getItem("password");
 	const nameArray = name.split(" ");
 	const firstName = nameArray[0];
 	const lastName = nameArray[1];
