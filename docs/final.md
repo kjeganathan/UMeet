@@ -20,12 +20,18 @@ Our goal is to create a standardized and efficent web platform which will make i
 - Name: Laura Nepo, Github: lauranepo
 
 ## 6. User Interface 
-| UI View                       | Purpose   | Visual                            |
-|-------------------------------|-----------|-----------------------------------|
-| Login / Create an Account     | This page enables a user to login to the web platform or create an account. | The email of the user             |
-| Book a Room                   | text      | The first name of the user        |
-| Room Profile                  | text      | The last name of the user         |
-| User Profile                  | This page allows a user to view all the previous and upcoming bookings associated with their account. In addition, they can edit account details (such as name and email) and delete their account.      | The password of the user          |
+| UI View                       | Purpose   | Visual                                                                                  |
+|-------------------------------|-----------|-----------------------------------------------------------------------------
+------------|
+| Login / Create an Account     
+| This page enables a user to login to the web platform or create an account. 
+| <img width="1440" alt="Screen Shot 2021-12-11 at 3 59 24 PM" src="https://user-images.githubusercontent.com/20649388/145691911-2459b4b0-b703-4d80-aa67-96a0128c31f1.png"> |
+
+| Book a Room                   
+| This page provides a user with an overview of the available classrooms and their corresponding timeslots. Additonally, a user can filter based on a few popular features. A user can select "Details" to be directed to the Room Profile Page or select "Pick a Date" to be prompted with a modal popup to select a date and make a booking. 
+| Image |
+| Room Profile                  | text      | Image |
+| User Profile                  | This page allows a user to view all the previous and upcoming bookings associated with their account. In addition, they can edit account details (such as name and email) and delete their account.| Image |
 
 
 ## Heroku Link
