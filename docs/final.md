@@ -30,8 +30,6 @@ We used a PostgreSQL database for this project.
 | first name        | text      | The first name of the user        |
 | last name         | text      | The last name of the user         |
 | password          | text      | The password of the user          |
-| previousBookings  | \_text    | The previous bookings of the user |
-| upcomingBookings  | \_text    | The upcoming bookings of the user |
 | userid            | int4      | The user ID of the user           |
 ### Room Table
 | Column            | Data Type | Description                       |
@@ -47,6 +45,16 @@ We used a PostgreSQL database for this project.
 | tags              | varchar   | The tags of the room              |
 | tech              | varchar   | The tech of the room              |
 | type              | varchar   | The type of the room              |
+| time              | varchar   | The time the room is available    |
+| date              | text[]    | The dates the room is booked      |
+### Bookings Table
+| Column            | Data Type | Description                       |
+|-------------------|-----------|-----------------------------------|
+| bookingid         | int4      | The booking id of the booking     |
+| building          | varchar   | The building name of the booking  |
+| date              | varchar   | The date the booking is made for  |
+| email             | varchar   | The booking user's email          |
+| time              | varchar   | The time the booking is made for  |
 
 ## Contributions
 - Disha: Collected data for on-campus room information from multiple UMass information repositories and compiled into one CSV file, then parsed CSV file into Heroku database to create rooms table, also created database connections and completed backend endpoints + functionality for roomProfilePage, finally, added client-side connections to the server for roomProfilePage
