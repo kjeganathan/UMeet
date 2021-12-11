@@ -1,11 +1,6 @@
-# Title
-Team-eta
-
-## Subtitle
-UMeet
-
-## Semester
-Fall 2021
+# Team-eta
+### UMeet
+### Fall 2021
 
 ### Overview
 - The team name: team-eta
