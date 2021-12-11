@@ -125,9 +125,7 @@ Here are a few innovative features we worked on for the 10 extra points:
 - Filtering available rooms based on popular features such as being highly rating (at least 4 stars), or filtering for medium capacity (<100) versus large capacity (>= 100) rooms, and finally, being able to filter for rooms with technology access
 - Creating a modal with functionality and an interface to select a meeting booking date 
 
-&nbsp
-
-### Grading Rubric 
+## Grading Rubric 
 
 ### General &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 20 pts
 - Authentication
