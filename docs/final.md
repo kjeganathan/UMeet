@@ -113,7 +113,7 @@ We used a PostgreSQL database for this project.
 ### 11. Contributions
 - Disha: Created full-stack for Room Profile Page including the HTML, JS, and CSS. Additionally, created a Rooms table in Heroku DB and scraped classroom/building information from UMass information repositories to populate the database with classrooms and classroom information/details. Created Google Maps API integration to transform building address into fetch URl and display a Google Map rendering with building address and directions. Created back-end queries and API endpoints for Booking Page; also completed HTML/CSS UI styling for displaying cards and filtering buttons. Completed final documentation. 
 
-- Kavya: Created full-stack for Log In / Create Account Page and User Profile Page including HTML, JS, and CSS. Additionally, created the Heroku DB connection and built the users and bookings database tables. Created functionality for booking cards to be populated on Book a Room page including when selecting a filter, functionality for creating a booking through selecting a date, and populating a user's bookings on User Profile Page. Also created the edit profile / delete profile functionality for User Profile Page. Completed setup.md documentation. 
+- Kavya: Created full-stack for Log In / Create Account Page and User Profile Page including HTML, JS, and CSS. Additionally, created the Heroku DB connection and built the users and bookings database tables. Created functionality (frontend javascript and backend endpoints with database interactions) for booking cards to be populated on Book a Room page including when selecting a filter, functionality for creating a booking through selecting a date, and populating a user's bookings on User Profile Page. Also created the edit profile / delete profile functionality for User Profile Page. Completed setup.md documentation. 
 
 - Laura: Worked on documentation, creating linkage between booking page and room profile page, building foundational HTML/CSS for User Profile Page, and completing authentication for login / create an account page through implementing bCrypt 
 
@@ -124,45 +124,3 @@ Here are a few innovative features we worked on for the 10 extra points:
 - Integrating with Google Maps API to dynamically display the address and driving directions to each room/building's location 
 - Filtering available rooms based on popular features such as being highly rating (at least 4 stars), or filtering for medium capacity (<100) versus large capacity (>= 100) rooms, and finally, being able to filter for rooms with technology access
 - Creating a modal with functionality and an interface to select a meeting booking date 
-
-### Grading Rubric 
-
-### General &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 20 pts
-- Authentication
-  - Successfully create a user through 'Create an Account'
-  - Successfully login a user
-- Navbar successfuly routes to specific pages 
-- Log Out button successfuly logs out user and clears local storage 
-- Linting/ code style
-
-### Book a Room Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
-- Successfully load available rooms and display cards 
-- Successfully filter between large/medium capacity, above 3 stars, and technology access
-- Date Selection modal efficiently allows a user to select a date 
-- Once a user clicks the "Book" button in the modal, they can successfuly click the X to exit the modal and view the booking on the User Profile Page 
-- "Details" button successfully routes to the Room Profile Page for the correct room 
-
-### Room Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
-- Successfuly load all room information and dynamically display all features and details 
-- Successfuly load and display Google Maps API Integration 
-- Roomid is successfuly stored in local storage 
-
-### User Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
-- Successfully load user's name and email 
-- Successfully populate user's previous and upcoming bookings in booking cards 
-
-### CRUD &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  ___ / 5 pts									
-- Create: **1 pt**
-  - User 
-  - Booking 
-- Read: **1 pt**
-  - View room details 
-  - View available bookings 
-  - View a user's bookings s
-- Update: **1 pt**
-  - Edit user's email 
-  - Edit user's first and last name 
-- Delete: **1 pt**
-  - Delete a user 
-
-### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Total:  ___ / 100 points
