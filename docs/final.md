@@ -1,22 +1,32 @@
-## Title
+## 1. Title
 Team-eta
 
-## Subtitle
+## 2. Subtitle
 UMeet
 
-## Semester
+## 3. Semester
 Fall 2021
 
-## Overview
-UMeet is a web application used to book meeting/event spaces around campus, specifically for clubs and RSO's to book rooms more easily. This web app will include functionality for users to leave comments on their experience using specific rooms, a rating system, and functionality to view your e-board team bookings. Furthermore, other users can upvote comments.
+## 4. Overview
+UMeet is a web application used to book meeting/event spaces around campus, specifically for student organizationsand RSO's to book classrooms more easily. This web app will include functionality for users to create an account, view available meeting rooms, learn details about each room, and book a room for a specific date and time slot. 
 
-There is an existing library application in order to book rooms in the library. Since the rooms provided by the library are too small to host large RSO and club groups, these library rooms cannot be used by RSO’s and club’s in order to hold events or meetings.
-Instead, we would like to create a platform which will make it easier for clubs and RSOs to book large meeting spaces in order to host their events in a standardized and articulate manner.
+There is an existing web application for booking group study rooms in the W. E. B. Du Bois Library (https://libcal.library.umass.edu/reserve/groupstudyrooms). However, these rooms provided by the library have a maximum capacity 6-8 students which are too small for RSO and student organization meetings. If a student organization in CICS or a campus RSO would like to book a classroom for meetings in the Integrated Learning Center, Isernberg School of Management Building, or any other classroom building on campus, they currently have to go through an extensive process of reaching out to CCM administration or submitting an application to Campus Pulse. 
 
-## Team Overview 
+Our goal is to create a standardized and efficent web platform which will make it easier for student organizations and RSOs to book meeting spaces in order to host their events in a standardized and articulate manner.
+
+## 5. Team Overview 
 - Name: Kavya Jeganathan, Github: kjeganathan
-- Name: Laura Nepo, Github: lauranepo
 - Name: Disha Srivastava, Github: dishsrivastava
+- Name: Laura Nepo, Github: lauranepo
+
+## 6. User Interface 
+| UI View                       | Purpose   | Visual                            |
+|-------------------------------|-----------|-----------------------------------|
+| Login / Create an Account     | This page enables a user to login to the web platform or create an account. | The email of the user             |
+| Book a Room                   | text      | The first name of the user        |
+| Room Profile                  | text      | The last name of the user         |
+| User Profile                  | This page allows a user to view all the previous and upcoming bookings associated with their account. In addition, they can edit account details (such as name and email) and delete their account.      | The password of the user          |
+
 
 ## Heroku Link
 https://u-meet.herokuapp.com/
