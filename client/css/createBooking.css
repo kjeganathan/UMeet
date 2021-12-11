@@ -11,6 +11,10 @@ body {
 	text-align: center;
 }
 
+#booking-rooms{
+    margin-left:5%;
+}
+
 .flex-header-bar {
 	display: flex;
 	flex-direction: row;
