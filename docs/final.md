@@ -158,7 +158,7 @@ Here are a few innovative features we worked on for the 10 extra points:
 - Read: **1 pt**
   - View room details 
   - View available bookings 
-  - View a user's bookings s
+  - View a user's bookings
 - Update: **1 pt**
   - Edit user's email 
   - Edit user's first and last name 
