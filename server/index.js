@@ -1,16 +1,4 @@
 'use strict';
-<<<<<<< Updated upstream
-process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
-const express = require('express');
-let http = require('http');
-let fs = require('fs');
-const path = require('path');
-const dblast = require("./database.js");
-const app = express();
-
-app.use(express.json()); // lets you handle JSON input
-app.use(express.static('client/')); // specify the directory 
-=======
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const dblast = require("./database.js");
@@ -67,7 +55,6 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((uid, done) => {
     done(null, uid);
 });
->>>>>>> Stashed changes
 
 app.use(express.json()); // lets you handle JSON input
 app.use(express.static('client/')); // specify the directory
@@ -138,23 +125,6 @@ app.get('/deleteProfile', (req, res) => {
     console.log("deleted user profile!");
 });
 
-<<<<<<< Updated upstream
-// browser url http://localhost:3000/login
-app.get('/login', (req, res) => {
-    console.log("Login Succeeded!");
-    res.sendFile(path.resolve('./client/userProfile.html'));
-});
-
-// curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-app.post('/createAccount', async (req, res) => {
-    const data = req.body;
-    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
-    console.log(`Created new account successfully!`);
-});
-
-// browser url http://localhost:3000/userInfo?userId=1
-app.post('/userInfo', async (req, res) => {
-=======
 
 app.get('/login', (req, res) => {
     res.sendFile(path.resolve('./client/login.html'));
@@ -203,18 +173,12 @@ app.post('/createBooking', checkLoggedIn, async (req, res) => {
 });
 
 app.post('/userInfo', checkLoggedIn, async (req, res) => {
->>>>>>> Stashed changes
     const data = req.body;
     res.send(JSON.stringify(await dblast.getUserByEmail(data.email)));
 });
 
 // https://www.codegrepper.com/code-examples/javascript/app.delete%28%29+express
-<<<<<<< Updated upstream
-// browser url http://localhost:3000/deleteAccount?userId=1
-app.delete('/users/:id', (req, res, next) => {
-=======
 app.delete('/users/:id', checkLoggedIn, (req, res, next) => {
->>>>>>> Stashed changes
     const expressionIndex = getIndexById(req.params.id, expressions);
     if (expressionIndex !== -1) {
       expressions.splice(expressionIndex, 1);
@@ -224,14 +188,9 @@ app.delete('/users/:id', checkLoggedIn, (req, res, next) => {
     }
   });
 
-<<<<<<< Updated upstream
-  // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
-app.post('/deleteAccount', (req, res) => {
-=======
 // FIXME fix delete account
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "5", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/deleteAccount', checkLoggedIn, (req, res) => {
->>>>>>> Stashed changes
     data["users"].pop(req.body.user);
     console.log(`Deleted account successfully!`);
 });
