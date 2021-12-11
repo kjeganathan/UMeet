@@ -13,7 +13,7 @@ UMeet is a web application used to book meeting/event spaces around campus, spec
 There is an existing library application in order to book rooms in the library. Since the rooms provided by the library are too small to host large RSO and club groups, these library rooms cannot be used by RSO’s and club’s in order to hold events or meetings.
 Instead, we would like to create a platform which will make it easier for clubs and RSOs to book large meeting spaces in order to host their events in a standardized and articulate manner.
 
-### Team Overview 
+## Team Overview 
 - Name: Kavya Jeganathan, Github: kjeganathan
 - Name: Laura Nepo, Github: lauranepo
 - Name: Disha Srivastava, Github: dishsrivastava
@@ -23,7 +23,7 @@ https://u-meet.herokuapp.com/
 
 ## Our Database
 We used a PostgreSQL database for this project. 
-### User Table
+### Users Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | email             | text      | The email of the user             |
@@ -31,7 +31,7 @@ We used a PostgreSQL database for this project.
 | last name         | text      | The last name of the user         |
 | password          | text      | The password of the user          |
 | userid            | int4      | The user ID of the user           |
-### Room Table
+### Rooms Table
 | Column            | Data Type | Description                       |
 |-------------------|-----------|-----------------------------------|
 | address           | varchar   | The address of the room           |
