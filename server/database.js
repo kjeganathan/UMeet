@@ -40,16 +40,6 @@ async function connectAndRun(task) {
 }
 
 // Database functions for log in 
-<<<<<<< Updated upstream
-async function addUser(firstname, lastname, email, password, previousbookings, upcomingbookings) {
-    return await connectAndRun((db) =>
-      db.none(
-        "INSERT INTO users (firstname, lastname, email, password, previousbookings, upcomingbookings) VALUES ($1, $2, $3, $4, $5, $6);",
-        [firstname, lastname, email, password, previousbookings, upcomingbookings]
-      )
-    );
-  }
-=======
 async function addUser(firstname, lastname, email, password) {
   return await connectAndRun((db) =>
     db.none(
@@ -67,7 +57,6 @@ async function addBooking(building, date, email, time) {
     )
   );
 }
->>>>>>> Stashed changes
 
 async function delUser(email) {
   return await connectAndRun((db) =>
@@ -75,9 +64,6 @@ async function delUser(email) {
   );
 }
 
-<<<<<<< Updated upstream
-async function getUserByEmail(email){
-=======
 async function updateDate(date, roomid) {
   return await connectAndRun((db) =>
     db.none("UPDATE rooms SET date = $1 where roomid = $2", [date, roomid])
@@ -92,7 +78,6 @@ async function getDate(roomid) {
 }
 
 async function getUserByEmail(email) {
->>>>>>> Stashed changes
   return await connectAndRun((db) =>
     db.any(
       "SELECT * FROM users where email = $1;", [email])
@@ -122,7 +107,6 @@ async function updateUserEmail(email, password) {
 }
 
 // Database functions for getting room information 
-<<<<<<< Updated upstream
 async function getRoomID(building, room) { 
   return await connectAndRun((db) => 
     db.any(
@@ -158,12 +142,6 @@ async function getRoomCapacity(roomid) {
     );
 }
 
-async function getRoomTech(roomid) { 
-  return await connectAndRun((db) => 
-    db.any(
-      "SELECT tech FROM rooms WHERE roomid = $1;", [roomid])
-    );
-}
 
 async function getRoomType(roomid) { 
   return await connectAndRun((db) => 
@@ -186,24 +164,7 @@ async function getRoomAddress(roomid) {
     );
 }
 
-  module.exports = {
-    addUser,
-    getUserByEmail,
-    updateUserFirstName,
-    updateUserLastName,
-    updateUserEmail,
-    delUser, 
-    getRoomID, 
-    getBuildingName,
-    getRoomName,
-    getRoomRating,
-    getRoomCapacity,
-    getRoomTech,
-    getRoomType, 
-    getRoomTags,
-    getRoomAddress
-  };
-=======
+
 async function getRoomID(building) {
   return await connectAndRun((db) =>
     db.any(
@@ -287,4 +248,3 @@ module.exports = {
   getMediumCapacity,
   getTechRooms
 };
->>>>>>> Stashed changes

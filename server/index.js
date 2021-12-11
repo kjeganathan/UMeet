@@ -82,6 +82,7 @@ async function validatePassword(email, password) {
 }
 
 function checkLoggedIn(req, res, next) {
+    console.log(req.isAuthenticated());
     if (req.isAuthenticated()) {
         console.log("authenticated");
         next();
