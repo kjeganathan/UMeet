@@ -124,3 +124,45 @@ Here are a few innovative features we worked on for the 10 extra points:
 - Integrating with Google Maps API to dynamically display the address and driving directions to each room/building's location 
 - Filtering available rooms based on popular features such as being highly rating (at least 4 stars), or filtering for medium capacity (<100) versus large capacity (>= 100) rooms, and finally, being able to filter for rooms with technology access
 - Creating a modal with functionality and an interface to select a meeting booking date 
+
+### Grading Rubric 
+
+### General &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 20 pts
+- Authentication
+  - Successfully create a user through 'Create an Account'
+  - Successfully login a user
+- Navbar successfuly routes to specific pages 
+- Log Out button successfuly logs out user and clears local storage 
+- Linting/ code style
+
+### Book a Room Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfully load available rooms and display cards 
+- Successfully filter between large/medium capacity, above 3 stars, and technology access
+- Date Selection modal efficiently allows a user to select a date 
+- Once a user clicks the "Book" button in the modal, they can successfuly click the X to exit the modal and view the booking on the User Profile Page 
+- "Details" button successfully routes to the Room Profile Page for the correct room 
+
+### Room Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfuly load all room information and dynamically display all features and details 
+- Successfuly load and display Google Maps API Integration 
+- Roomid is successfuly stored in local storage 
+
+### User Profile Page &emsp; &emsp; &emsp; &emsp; &emsp; ___ / 25 pts
+- Successfully load user's name and email 
+- Successfully populate user's previous and upcoming bookings in booking cards 
+
+### CRUD &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  ___ / 5 pts									
+- Create: **1 pt**
+  - User 
+  - Booking 
+- Read: **1 pt**
+  - View room details 
+  - View available bookings 
+  - View a user's bookings s
+- Update: **1 pt**
+  - Edit user's email 
+  - Edit user's first and last name 
+- Delete: **1 pt**
+  - Delete a user 
+
+### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Total:  ___ / 100 points
