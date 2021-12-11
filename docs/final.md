@@ -21,6 +21,29 @@ Instead, we would like to create a platform which will make it easier for clubs 
 ## Heroku Link
 https://u-meet.herokuapp.com/
 
+## Our APIs
+RESTful APIs
+
+| Route               |  Description                                                                                                 |
+|---------------------|--------------------------------------------------------------------------------------------------------------|
+| /deleteUser         |  deletes a user from user table in the database                                                              |
+| /editInfo           |  edits a user's information like email and name                                                              |
+| /login              |  performs authentication, if not registered redirects to login page, else takes user to profile page         |
+| /logout             |  logs out signed in user, redirects to login page and emptys local storage                                   |
+| /createAccount      |  adds a new user to user table in the database                                                               |
+| /createBooking      |  adds a new booking to booking table in the database                                                         |
+| /userInfo           |  gets a user's information based on email froom the useres table in the database                             |
+| /roomInformation    |  gets a room's information based on roomid from the rooms table in the database                              |
+| /allRooms           |  gets all the rooms stored in the rooms table in the database                                                |
+| /dateInformation    |  gets date of room booked based on roomid from the rooms table in the database                               |
+| /updateDate         |  updates the date array of the rooms table in the database                                                   |
+| /bookingInformation |  gets a booking's information based on email of the user making the booking from the bookings database table |
+| /getAbove3Stars     |  filters all rooms in the rooms database table based on having above 3 stars                                 |
+| /getLargeCapcity    |  filters all rooms in the rooms database table based on having above or equal to 100 capacity                |
+| /getMediumCapcity   |  filters all rooms in the rooms database table based on having less than 100 capacity                        |
+| /getTechRooms       |  filters all rooms in the rooms database table based on having technology enabled                            |
+| *                   |  indicates error                                                                                             |
+
 ## Our Database
 We used a PostgreSQL database for this project. 
 ### Users Table
