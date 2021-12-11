@@ -38,7 +38,7 @@ Here are a few screenshots of our UI views:
 | Room Profile | <img width="1440" alt="Screen Shot 2021-12-11 at 4 02 11 PM" src="https://user-images.githubusercontent.com/20649388/145692285-6a3c5474-dfc2-4c58-af65-178dff1221b3.png"> | 
 | Room Profile => Scroll Page Down | <img width="1440" alt="Screen Shot 2021-12-11 at 4 02 22 PM" src="https://user-images.githubusercontent.com/20649388/145692296-fdff8bd5-62ca-4194-8f92-2c317201f8ec.png"> | 
 | User Profile | <img width="1440" alt="Screen Shot 2021-12-11 at 4 33 23 PM" src="https://user-images.githubusercontent.com/20649388/145692324-72f88491-3d5d-4099-9fcb-296625698f8b.png"> | 
-| User Profile => Bookings | <img width="1439" alt="Screen Shot 2021-12-11 at 4 34 12 PM" src="https://user-images.githubusercontent.com/20649388/145692338-3ca9cc9d-bb96-4b8e-8692-919110be7462.png"> | 
+| User Profile => Scroll Page Down | <img width="1439" alt="Screen Shot 2021-12-11 at 4 34 12 PM" src="https://user-images.githubusercontent.com/20649388/145692338-3ca9cc9d-bb96-4b8e-8692-919110be7462.png"> | 
 
 ### 7. Our APIs
 Here is a consolidated list of our RESTful APIs: 
