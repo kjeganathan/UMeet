@@ -1,15 +1,13 @@
-# Final Milestone
-
-### Title
+## Title
 Team-eta
 
-### Subtitle
+## Subtitle
 UMeet
 
-### Semester
+## Semester
 Fall 2021
 
-### Overview
+## Overview
 - The team name: team-eta
 - The application name: UMeet
 
