@@ -109,6 +109,8 @@ We used a PostgreSQL database for this project.
 
 
 ## 10. Authentication/Authorization 
+Our login / create an account landing page is the only page available to users without authentication. We started out working on MinCrypt but were faced with a bug in updating the hashed password into our Heroku Postgres database. In our index.js file, you will find the extensive code for completing MiniCrypt and adding the functionality to our /login and /createAccount endpoints. In the end, we utilized JavaScript logic to build authentication for login by verifying if the password inputted by the user matched the password stored in our database. 
+
 
 ## 11. Contributions
 - Disha: Created full-stack for Room Profile Page including the HTML, JS, and CSS. Additionally, created a Rooms table in Heroku DB and scraped classroom/building information from UMass information repositories to populate the database with classrooms and classroom information/details. Created Google Maps API integration to transform building address into fetch URl and display a Google Map rendering with building address and directions. Created back-end queries and API endpoints for Booking Page; also completed HTML/CSS UI styling for displaying cards and filtering buttons. Completed final documentation. 
