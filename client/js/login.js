@@ -29,7 +29,14 @@ loginButton.addEventListener('click', async () => {
     const password = document.getElementById('exampleInputPassword1').value;
     localStorage.setItem("email", JSON.stringify(email));
     localStorage.setItem("password", JSON.stringify(password));
-    await fetch('/login');
-     //store email in localstorage.json
-    document.location.href = "https://u-meet.herokuapp.com/profilePage";
+    await fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                email: email,
+                password: password
+        })
     });
+});

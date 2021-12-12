@@ -7,10 +7,14 @@ const app = express();
 let http = require('http');
 let fs = require('fs');
 const path = require('path');
-const passport = require('passport'); // handles authentication
 const expressSession = require('express-session');  // for managing session state 
-const passportLocal = require('passport-local'); // username/password strategy
 const dblast = require("./database.js");
+
+/*  We tried to use MiniCrypt and were really close... 
+
+const passport = require('passport'); // handles authentication
+const passportLocal = require('passport-local'); // username/password strategy
+
 const minicrypt = require('./miniCrypt');
 const mc = new minicrypt();
 
@@ -43,10 +47,6 @@ const strategy = new LocalStrat({usernameField: 'email', passwordField: 'passwor
         }
         return done(null, email);
     });
-
-// app configurations
-app.use(express.static('client/')); // specify the directory
-app.use(express.json()); // lets you handle JSON input
 
 // convert user object to a unique identifier.
 passport.serializeUser((user, done) => {
@@ -84,7 +84,11 @@ const checkPass = async (email, pass) => {
         return false;
     }
     return miniCrypt.check(pass, credInfo.salt, credInfo.hash);
-};
+}; */ 
+
+// app configurations
+app.use(express.static('client/')); // specify the directory
+app.use(express.json()); // lets you handle JSON input
 
 // connect HTML frontend to server backend 
 app.get('/', (req, res) => {
@@ -126,9 +130,30 @@ app.get('/deleteProfile', (req, res) => {
 });
 
 // browser url http://localhost:3000/login
-app.get('/login', mustBeAuthenticated, (req, res) => {
-    console.log("Login Succeeded!");
-    res.sendFile(path.resolve('./client/userProfile.html'));
+app.post('/login', async (req, res) => {
+    const data = req.body;
+    let user = JSON.stringify(await dblast.getUserByEmail(data.email));
+
+    const email = data.email; 
+    const password = data.password; 
+
+    /* let listofUsers = JSON.stringify(await dblast.getAllUsers());
+    listofUsers.forEach(element => {
+        console.log(element); 
+    }); */ 
+
+    let userString = JSON.parse(user); 
+    console.log(userString[0].password); 
+    console.log("user" + JSON.stringify(user)); 
+    console.log(password); 
+
+    if(password === user.password) {
+        console.log("Login Succeeded!");
+        res.sendFile(path.resolve('./client/userProfile.html'));
+    } else {
+        console.log("wrong password, try again"); 
+        res.sendFile(path.resolve('./client/login.html'));
+    }
 });
 
 app.get('/logout', (req, res) => {
@@ -139,11 +164,15 @@ app.get('/logout', (req, res) => {
 // curl -d '{ "email" : "x", "password" : "X", "firstName" : "x", "lastName" : "x", "userId" : "7", "groups" : ["Esports club"], "previousBookings" : [1], "upcomingBookings" : [2]}' -H "Content-Type: application/json" http://localhost:3000/createAccount
 app.post('/createAccount', async (req, res) => {
     const data = req.body;
+    await dblast.addUser(data.firstname, data.lastname, data.email, data.password, data.previousbookings, data.upcomingbookings);
+    console.log(`Created new account successfully!`);
+
+    /* We tried to use MiniCrypt to create a hash of the password. We were able to create the hash 
+    but had errors with trying to push the password type to our Heroku db. 
+
     console.log("password input: " + data.password);
     console.log("hash: " + mc.hash(data.password));
-    const [salt, hash] = mc.hash(data.password);
-    await dblast.addUser(data.firstname, data.lastname, data.email, [salt, hash], data.previousbookings, data.upcomingbookings);
-    console.log(`Created new account successfully!`);
+    const [salt, hash] = mc.hash(data.password); */
 });
 
 // browser url http://localhost:3000/userInfo?userId=1
