@@ -65,7 +65,7 @@ window.addEventListener("load", async function() {
 	let splitArr = arr.split(',');
 
 	for (let i = 0; i < 3; ++i) {
-		if (splitArr[i] === " technology-access") {
+		if (splitArr[i] === " technology-access" || splitArr[i] === "technology-access")  {
 			document.getElementById('tag-' + i).innerText = "#tech-access";
 		} else {
 			document.getElementById('tag-' + i).innerText = "#" + splitArr[i];
