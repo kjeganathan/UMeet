@@ -1,6 +1,7 @@
 ## 1. Title
-Team-eta
-Note: It's recommended to open our application on Google Chrome
+Team-eta 
+<br/>
+Note: It's recommended to open our application on Google Chrome.
 
 ## 2. Subtitle
 UMeet
