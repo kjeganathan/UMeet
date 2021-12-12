@@ -50,7 +50,11 @@ window.addEventListener("load", async function() {
 
 	// Popular Features 
 	// id="room-tech" 
-	document.getElementById('room-tech').innerText = roomInformationResponseJSON[0]["tech"];
+	if (roomInformationResponseJSON[0]["tech"] === null) {
+		document.getElementById('room-tech').innerText = "None";
+	} else {
+		document.getElementById('room-tech').innerText = roomInformationResponseJSON[0]["tech"];
+	}
 
 	// Popular Features 
 	// id="room-building-acronym" 
