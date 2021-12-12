@@ -138,7 +138,6 @@ app.post('/login', async (req, res) => {
     const password = data.password; 
 
     let userString = JSON.parse(user); 
-
     if(password === userString[0].password) {
         console.log("Login Succeeded!");
         res.send(true);
@@ -146,8 +145,6 @@ app.post('/login', async (req, res) => {
         console.log("wrong password, try again"); 
         res.send(false);
     }
-
-    
 });
 
 app.get('/logout', (req, res) => {
