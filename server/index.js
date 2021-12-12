@@ -137,23 +137,17 @@ app.post('/login', async (req, res) => {
     const email = data.email; 
     const password = data.password; 
 
-    /* let listofUsers = JSON.stringify(await dblast.getAllUsers());
-    listofUsers.forEach(element => {
-        console.log(element); 
-    }); */ 
-
     let userString = JSON.parse(user); 
-    console.log(userString[0].password); 
-    console.log("user" + JSON.stringify(user)); 
-    console.log(password); 
 
-    if(password === user.password) {
+    if(password === userString[0].password) {
         console.log("Login Succeeded!");
-        res.sendFile(path.resolve('./client/userProfile.html'));
+        res.send(true);
     } else {
         console.log("wrong password, try again"); 
-        res.sendFile(path.resolve('./client/login.html'));
+        res.send(false);
     }
+
+    
 });
 
 app.get('/logout', (req, res) => {

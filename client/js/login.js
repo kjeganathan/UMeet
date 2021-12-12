@@ -29,7 +29,7 @@ loginButton.addEventListener('click', async () => {
     const password = document.getElementById('exampleInputPassword1').value;
     localStorage.setItem("email", JSON.stringify(email));
     localStorage.setItem("password", JSON.stringify(password));
-    await fetch('/login', {
+    let response = await fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -39,4 +39,9 @@ loginButton.addEventListener('click', async () => {
                 password: password
         })
     });
+    let responsejson = await response.json();
+    console.log(responsejson);
+    if(responsejson === true){
+        document.location.href = "http://localhost:3000/profilePage";
+    }
 });
