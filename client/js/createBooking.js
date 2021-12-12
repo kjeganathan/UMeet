@@ -120,7 +120,7 @@ async function bookMeeting() {
 async function bookingDetails() {
 	const roomid = this.id;
 	localStorage.setItem("roomid", roomid);
-	document.location.href = "http://localhost:3000/roomProfilePage";
+	document.location.href = "https://u-meet.herokuapp.com/roomProfilePage";
 }
 
 async function datePicker() {

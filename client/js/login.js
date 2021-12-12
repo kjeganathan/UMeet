@@ -42,6 +42,6 @@ loginButton.addEventListener('click', async () => {
     let responsejson = await response.json();
     console.log(responsejson);
     if(responsejson === true){
-        document.location.href = "http://localhost:3000/profilePage";
+        document.location.href = "https://u-meet.herokuapp.com/profilePage";
     }
 });
