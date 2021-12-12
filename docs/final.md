@@ -63,6 +63,8 @@ Here is a consolidated list of our RESTful APIs:
 | /getTechRooms       |  filters all rooms in the rooms database table based on having technology enabled                            |
 | *                   |  indicates error                                                                                             |
 
+Note:  /createAccount endpoint loads for a long time, but you can directly login once creating an account even if the page is still loading.
+
 ## 8. Our Database
 We used a PostgreSQL database for this project. 
 ### Users Table
