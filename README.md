@@ -53,7 +53,8 @@ Here is a consolidated list of our RESTful APIs:
 | /getTechRooms       |  filters all rooms in the rooms database table based on having technology enabled                            |
 | *                   |  indicates error                                                                                             |
 
-## heroku Postgres Database
+
+## Heroku Postgres Database
 We used a PostgreSQL database for this project. 
 ### Users Table
 | Column            | Data Type | Description                       |
