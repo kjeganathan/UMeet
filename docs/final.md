@@ -17,6 +17,7 @@ There is an existing web application for booking group study rooms in the W. E. 
 Our goal is to create a standardized and efficient web platform which will make it easier for student organizations and RSOs to book meeting spaces in order to host their events in a standardized and articulate manner.
 
 Application Heroku Link: https://u-meet.herokuapp.com/
+Video Demo: https://youtu.be/gLH-QmTeI2A
 
 ## 5. Team Overview 
 - Name: Kavya Jeganathan, Github: kjeganathan
