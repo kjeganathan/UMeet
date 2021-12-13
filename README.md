@@ -6,6 +6,8 @@ There is an existing web application for booking group study rooms in the W. E. 
 
 Our goal is to create a standardized and efficient web platform which will make it easier for student organizations and RSOs to book meeting spaces in order to host their events in a standardized and articulate manner.
 
+Video Demo: https://youtu.be/gLH-QmTeI2A
+
 ## Team Overview 
 - @kjeganathan
 - @dishsrivastava
